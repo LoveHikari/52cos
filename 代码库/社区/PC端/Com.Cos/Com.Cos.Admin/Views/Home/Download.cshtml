@@ -1,0 +1,57 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>download</title>
+</head>
+<body>
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/mobile-detect/1.3.6/mobile-detect.min.js"></script>
+    <script>
+        //判断数组中是否包含某字符串
+        Array.prototype.contains = function (needle) {
+            for (i in this) {
+                if (this[i].indexOf(needle) > 0)
+                    return i;
+            }
+            return -1;
+        }
+        $(document).ready(function() {
+            var device_type = navigator.userAgent;//获取userAgent信息
+            //document.write(device_type);//打印到页面
+            var md = new MobileDetect(device_type);//初始化mobile-detect
+            var os = md.os();//获取系统
+            var model = "";
+            if (os == "iOS") {//ios系统的处理
+                os = md.os() + md.version("iPhone");
+                model = md.mobile();
+                window.location.href = "https://itunes.apple.com/cn/app/id1145726508";
+            } else if (os == "AndroidOS") {//Android系统的处理
+                os = md.os() + md.version("Android");
+                var sss = device_type.split(";");
+                var i = sss.contains("Build/");
+                if (i > -1) {
+                    model = sss[i].substring(0, sss[i].indexOf("Build/"));
+                }
+                if (model.indexOf("MI")>-1) {  //小米
+                    window.location.href = "http://app.mi.com/details?id=com.cos.huanhuan";
+                } else if (model.indexOf("MX") > -1) { //魅族
+                    window.location.href = "http://112.124.9.200/download/com.cos.huanhuan_9b2b59cdf5204f0e9ec4011442d4088b.apk";
+                } else {
+                    window.location.href = "http://112.124.9.200/download/com.cos.huanhuan_9b2b59cdf5204f0e9ec4011442d4088b.apk";
+                }
+
+            }
+
+            //alert(os + "---" + model);//打印系统版本和手机型号
+        });
+
+    </script>
+</body>
+</html>

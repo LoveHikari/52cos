@@ -1,0 +1,37 @@
+﻿@using Com.Cos.Common
+@using Com.Cos.Models
+@model Com.Cos.Web.Areas.Member.Models.PublishViewModel
+
+<div class="middleTop clearfix" style="padding-bottom:20px;">
+    <div class="title" style="border-bottom:none;padding-bottom:0;">
+        <span>我发布的</span>
+        <img src="../img/hongjian_1.jpg">
+        @Ajax.ActionLink("返回参与的兑换", "ParticipateExchange", "Member", "",new AjaxOptions { UpdateTargetId = "tb" },new{@class="aa"})
+    </div>
+    <div class="centbi">
+        @for (int i = 0; i < ((List<Cooperation>)Model.Model).Count; i++)
+        {
+            var coo = ((List<Cooperation>)Model.Model)[i];
+            <div class="lilik clearfix" style="@(i==((List<Cooperation>)Model.Model).Count-1?"border:none;":"")">
+                <img src="@coo.Cover">
+                <div class="rirt">
+                    <div class="tops clearfix">
+                        <span>@coo.Title</span><font>合作</font>
+                    </div>
+                    <p class="pp clearfix">发布合作时间：@coo.ReleaseTime.GetValueOrDefault().ToString("yyyy-MM-dd HH:mm:ss")</p>
+                    <div class="button clearfix">
+                        <font>需</font><span>摄影师一名</span>
+                        <p>等待官方确认</p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<!--分页-->
+@Url.GetToPager(Ajax, Model.PageIndex, Model.PageSize, Model.TotalRecord, "ParticipateCooperation", "Member")
+<!--分页-->
+<script>
+    $(function () { window.scrollTo(0, 0); });
+</script>

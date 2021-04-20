@@ -1,0 +1,173 @@
+﻿
+
+/*播放器*/
+.cite-tools {
+  border: none;
+  margin: 0;
+  padding: 0;
+  background: none;
+  background: url(http://www.91moe.com/bg.jpg) repeat-x;
+  height: 37px;
+}
+.cite-div {
+  width: 118px;
+  padding: 0 0 0 10px;
+  float: left;
+  line-height: 37px;
+  height: 37px;
+  overflow: hidden;
+}.cite-tools ul {
+  height: 36px;
+  margin: 0;
+  float: left;
+  overflow: hidden;
+}.cite-tools ul li {
+  height: 36px;
+  line-height: 36px;
+  background: url(http://donghua.dmzj.com/css/images/li.gif) 0 -2px no-repeat;
+  background-position: right;
+  border: none;
+  padding: 0px;
+}.cite-tools li {
+  display: inline-block;
+  float: left;
+  height: 30px;
+  border-left: 1px solid #fff;
+  border-right: 1px solid #e5e5e5;
+  line-height: 30px;
+  padding: 0 10px;
+}.cite-tools ul li.on a {
+  text-decoration: none;
+  font-weight: bold;
+  text-shadow: 1px 1px 0px #fff;
+  color: #000;
+  padding: 0 5px 0 31px;
+}.cite-tools ul li a {
+  text-decoration: none;
+  color: #4c4d4d;
+  background: url(http://donghua.dmzj.com/css/images/cin.png) no-repeat;
+  display: inline-block;
+  height: 37px;
+  line-height: 37px;
+  padding: 0 6px 0 29px;
+  outline: none;
+  hide-focus: expression( this.hideFocus=true);
+}
+.cite-div2 {
+  float: right;
+  width: 235px;
+}.cite-div2 .l-span {
+  background-position: 0 -64px;
+}.cite-div2 span {
+  display: inline-block;
+  padding: 0 3px 0 25px;
+  background: url(http://www.91moe.com/bg.jpg) no-repeat;
+  height: 37px;
+  line-height: 37px;
+}.cite-div2 a {
+  text-decoration: none;
+  text-shadow: 1px 1px 0px #fff;
+  color: #4c4d4d;
+}.cite-div2 .r-span {
+  background-position: 0 -101px;
+}.cite-tools ul li.on .cite-youku:link, .cite-tools ul l.oni .cite-youku:visited {
+  background-position: 0 -38px;
+}
+
+.cite-tools ul li .cite-youku:link,.cite-tools ul li .cite-youku:visited{ background-position: 0 -3px;}
+.cite-tools ul li .cite-tudou:link,.cite-tools ul li .cite-tudou:visited{ background-position: -66px -3px;}
+.cite-tools ul li .cite-tudou2:link,.cite-tools ul li .cite-tudou:visited{ background-position: -66px -3px;}
+.cite-tools ul li .cite-ku6:link,.cite-tools ul li .cite-ku6:visited{ background-position:-132px -3px;}
+.cite-tools ul li .cite-sina:link,.cite-tools ul li .cite-sina:visited{ background-position:-196px -3px;}
+.cite-tools ul li .cite-qq:link,.cite-tools ul li .cite-qq:visited{ background-position:-260px -3px;}
+.cite-tools ul li .cite-qq2:link,.cite-tools ul li .cite-qq2:visited{ background-position:-260px -3px;}
+.cite-tools ul li .cite-qiyi:link,.cite-tools ul li .cite-qiyi:visited{background-position:-325px -3px;}
+.cite-tools ul li .cite-ck:link,.cite-tools ul li .cite-ck:visited{background-position:-382px -3px;}
+.cite-tools ul li .cite-bilibili:link,.cite-tools ul li .cite-bilibili:visited{background-position:-382px -3px;}
+.cite-tools ul li .cite-bilicid:link,.cite-tools ul li .cite-bilicid:visited{background-position:-382px -3px;}
+.cite-tools ul li .cite-acfun:link,.cite-tools ul li .cite-acfun:visited{background-position:-382px -3px;}
+.cite-tools ul li .cite-acfun_ab:link,.cite-tools ul li .cite-acfun_ab:visited{background-position:-382px -3px;}
+.cite-tools ul li .cite-yun:link,.cite-tools ul li .cite-yun:visited{background-position:-382px -3px;}
+.cite-tools ul li .cite-mukio:link,.cite-tools ul li .cite-mukio:visited{background-position:-382px -3px;}
+.cite-tools ul li .cite-pptv:link,.cite-tools ul li .cite-pptv:visited{background-position:-445px -3px;}
+.cite-tools ul li .cite-sohu:link,.cite-tools ul li .cite-sohu:visited{background-position:-506px -3px;}
+.cite-tools ul li .cite-letv:link,.cite-tools ul li .cite-letv:visited{background-position:-567px -3px;}
+.cite-tools ul li .cite-letvyun:link,.cite-tools ul li .cite-letvyun:visited{background-position:-567px -3px;}
+.cite-tools ul li .cite-qingkong:link,.cite-tools ul li .cite-qingkong:visited{background-position:-627px -3px;}
+.cite-tools ul li .cite-weiyun:link,.cite-tools ul li .cite-weiyun:visited{background-position:-627px -3px;}
+.cite-tools ul li .cite-cntv:link,.cite-tools ul li .cite-cntv:visited{background-position:-383px -3px;}
+.cite-tools ul li .cite-56:link,.cite-tools ul li .cite-56:visited{background-position:-382px -3px;}
+
+.cite-tools ul li a:hover,.cite-div2 a:hover{ position:relative; _top:-1px}
+.cite-tools ul li .cite-youku:hover{background-position: 0 -76px;}
+.cite-tools ul li .cite-tudou:hover{ background-position: -66px -76px;}
+.cite-tools ul li .cite-tudou2:hover{ background-position: -66px -76px;}
+.cite-tools ul li .cite-ku6:hover{ background-position: -132px -76px; padding: 0 5px 0 32px}
+.cite-tools ul li .cite-sina:hover{ background-position: -196px -76px;}
+.cite-tools ul li .cite-qq:hover{ background-position: -260px -76px; padding: 0 5px 0 32px;_padding: 0 5px 0 33px}
+.cite-tools ul li .cite-qq2:hover{ background-position: -260px -76px; padding: 0 5px 0 32px;_padding: 0 5px 0 33px}
+.cite-tools ul li .cite-qiyi:hover{ background-position: -325px -76px;}
+.cite-tools ul li .cite-ck:hover{ background-position: -382px -76px;}
+.cite-tools ul li .cite-bilibili:hover{ background-position: -382px -76px;}
+.cite-tools ul li .cite-bilicid:hover{ background-position: -382px -76px;}
+.cite-tools ul li .cite-acfun:hover{ background-position: -382px -76px;}
+.cite-tools ul li .cite-acfun_ab:hover{ background-position: -382px -76px;}
+.cite-tools ul li .cite-yun:hover{ background-position: -382px -76px;}
+.cite-tools ul li .cite-mukio:hover{ background-position: -382px -76px;}
+.cite-tools ul li .cite-pptv:hover{ background-position: -445px -76px;}
+.cite-tools ul li .cite-sohu:hover{background-position:-506px -76px;}
+.cite-tools ul li .cite-letv:hover{background-position:-567px -76px;}
+.cite-tools ul li .cite-letvyun:hover{background-position:-567px -76px;}
+.cite-tools ul li .cite-qingkong:hover{background-position:-627px -76px;}
+.cite-tools ul li .cite-weiyun:hover{background-position:-627px -76px;}
+.cite-tools ul li .cite-cntv:hover{ background-position: -383px -76px;}
+.cite-tools ul li .cite-56:hover{ background-position: -382px -76px;}
+
+.cite-tools ul li a:hover,.cite-tools ul li a:active,.cite-tools ul li.on a{text-decoration:none;  font-weight:bold; text-shadow:1px 1px 0px #fff;  color:#000; padding: 0 5px 0 31px}
+.cite-tools ul li .cite-youku:active{background-position: 0 -38px;}
+.cite-tools ul li .cite-tudou:active{background-position: -65px -38px;}
+.cite-tools ul li .cite-tudou2:active{background-position: -65px -38px;}
+.cite-tools ul li .cite-ku6:active{background-position: -132px -38px;}
+.cite-tools ul li .cite-sina:active{background-position: -196px -38px;}
+.cite-tools ul li .cite-qq:active{background-position: -260px -38px;}
+.cite-tools ul li .cite-qq2:active{background-position: -260px -38px;}
+.cite-tools ul li .cite-qiyi:active{background-position: -325px -38px;}
+.cite-tools ul li .cite-ck:active{background-position: -382px -38px;}
+.cite-tools ul li .cite-bilibili:active{background-position: -382px -38px;}
+.cite-tools ul li .cite-bilicid:active{background-position: -382px -38px;}
+.cite-tools ul li .cite-acfun:active{background-position: -382px -38px;}
+.cite-tools ul li .cite-acfun_ab:active{background-position: -382px -38px;}
+.cite-tools ul li .cite-yun:active{background-position: -382px -38px;}
+.cite-tools ul li .cite-mukio:active{background-position: -382px -38px;}
+.cite-tools ul li .cite-pptv:active{background-position: -445px -38px;}
+.cite-tools ul li .cite-sohu:active{background-position:-506px -38px;}
+.cite-tools ul li .cite-letv:active{background-position:-567px -38px;}
+.cite-tools ul li .cite-letvyun:active{background-position:-567px -38px;}
+.cite-tools ul li .cite-qingkong:active{background-position:-627px -38px;}
+.cite-tools ul li .cite-weiyun:active{background-position:-627px -38px;}
+.cite-tools ul li .cite-cntv:active{background-position: -383px -38px;}
+.cite-tools ul li .cite-56:active{background-position: -382px -38px;}
+
+.cite-tools ul li.on .cite-youku:link,.cite-tools ul l.oni .cite-youku:visited{background-position: 0 -38px;}
+.cite-tools ul li.on .cite-tudou:link,.cite-tools ul li.on .cite-tudou:visited{background-position: -65px -38px;}
+.cite-tools ul li.on .cite-tudou2:link,.cite-tools ul li.on .cite-tudou:visited{background-position: -65px -38px;}
+.cite-tools ul li.on .cite-ku6:link,.cite-tools ul li.on .cite-ku6:visited{ background-position:-132px -38px;}
+.cite-tools ul li.on .cite-sina:link,.cite-tools ul li.on .cite-sina:visited{ background-position:-196px -38px;}
+.cite-tools ul li.on .cite-qq:link,.cite-tools ul li.on .cite-qq:visited{ background-position:-260px -38px;}
+.cite-tools ul li.on .cite-qq2:link,.cite-tools ul li.on .cite-qq2:visited{ background-position:-260px -38px;}
+.cite-tools ul li.on .cite-qiyi:link,.cite-tools ul li.on .cite-qiyi:visited{background-position:-325px -38px;}
+.cite-tools ul li.on .cite-bilibili:link,.cite-tools ul li.on .cite-bilibili:visited{background-position:-382px -38px;}
+.cite-tools ul li.on .cite-bilicid:link,.cite-tools ul li.on .cite-bilicid:visited{background-position:-382px -38px;}
+.cite-tools ul li.on .cite-acfun:link,.cite-tools ul li.on .cite-acfun:visited{background-position:-382px -38px;}
+.cite-tools ul li.on .cite-acfun_ab:link,.cite-tools ul li.on .cite-acfun_ab:visited{background-position:-382px -38px;}
+.cite-tools ul li.on .cite-yun:link,.cite-tools ul li.on .cite-yun:visited{background-position:-382px -38px;}
+.cite-tools ul li.on .cite-ck:link,.cite-tools ul li.on .cite-ck:visited{background-position:-382px -38px;}
+.cite-tools ul li.on .cite-mukio:link,.cite-tools ul li.on .cite-mukio:visited{background-position:-382px -38px;}
+.cite-tools ul li.on .cite-pptv:link,.cite-tools ul li.on .cite-pptv:visited{background-position:-445px -38px;}
+.cite-tools ul li.on .cite-sohu:link,.cite-tools ul li.on .cite-sohu:visited{background-position:-506px -38px;}
+.cite-tools ul li.on .cite-letv:link,.cite-tools ul li.on .cite-letv:visited{background-position:-567px -38px;}
+.cite-tools ul li.on .cite-letvyun:link,.cite-tools ul li.on .cite-letvyun:visited{background-position:-567px -38px;}
+.cite-tools ul li.on .cite-qingkong:link,.cite-tools ul li.on .cite-qingkong:visited{background-position:-627px -38px;}
+.cite-tools ul li.on .cite-weiyun:link,.cite-tools ul li.on .cite-weiyun:visited{background-position:-627px -38px;}
+.cite-tools ul li.on .cite-cntv:link,.cite-tools ul li.on .cite-cntv:visited{background-position:-383px -38px;}
+.cite-tools ul li.on .cite-56:link,.cite-tools ul li.on .cite-56:visited{background-position:-382px -38px;}

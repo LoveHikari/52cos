@@ -1,0 +1,707 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.clearfix {
+    clear: both;
+    overflow: hidden;
+}
+
+.big {
+    font-family: 'Microsoft YaHei';
+    width: 100%;
+    height: 100%;
+    background: #fef5f5;
+}
+
+.content {
+    width: 1000px;
+    background: #fef5f5;
+    margin: 0 auto;
+}
+
+.leftContent {
+    position: relative;
+    width: 740px;
+    margin-top: 20px;
+    float: left;
+    padding-bottom: 100px;
+}
+
+.rightContent {
+    width: 240px;
+}
+
+.leftTop {
+    background: #fff;
+    margin-top: 5px;
+}
+
+.title {
+    padding-top: 4px;
+    border-bottom: 1px solid #fe98bc;
+    padding-bottom: 5px;
+}
+
+.leftMiddle .title {
+    border: none;
+    padding-top: 4px;
+}
+
+.pay .title {
+    border: none;
+}
+
+.leftBottom .title, .guarantee .title {
+    border: none;
+}
+
+.leftBottom p, .guarantee p, .pay p {
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+    .leftBottom p span, .guarantee p span, .pay p span {
+        color: #f5678d;
+        font-size: 18px;
+        margin-left: 10px;
+    }
+
+.radio {
+    margin-left: 60px;
+}
+
+.address {
+    margin: 15px 0;
+}
+
+    .address .titleSpan {
+        display: inline-block;
+        float: left;
+        color: #f5678d;
+        font-size: 14px;
+        margin: 0 0 0 2px;
+    }
+
+.dressBox {
+    width: 90%;
+    padding-top: 5px;
+    display: inline-block;
+}
+
+.border_radiu {
+    position: relative;
+    border-radius: 16px;
+    height: 16px;
+    width: 16px;
+    border: 1px solid #cbc9c9;
+    box-shadow: 0 0 8px #cbc9c9;
+    display: inline-block;
+    float: left;
+    margin: 3px 10px 0 10px;
+    cursor: pointer;
+}
+
+    .border_radiu img {
+        position: absolute;
+        top: 4px;
+        left: 4px;
+    }
+
+    .border_radiu span {
+        display: inline-block;
+    }
+
+.addAddress {
+    position: relative;
+}
+
+    .addAddress img {
+        cursor: pointer;
+    }
+
+    .addAddress span {
+        position: absolute;
+        top: 8px;
+        left: 28px;
+        color: #fff;
+        font-size: 14px;
+        cursor: pointer;
+    }
+
+.address_1 {
+    margin-bottom: 13px;
+}
+
+    .address_1 span {
+        font-size: 16px;
+        color: #666666;
+    }
+
+.select {
+    border: 1px solid #a7e0f5;
+    box-shadow: 0 0 8px #a7e0f5;
+}
+
+.selectADS {
+    color: #55d1fe !important;
+}
+
+.address_1 font {
+    float: right;
+    font-size: 12px;
+    color: #999999;
+    line-height: 21px;
+    cursor: pointer;
+}
+
+.payInfo {
+    width: 380px;
+    float: right;
+    padding: 10px;
+}
+
+.payInfo {
+    border: 2px solid #55d1fe;
+}
+
+.shifu {
+    text-align: right;
+}
+
+    .shifu span {
+        color: #f5678d;
+        font-size: 24px;
+    }
+
+.adss {
+    color: #f5678d;
+    font-size: 16px;
+    text-align: right;
+}
+
+    .adss span {
+        font-size: 14px;
+        color: #000;
+    }
+
+.payBtn {
+    background: #55d1fe;
+    position: absolute;
+    bottom: 60px;
+    right: 0;
+    padding: 10px 20px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.leftTop .title span,
+.leftMiddle .title span,
+.leftBottom .title span,
+.guarantee .title span,
+.pay .title span {
+    display: inline-block;
+    float: left;
+    padding: 5.5px 5px;
+    color: #fff;
+    background: #f5678d;
+    font-size: 16px;
+    font-weight: 100;
+}
+
+.leftTop h3 span {
+    float: right;
+    color: #999999;
+    font-size: 14px;
+    margin-top: 10px
+}
+
+.leftTop p {
+    font-size: 20px;
+    padding: 0 10px;
+    line-height: 35px;
+}
+
+.pingzheng {
+    padding: 0 10px 10px 10px;
+}
+
+.leftMiddle {
+    background: #fff;
+    margin: 20px 0;
+}
+
+.leftBottom {
+    background: #fff;
+    margin-bottom: 20px;
+}
+
+.guarantee, .pay {
+    background: #fff;
+    margin-bottom: 20px;
+}
+
+.pingfen {
+    margin: 10px 0px;
+    padding: 0 10px;
+}
+
+    .pingfen span {
+        float: left;
+        line-height: 49px;
+    }
+
+.progress {
+    position: relative;
+    display: inline-block;
+}
+
+.gress {
+    background: url(../../img/tiaoBack.jpg) center center no-repeat;
+    width: 430px;
+    height: 7px;
+}
+
+.progress ul {
+    position: absolute;
+    top: -25px;
+    left: -15px;
+}
+
+    .progress ul li {
+        float: left;
+        list-style: none;
+        color: #5ddaf2;
+        font-size: 14px;
+        margin-right: 65px;
+    }
+
+        .progress ul li:nth-child(5) {
+            margin-right: 0;
+        }
+
+.blueGress {
+    position: relative;
+    background: url(../../img/bluePX.png) repeat-x;
+    border-radius: 7px;
+    width: 325px;
+    height: 7px;
+}
+
+    .blueGress i {
+        position: absolute;
+        right: -12px;
+        top: -17px;
+    }
+
+.mark {
+    position: relative;
+    display: inline-block;
+}
+
+    .mark span {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        color: #fff;
+        display: block;
+        width: 55px;
+        text-align: center;
+    }
+
+.butChange {
+    border-top: 1px solid #fe98bc;
+}
+
+    .butChange button {
+        display: block;
+        width: 220px;
+        height: 50px;
+        margin: 15px auto 15px auto;
+        background: url(../../img/duihuanBtn.png) repeat-x;
+        border: none;
+        outline: none;
+        color: #fff;
+        font-size: 18px;
+        font-family: 'Microsoft YaHei';
+        letter-spacing: 4px;
+        border-radius: 6px;
+    }
+
+.rightContent {
+    width: 240px;
+    float: right;
+    margin-top: 30px;
+}
+
+.user {
+    position: relative;
+    border-bottom: 1px solid #fe98bc;
+    padding: 10px 0;
+}
+
+.touxiang {
+    width: 36px;
+    height: 36px;
+    box-shadow: 0 0 8px #b8b7b7;
+    border-radius: 36px;
+    margin: 0 auto;
+}
+
+    .touxiang img {
+        display: block;
+        width: 100%;
+    }
+
+.user p {
+    text-align: center;
+    margin-top: 5px;
+}
+
+.user span {
+    position: absolute;
+    top: 6px;
+    right: 37px;
+    color: #fff;
+    background: #fe98bc;
+    padding: 3px 4px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.think {
+    display: inline-block;
+    float: left;
+    width: 24.4%;
+    border-right: 1px solid #fe98bc;
+    margin: 10px 0 15px 0;
+}
+
+    .think:last-child {
+        border-right: none;
+    }
+
+    .think p {
+        text-align: center;
+        margin-top: 5px;
+        font-size: 14px;
+    }
+
+    .think img {
+        display: block;
+        margin: 0 auto;
+    }
+
+.Navigation {
+    margin-top: 20px;
+    background: #fff;
+}
+
+.rightTop {
+    background: #fff;
+}
+
+.Navigation h3 {
+    color: #ff4c7d;
+    font-size: 24px;
+    padding: 10px 10px 8px 10px;
+    font-weight: 100;
+}
+
+.Navigation ul {
+    padding: 0 10px;
+    margin-bottom: 20px;
+}
+
+    .Navigation ul li {
+        float: left;
+        width: 50%;
+        list-style: none;
+        color: #666;
+        font-size: 16px;
+        line-height: 30px;
+    }
+
+.daohang {
+    margin: 0 0 13px 0;
+}
+
+    .daohang img {
+        display: inline-block;
+        float: left;
+    }
+
+    .daohang span {
+        padding: 0px 16px;
+        float: left;
+        line-height: 20px;
+        display: inline-block;
+        background: #55d1fe;
+        color: #fff;
+    }
+
+
+
+
+
+@media (min-width:320px) and (max-width:360px) {
+    .leftTop h3, .leftMiddle h3 {
+        font-size: 18px;
+    }
+
+        .leftTop h3 span {
+            margin-top: 10px;
+        }
+
+    .leftContent, .content {
+        width: 100%;
+    }
+
+    .payInfo {
+        width: 100%;
+    }
+
+    .radio {
+        margin-left: 3%;
+    }
+
+    .address_1 span {
+        font-size: 13px;
+    }
+
+    .leftBottom p, .guarantee p, .pay p {
+        font-size: 13px;
+        line-height: 20px;
+    }
+
+    .dressBox {
+        width: 100%;
+    }
+
+    .gress {
+        width: 230px;
+    }
+
+    .progress ul li {
+        font-size: 12px;
+        margin-right: 5%;
+    }
+
+    .progress ul {
+        width: 230px;
+    }
+
+    .blueGress {
+        width: 200px;
+    }
+
+    .rightContent {
+        margin-left: 18%;
+        float: left;
+        margin-top: 0;
+    }
+}
+
+@media (min-width:361px) and (max-width:480px) {
+    .radio {
+        margin-left: 3%;
+    }
+
+    .address_1 span {
+        font-size: 14px;
+    }
+
+    .leftBottom p, .guarantee p, .pay p {
+        font-size: 13px;
+        line-height: 18px;
+    }
+
+    .leftTop h3, .leftMiddle h3 {
+        font-size: 18px;
+    }
+
+        .leftTop h3 span {
+            margin-top: 10px;
+        }
+
+    .leftContent, .content {
+        width: 100%;
+    }
+
+    .gress {
+        width: 230px;
+    }
+
+    .dressBox {
+        width: 100%;
+    }
+
+    .progress ul li {
+        font-size: 12px;
+        margin-right: 5%;
+    }
+
+    .progress ul {
+        width: 230px;
+    }
+
+    .blueGress {
+        width: 200px;
+    }
+
+    .rightContent {
+        margin-left: 18%;
+        float: left;
+        margin-top: 0;
+    }
+}
+
+@media (min-width:481px) and (max-width:600px) {
+    .radio {
+        margin-left: 3%;
+    }
+
+    .leftTop h3, .leftMiddle h3 {
+        font-size: 18px;
+    }
+
+        .leftTop h3 span {
+            margin-top: 10px;
+        }
+
+    .leftContent, .content {
+        width: 100%;
+    }
+
+    .dressBox {
+        width: 100%;
+    }
+
+    .rightContent {
+        margin-left: 18%;
+        float: left;
+        margin-top: 0;
+    }
+}
+
+/*新添加的弹框*/
+.adreHui {
+    display: none;
+    position: fixed;
+    top: 150px;
+    left: 50%;
+    margin-left: -160px;
+    width: 320px;
+    background: #fff;
+    border: solid 2px #aaaaaa;
+    box-shadow: 0 0 6px #ccc;
+    z-index: 9999;
+    border-radius: 5px;
+}
+
+    .adreHui img {
+        display: block;
+        margin: 20px auto 0 auto;
+    }
+
+    .adreHui p {
+        text-align: center;
+        color: #f5678d;
+        font-size: 20px;
+        line-height: 40px;
+    }
+
+    .adreHui a {
+        text-decoration: none;
+        text-align: center;
+        color: #fff;
+        cursor: pointer;
+        margin: 0 auto 20px auto;
+        font-size: 20px;
+        background: #fb9157;
+        border-radius: 5px;
+        display: block;
+        height: 40px;
+        line-height: 40px;
+        width: 140px;
+    }
+
+.dizhiss {
+    display: none;
+    width: 620px;
+    position: fixed;
+    top: 150px;
+    left: 50%;
+    margin-left: -320px;
+    background: #fff;
+    border: solid 2px #bfbfbf;
+    box-shadow: 0 0 6px #ccc;
+    z-index: 9999;
+    border-radius: 5px;
+}
+
+    .dizhiss h3 {
+        font-weight: 400;
+        color: #fff;
+        font-size: 22px;
+        background: #f5678d;
+        display: block;
+        height: 50px;
+        line-height: 50px;
+        text-indent: 15px;
+    }
+
+    .dizhiss .dizi {
+        margin: 0 15px;
+        border-bottom: solid 1px #aaaaaa;
+        height: 40px;
+    }
+
+        .dizhiss .dizi label, .dizhiss .dizi input {
+            display: inline-block;
+            float: left;
+            color: #333333;
+            font-size: 16px;
+            height: 30px;
+            line-height: 30px;
+            ;
+            margin-top: 10px;
+        }
+
+        .dizhiss .dizi input {
+            border: none;
+            outline: none;
+        }
+
+    .dizhiss button {
+        font-size: 20px;
+        border: none;
+        outline: none;
+        color: #fff;
+        margin-bottom: 15px;
+        border-radius: 5px;
+        background: #f5678d;
+        width: 87px;
+        height: 36px;
+        text-align: center;
+        display: block;
+        float: right;
+        margin-right: 30px;
+        margin-top: 20px;
+    }
+
+@media (min-width:320px) and (max-width:600px) {
+    .dizhiss {
+        width: 90%;
+        left: 5%;
+        top: 2%;
+        margin-left: 0;
+    }
+
+    .adreHui {
+        width: 90%;
+        left: 5%;
+        margin-left: 0;
+    }
+}

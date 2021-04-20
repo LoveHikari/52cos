@@ -1,0 +1,36 @@
+﻿@using Com.Cos.Models
+
+@{
+    ViewBag.Title = "充值记录";
+}
+@section Css
+{
+    <link rel="stylesheet" href="~/Content/css/libs/ReleaseCps.css">
+}
+<div class="big">
+    <div class="content clearfix">
+        <!--左侧菜单 Start-->
+        @Html.Partial("_PartialLeftMenu")
+        <!--左侧菜单 End-->
+        <div class="middleContent">
+            <div class="middleTop clearfix" style="padding-bottom:20px;background:none;">
+                <div class="libka clearfix"><a>返回</a><img src="~/Content/img/jianlef.jpg"><img src="~/Content/img/imghj.jpg"><a>充值记录</a></div>
+                @foreach (var bill in ViewBag.Bills)
+                {
+                    var b = (RechargeRecord)bill;
+                    <div class="cente clearfix">
+                        <div class="nimiyk clearfix">
+                            <p>@b.AddTime.GetValueOrDefault().ToString("yyyy-MM-dd HH:mm:ss")</p><span>已支付</span>
+                        </div>
+                        <div class="bhtn clearfix"><font>@b.Source</font><font class="li2">@b.WareDesc</font><span>金额：@b.RMB 元</span></div>
+                    </div>
+                }
+            </div>
+
+        </div>
+        <!--右侧 Start-->
+        @*@Html.Partial("_PartialRight")*@
+        <!--右侧 End-->
+    </div>
+</div>
+

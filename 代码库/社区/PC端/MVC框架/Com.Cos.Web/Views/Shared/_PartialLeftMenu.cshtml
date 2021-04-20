@@ -1,0 +1,114 @@
+﻿<div class="leftContent">
+    <ul>
+        <li>
+            <a href="@Url.Action("BuyVip","Member",new{Area="Member"})">
+                <div class="liDiv clearfix">
+                    <img src="~/Content/img/money.jpg">
+                    <span>会员充值</span>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="@Url.Action("Recharge","Member",new{Area="Member"})">
+                <div class="liDiv clearfix">
+                    <img src="~/Content/img/icon_1.jpg">
+                    <span>身家充值</span>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="@Url.Action("Publish","Exchange",new{Area="Exchange"})">
+                <div class="liDiv clearfix">
+                    <img src="~/Content/img/icon_2.jpg">
+                    <span>发布兑换</span>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="@Url.Action("Publish","Cooperation",new{Area="Cooperation"})">
+                <div class="liDiv clearfix">
+                    <img src="~/Content/img/icon_4.jpg">
+                    <span>发布合作</span>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="@Url.Action("History","Member",new{Area="Member"})">
+                <div class="liDiv clearfix">
+                    <img src="~/Content/img/icon_5.jpg">
+                    <span>积分历史</span>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="@Url.Action("Password","Member",new{Area="Member"})">
+                <div class="liDiv clearfix">
+                    <img src="~/Content/img/icon_7.jpg">
+                    <span>修改密码</span>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="@Url.Action("Account","Member",new{Area="Member"})">
+                <div class="liDiv clearfix">
+                    <img src="~/Content/img/icon_8.jpg">
+                    <span>我的设置</span>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="@Url.Action("Dashboard","Member",new{Area="Member"})">
+                <div class="liDiv clearfix">
+                    <img src="~/Content/img/icon_9.jpg">
+                    <span>用户中心</span>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="@Url.Action("Index","Member",new{Area="Member"})">
+                <div class="liDiv clearfix">
+                    <img src="~/Content/img/icon_10.jpg">
+                    <span>我的私信</span>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="@Url.Action("Avatar","Member",new{Area="Member"})">
+                <div class="liDiv clearfix">
+                    <img src="~/Content/img/icon_13.jpg">
+                    <span>我的头像</span>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="@Url.Action("Publish","Member",new{Area="Member"})">
+                <div class="liDiv clearfix">
+                    <img src="~/Content/img/icon_14.jpg">
+                    <span>我的发布</span>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="@Url.Action("Participate","Member",new{Area="Member"})">
+                <div class="liDiv clearfix">
+                    <img src="~/Content/img/icon_15.jpg">
+                    <span>我的参与</span>
+                </div>
+            </a>
+        </li>
+    </ul>
+    <script>
+        (function (window) {
+            var pathname = window.location.pathname;
+            var lis = $(".leftContent ul li");
+            $(".leftContent ul li .liDiv").removeClass("active");
+            $.each(lis, function (i, value) {
+                var href = $("a", this).attr("href");
+                if (href === pathname) {
+                    $(".liDiv", value).addClass("active");
+                }
+            });
+        })(window);
+    
+    </script>
+</div>

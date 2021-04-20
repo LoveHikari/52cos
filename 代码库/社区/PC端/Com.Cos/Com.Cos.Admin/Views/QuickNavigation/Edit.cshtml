@@ -1,0 +1,73 @@
+﻿@model Com.Cos.Admin.Models.QuickNavigationViewModels.QuickNavigationViewModel
+@{
+    ViewData["Title"] = "编辑数据字典";
+}
+
+<article class="page-container">
+    <form method="post" class="form form-horizontal" id="form-member-add" asp-action="Edit" asp-controller="QuickNavigation" enctype="application/x-www-form-urlencoded">
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.Id)
+        <div class="row cl">
+            @Html.LabelFor(model => model.Title, new {@class = "form-label col-xs-4 col-sm-3"})
+            <div class="formControls col-xs-8 col-sm-8">
+                @Html.TextBoxFor(model => model.Title, new {@class = "input-text"})
+            </div>
+            <span class="c-red">*</span>
+        </div>
+        <div class="row cl">
+            @Html.LabelFor(model => model.SmallTitle, new {@class = "form-label col-xs-4 col-sm-3"})
+            <div class="formControls col-xs-8 col-sm-9">
+                @Html.TextBoxFor(model => model.SmallTitle, new {@class = "input-text"})
+            </div>
+        </div>
+        <div class="row cl">
+            @Html.LabelFor(model => model.Link, new {@class = "form-label col-xs-4 col-sm-3"})
+            <div class="formControls col-xs-8 col-sm-9">
+                @Html.TextBoxFor(model => model.Link, new {@class = "input-text"})
+            </div>
+        </div>
+        <div class="row cl">
+            @Html.LabelFor(model => model.Cont, new {@class = "form-label col-xs-4 col-sm-3"})
+            <div class="formControls col-xs-8 col-sm-8">
+                @Html.TextAreaFor(model => model.Cont, new {@class = "textarea", @placeholder = "说点什么...最少输入10个字符", @onKeyUp = "$.Huitextarealength(this, 1000)"})
+                <p class="textarea-numberbar"><em class="textarea-length">0</em>/1000
+                </p>
+            </div>
+            <span class="c-red">*</span>
+        </div>
+        <div class="row cl">
+            <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
+                <input class="btn btn-primary radius" type="submit" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
+            </div>
+        </div>
+    </form>
+</article>
+
+@section Scripts{ 
+    <script type="text/javascript">
+        $(function () {
+            $('.skin-minimal input').iCheck({
+                checkboxClass: 'icheckbox-blue',
+                radioClass: 'iradio-blue',
+                increaseArea: '20%'
+            });
+
+            $('#form-member-add').submit(function () {
+                $(this).ajaxSubmit(function (msg) {
+                    if (msg.status == "true") {
+                        var index = parent.layer.getFrameIndex(window.name);
+                        parent.$('.btn-success i').click();
+                        parent.layer.close(index);
+                    } else if (msg.status == "false") {
+                        alert("保存失败");
+                    }
+                }).error(function (res) {
+                    alert("服务器错误");
+                });
+
+                return false; //阻止表单默认提交
+            });
+        });
+    </script> 
+}

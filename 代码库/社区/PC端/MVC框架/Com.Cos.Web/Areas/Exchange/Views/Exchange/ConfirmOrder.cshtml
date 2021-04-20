@@ -1,0 +1,125 @@
+﻿@using Com.Cos.Models
+@model Com.Cos.Web.Areas.Exchange.Models.ConfirmOrderViewModel
+
+@{
+    ViewBag.Title = "确认订单";
+
+    Member member = ViewBag.Member;
+    bool isVip = ViewBag.Vip;
+    string type = ViewBag.Type;
+}
+
+@section Css
+{
+    <link rel="stylesheet" href="~/Content/css/libs/address.css">
+}
+<div class="big">
+    <div class="content clearfix">
+        @using (@Html.BeginForm("ConfirmOrder", "Exchange", FormMethod.Post, new { @Target = "_blank",@Id="pay" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+            if (type == "0")
+            {
+                @Html.Partial("_PartialExchange", Model)
+            }
+            else
+            {
+                @Html.Partial("_PartiaRented", Model)
+            }
+
+        }
+
+        <!--右侧 Start-->
+        @Html.Partial("_PartialRight", member)
+        <!--右侧 End-->
+    </div>
+</div>
+<div class="adreHui">
+    <img src="~/Content/img/imghtan.jpg" />
+    <p>抱歉！您还不是我们的会员</p>
+    <a href="@Url.Action("BuyVip","Member",new{area="Member"})">立即加入会员</a>
+</div>
+@Html.Partial("_PartiaAddress", member)
+
+@section Scripts
+{
+    <script>
+        //模拟单选
+        //$('.selectADS').click(function () { $('.adreHui').show() });
+        $('.addAddress span').click(function () { $('.dizhiss').show(); });
+        $('.dizhiss button').click(function () { $('.dizhiss').hide(); });
+        //上面都是刚刚添加的
+
+
+        $('div.border_radiu').click(function () {
+            if (!$(this).hasClass('select')) {
+                $(this).siblings('font').show();
+                $(this).parents('.address_1').siblings('').children('div.border_radiu').siblings('font').hide();
+                $(this).parents('.address_1').siblings('').children('div.border_radiu').siblings('span').removeClass('selectADS');
+                $(this).siblings('span').addClass('selectADS');
+            }
+            $(this).parents('.address_1').siblings('').children('div.border_radiu').removeClass('select');
+            $(this).addClass('select');
+            $(this).find('img').attr('src', '/Content/img/blue_dian.jpg');
+            $(this).parents('.address_1').siblings('').children('div.border_radiu').find('img').attr('src', '/Content/img/gray_dian.jpg');
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            //收货地址点击
+            $(".address .dressBox .border_radiu").click(function () {
+                var address = $(this).next("span").attr("data-value");
+                var addText = $(this).next("span").text().replace("收) ", "收)<br />");
+                $("#Address").val(address);
+                $(".payInfo .adss span").html(addText);
+            });
+            
+            //点击选择兑换方式
+            $(".leftMiddle .radio .address_1").click(function () {
+                var vip = $("span", this).attr("data-value");
+                var vipText = $("span", this).text();
+                $("#Method").val(vip);
+                $(".payInfo .adss").next(".shifu").find("span").text(vipText);
+                if (vipText == "单次租赁") {
+                    $(".payInfo.clearfix .fk").find("span").text(145);
+                    $('#Money').val(145);
+                } else {
+                    $(".payInfo.clearfix .fk").find("span").text(115);
+                    $('#Money').val(115);
+                }
+
+            });
+
+            $(".address .dressBox .border_radiu:eq(0)").trigger("click");
+
+            $(".payBtn").click(function () {
+                $("#pay").submit();
+            });
+        });
+    </script>
+    
+    @if (type == "0")
+    {
+        <script>
+            $(".leftMiddle .radio .address_1 .border_radiu:eq(0)").trigger("click");
+        </script>
+    }
+    else
+    {
+        <script>
+            //点击会员兑换时
+            $(".leftMiddle .radio .address_1:eq(0)").click(function () {
+                if ("@isVip" == "False") {
+                    $('.adreHui').show();
+                }
+
+            });
+
+            if ("@isVip" == "False") $(".leftMiddle .radio .address_1 .border_radiu:eq(1)").trigger("click");
+            else $(".leftMiddle .radio .address_1 .border_radiu:eq(0)").trigger("click");
+        </script>
+    }
+}
+

@@ -1,0 +1,46 @@
+﻿@using Com.Cos.Models
+@model Com.Cos.Models.Cooperation
+
+@{
+    ViewBag.Title = "合作详情页";
+
+    Cooperation coo = ViewBag.Cooperation;
+    Member member = ViewBag.Member;
+}
+
+@section Css
+{
+    <link rel="stylesheet" href="~/Content/css/libs/cooperation.css">
+}
+
+<div class="big">
+    <div class="content clearfix">
+        <div class="leftContent">
+            <div class="leftTop">
+                <div class="userInfo">
+                    <div class="touxi">
+                        <img src="@member.Portrait">
+                        <span>@member.nickname</span>
+                        <font>发布时间：@coo.ReleaseTime.GetValueOrDefault().ToString("yyyy-MM-dd")</font>
+                    </div>
+                </div>
+                <p>活动主题：<span>@coo.Title</span></p>
+                <p>活动时间：<span>@coo.EnrollEnd</span></p>
+                <p>活动地点：<span>@coo.Address</span></p>
+                <p>活动需求：<span>@coo.Cont</span></p>
+                <button>戳我</button>
+            </div>
+            <div class="leftMiddle clearfix">
+                <h3>个人作品</h3>
+                @foreach (string img in ViewBag.ImgList)
+                {
+                    <img src="@img" alt="">
+                }
+            </div>
+        </div>
+        
+        @Html.Partial("_PartialRight",(Member)ViewBag.Member)
+
+    </div>
+</div>
+

@@ -1,0 +1,255 @@
+@charset "utf-8";
+/* CSS Document */
+*{margin:0;padding:0}
+a{text-decoration:none;cursor:pointer;}
+ul{list-style:none}
+h1,h2,h3,h4,h5,h6{font-weight:400;}
+body{font-size:12px;font-family:'微软雅黑';background:#f8eded;}
+.clearfix{clear:both;overflow:hidden;}
+.topgea{width:100%;border-bottom:solid 1px #eb6877;background:#fff;height:82px;}
+.topgea .neic{width:980px;margin:0 auto;height:81px;}
+.topgea .neic .logo{display:inline-block;float:left;margin:12px 40px 15px 0;}
+.topgea .neic .centnva{width:256px;float:left;}
+.topgea .neic .centnva a.yuehuan{background:none;}
+.topgea .neic .centnva a.yuehuan img{position:absolute;top:0;left:0;z-index:999999;}
+.topgea .neic .centnva a{float:left;display:inline-block;width:90px;height:86px;color:#fa5a80;font-size:18px;padding-left:20px;}
+.topgea .neic .centnva a:hover{color:#b9074a;}
+.topgea .neic .centnva a.a1{background:url(../images/iconwwsd.png) left center no-repeat;position:relative;}
+.topgea .neic .centnva a.a2{line-height:86px;background:url(../images/img_14.jpg) left center no-repeat;margin-left:35px;}
+.topgea .neic .rightw{width:450px;float:right;margin-top:23px;}
+.topgea .neic .rightw a.aa{color:#333333;font-size:16px;margin-left:14px;display:inline-block;height:32px;line-height:40px;}
+.topgea .neic .rightw a.a1{color:#ff4c7d;}
+.topgea .neic .rightw .img{display:inline-block;float:left;margin-left:10px;}
+.topgea .neic .rightw .riginpu{width:267px;background:#fff;border:solid 2px #eb6877;border-radius:16px;height:32px;float:left;background:url(../images/img_09.jpg) 11px center no-repeat;}
+.topgea .neic .rightw .riginpu input{height:30px;width:210px;margin-top:1px;border:none;outline:none;margin-left:30px;}
+.bibox{width:100%;padding-bottom:80px;}
+.bibox .centi{width:1040px;margin:0 auto;}
+.bibox .centi .toptext{width:1000px;margin:18px auto 0 auto;}
+.corporation{width:1028px;margin:0 auto;}
+.corporation .part1{background:#fff;width:310px;margin-right:28px;float:left;margin-top:20px;}
+.corporation .part1 img{width:100%;}
+.corporation .part1 .buttonss,.rigpaty ul li .buttonss{width:100%;position:relative;}
+.corporation .part1 .buttonss .icon,.rigpaty ul li .buttonss .icon{width:40px;position:absolute;top:-20px;left:0;box-shadow:0 3px 3px #7d719d;border-radius:40px;z-index:999999;}
+.corporation .part1 .buttonss span,.rigpaty ul li .buttonss span{color:#ff73a8;font-size:14px;margin-left:40px;display:inline-block;margin-top:2px;}
+.corporation .part1 .buttonss font,.rigpaty ul li .buttonss font{color:#999999;font-size:14px;float:right;display:inline-block;margin-top:4px;margin-right:4px;}
+.corporation .part1 .etnns,.rigpaty ul li .etnns{width:100%;margin-top:3px;}
+.corporation .part1 .etnns span,.rigpaty ul li .etnns span{display:inline-block;color:#55d1fe;font-size:18px;margin-left:4px;margin-bottom:4px;height:22px;line-height:22px;float:left;}
+.corporation .part1 .etnns i{display:inline-block;font-style:normal;color:#fff;font-size:14px;width:22px;height:22px;border-radius:22px;background:#ff73a8;line-height:22px;margin-right:5px;display:inline-block;text-align:center;float:right;}
+.corporation .part1 .etnns font{display:inline-block;color:#ff73a8;font-size:14px;height:22px;border-radius:22px;line-height:22px;display:inline-block;float:right;margin-right:3px;}
+.corporation .parts2{width:349px;margin-left:22px;}
+.linkbc .bic{background:url(../images/blue.jpg) right center no-repeat #51d2f9;width:220px;margin:25px 0 0px 0;}
+.linkbc .bic span{color:#fff;height:20px;line-height:20px;padding-left:12px;text-align:center;display:inline-block;float:left;background:url(../images/white.jpg) right center no-repeat;padding-right:25px;}
+#centtwo{height:368px;margin-bottom:0;width:1040px;}
+.lefttwenty{margin-left:20px;}
+#fangi{display:none;width:72px;height:192px;cursor:pointer;background:url(../images/minjk.png) top center no-repeat;position:fixed;top:200px;z-index:999;right:5%;}
+#fangi a{width:100%;display:block;height:80px;position:relative;}
+#fangi a img{display:none;position:absolute;}
+#fangi a:hover img{display:block;width:300px;top:-100px;left:-300px;z-index:999;}
+.fenyww{width:1000px;margin:40px auto;}
+.fenyww ul li{float:left;margin-left:9px;}
+.fenyww ul li span{color:#ff73a8;font-size:18px;border-radius:3px;border:solid 1px #fa558f;display:block;width:30px;height:30px;text-align:center;line-height:30px;}
+.fenyww ul li span img{margin:5px auto;display:block;}
+.fenyww ul li.on span{background:#ff73a8;color:#fff;}
+.fenyww ul li label{margin-left:40px;width:80px;float:left;height:32px;color:#666666;font-size:18px;line-height:32px;}
+.fenyww ul li input{outline:none;width:57px;height:30px;float:left;border:solid 1px #fa558f;border-radius:3px;line-height:30px;}
+.fenyww ul li i{background:#ff73a8;border-radius:3px;text-align:center;display:inline-block;font-size:18px;width:37px;height:32px;margin-left:7px;text-align:center;font-style:normal;text-align:center;color:#fff;line-height:32px;}
+.fenyww ul{margin-left:300px;}
+.bibox{width:1028px;margin:0 auto;}
+.bibox .tops {margin-top:20px;}
+
+@media screen and (max-width: 320px){
+    .bibox{width:100%;}
+    .bibox .tops{width:100%;margin-top:0;}
+     .bibox .tops img{width:100%;display:block;}  
+     .linkbc .bic{margin-top:2%;}
+.fenyww ul{margin-left:0;}
+.fenyww ul li{margin-left:7px;}
+.conens ul.yunhugtt li:nth-child(2n){width:48%;margin-left:0;float:right;}
+.conens ul.yunhugtt li{width:48%;margin-left:1.3%;height:auto;margin-bottom:2%;}
+.lihkk span{margin-bottom:4px;}
+.topgea .neic .centnva a.yuehuan img,.hhhuhu{display:none;}
+.topgea .neic .rightw a{margin:0;}
+.topgea .neic{width:100%;}
+.topgea .neic .logo{width:30%;margin-left:0;margin-right:2%;margin-left:5%;margin-bottom:0;}
+.topgea .neic .logo img{width:100%;}
+.topgea .neic .centnva{width:60%;margin-top:4%;margin-left:2%;}
+.topgea .neic .centnva a{font-size:13px;margin-top:7%;height:16px;line-height:16px;}
+.topgea .neic .centnva a.a2{margin-left:3%;}
+.topgea .neic .rightw{background:#fff;width:100%;margin-top:2%;margin-bottom:2%;}
+.topgea .neic .rightw .img{width:17%;margin-left:2%;}
+.topgea .neic .rightw .riginpu{background:#fff;width:71%;float:left;margin-left:3%;}
+.topgea .neic .rightw .riginpu input{width:80%;}
+.bibox .centi,.bibox .centi .toptext,.slideBox,.slideBox .bd img,.conens{width:100%;}
+.butontet{width:100%;}
+.cinpin .topd{width:100%;}
+#centtwo{width:100%;height:auto;}
+.corporation .part1{width:49%;margin-right:0;}
+.corporation .part1:nth-child(2n){float:right;}
+.rigpaty{width:100%;}
+}
+@media (min-width:322px) and (max-width: 360px){
+    .bibox{width:100%;}
+    .bibox .tops{width:100%;margin-top:0;}
+     .bibox .tops img{width:100%;display:block;}  
+     .linkbc .bic{margin-top:2%;}
+.fenyww ul{margin-left:0;}
+.fenyww ul li{margin-left:7px;}
+.conens ul.yunhugtt li:nth-child(2n){width:48%;margin-left:0;float:right;}
+.conens ul.yunhugtt li{width:48%;margin-left:1.3%;height:auto;margin-bottom:2%;}
+.lihkk span{margin-bottom:4px;}
+.topgea .neic .centnva a.yuehuan img,.hhhuhu{display:none;}
+
+.topgea .neic{width:100%;}
+.topgea .neic .logo{width:30%;margin-left:0;margin-right:2%;margin-left:5%;margin-bottom:0;}
+.topgea .neic .logo img{width:100%;}
+.topgea .neic .centnva{width:60%;margin-top:4%;margin-left:2%;}
+.topgea .neic .centnva a{font-size:13px;margin-top:7%;height:16px;line-height:16px;}
+.topgea .neic .centnva a.a2{margin-left:3%;}
+.topgea .neic .rightw{background:#fff;width:100%;margin-top:2%;margin-bottom:2%;}
+.topgea .neic .rightw .img{width:17%;margin-left:2%;}
+.topgea .neic .rightw .riginpu{width:71%;float:left;margin-left:3%;}
+.topgea .neic .rightw .riginpu input{width:80%;}
+.bibox .centi,.bibox .centi .toptext,.slideBox,.slideBox .bd img,.conens{width:100%;}
+
+.butontet{width:100%;}
+.cinpin .topd{width:100%;margin-top:1%;}
+#centtwo{width:100%;height:auto;}
+
+.corporation .part1{width:49%;margin-right:0;}
+.corporation .part1:nth-child(2n){float:right;}
+.rigpaty{width:100%;}
+.ritht{width:100%;}
+}
+@media (min-width:361px) and (max-width: 390px){
+    .bibox{width:100%;}
+    .bibox .tops{width:100%;margin-top:0;}
+     .bibox .tops img{width:100%;display:block;}  
+     .linkbc .bic{margin-top:2%;}
+    .fenyww ul{margin-left:0;}
+.fenyww ul li{margin-left:13px;}
+.conens ul.yunhugtt li:nth-child(2n){width:48%;margin-left:0;float:right;}
+.conens ul.yunhugtt li{width:48%;margin-left:1.3%;height:auto;margin-bottom:2%;}
+.lihkk span{margin-bottom:4px;}
+.topgea .neic .centnva a.yuehuan img,.hhhuhu{display:none;}
+.topgea .neic{width:100%;}
+.topgea .neic .logo{width:30%;margin-left:0;margin-right:2%;margin-left:5%;margin-bottom:0;}
+.topgea .neic .logo img{width:100%;}
+.topgea .neic .centnva{width:60%;margin-top:4%;margin-left:2%;}
+.topgea .neic .centnva a{font-size:13px;margin-top:7%;height:16px;line-height:16px;}
+.topgea .neic .centnva a.a2{margin-left:3%;}
+.topgea .neic .rightw{background:#fff;width:100%;margin-top:2%;margin-bottom:2%;}
+.topgea .neic .rightw .img{width:17%;margin-left:4%;}
+.topgea .neic .rightw .riginpu{width:71%;float:left;margin-left:3%;}
+.topgea .neic .rightw .riginpu input{width:80%;}
+.bibox .centi,.bibox .centi .toptext,.slideBox,.slideBox .bd img,.conens{width:100%;}
+
+.butontet{width:100%;}
+.cinpin .topd{width:100%;margin-top:1%;}
+#centtwo{width:100%;height:auto;}
+
+.corporation .part1{width:49%;margin-right:0;}
+.corporation .part1:nth-child(2n){float:right;}
+.rigpaty{width:100%;}
+.ritht{width:100%;}
+.cinpin .topd .lefts{margin-top:2%;}
+}
+@media (min-width:391px) and (max-width: 430px){
+    .bibox{width:100%;}
+    .bibox .tops{width:100%;margin-top:0;}
+     .bibox .tops img{width:100%;display:block;}  
+     .linkbc .bic{margin-top:2%;}
+    .fenyww ul{margin-left:0;}
+.fenyww ul li{margin-left:13px;}
+ .centnva a.yuehuan img,.hhhuhu{display:none;}
+
+.topgea .neic{width:100%;}
+.topgea .neic .logo{width:30%;margin-left:0;margin-right:2%;margin-left:5%;margin-bottom:0;}
+.topgea .neic .logo img{width:100%;}
+.topgea .neic .centnva{width:60%;margin-top:4%;margin-left:2%;}
+.topgea .neic .centnva a{font-size:13px;margin-top:7%;height:16px;line-height:16px;}
+.topgea .neic .centnva a.a2{margin-left:3%;}
+.topgea .neic .rightw{background:#fff;width:100%;margin-top:2%;margin-bottom:2%;}
+.topgea .neic .rightw .img{width:17%;margin-left:5%;}
+.topgea .neic .rightw .riginpu{width:71%;float:left;margin-left:3%;}
+.topgea .neic .rightw .riginpu input{width:80%;}
+.bibox .centi,.bibox .centi .toptext,.slideBox,.slideBox .bd img,.conens{width:100%;}
+
+
+.corporation .part1{width:49%;margin-right:0;}
+.corporation .part1:nth-child(2n){float:right;}
+.rigpaty{width:100%;}
+.ritht{width:100%;}
+.cinpin .topd .lefts{margin-top:2%;}
+}
+@media (min-width:431px) and (max-width: 470px){
+    .bibox{width:100%;}
+    .bibox .tops{width:100%;margin-top:0;}
+     .bibox .tops img{width:100%;display:block;}  
+     .linkbc .bic{margin-top:2%;}
+      .fenyww ul{margin-left:0;}
+.fenyww ul li{margin-left:13px;}
+
+.lihkk span{margin-bottom:4px;}
+.topgea .neic .centnva a.yuehuan img,.hhhuhu{display:none;}  
+.topgea .neic{width:100%;}
+.topgea .neic .logo{width:30%;margin-left:0;margin-right:2%;margin-left:5%;margin-bottom:0;}
+.topgea .neic .logo img{width:100%;}
+.topgea .neic .centnva{width:60%;margin-top:4%;margin-left:2%;}
+.topgea .neic .centnva a{font-size:13px;margin-top:7%;height:16px;line-height:16px;}
+.topgea .neic .centnva a.a2{margin-left:3%;}
+.topgea .neic .rightw{width:100%;margin-top:2%;margin-bottom:2%;}
+.topgea .neic .rightw .img{width:17%;margin-left:5%;}
+.topgea .neic .rightw .riginpu{width:71%;float:left;margin-left:3%;}
+.topgea .neic .rightw .riginpu input{width:80%;}
+.bibox .centi,.bibox .centi .toptext,.slideBox,.slideBox .bd img,.conens{width:100%;}
+
+.corporation .part1{width:49%;margin-right:0;}
+.corporation .part1:nth-child(2n){float:right;}
+.rigpaty{width:100%;}
+.ritht{width:100%;}
+.cinpin .topd .lefts{margin-top:2%;}
+}
+@media (min-width:471px) and (max-width: 780px){
+    .bibox{width:100%;}
+    .bibox .tops{width:100%;margin-top:0;}
+     .bibox .tops img{width:100%;display:block;}  
+     .linkbc .bic{margin-top:2%;}
+        .fenyww ul{margin-left:0;}
+.fenyww ul li{margin-left:13px;}
+
+.lihkk span{margin-bottom:4px;}
+.topgea .neic .centnva a.yuehuan img,.hhhuhu{display:none;}
+.topgea .neic{width:100%;}
+.topgea .neic .logo{width:130px;margin-left:0;margin-right:2%;margin-left:5%;margin-bottom:0;}
+.topgea .neic .logo img{width:100%;}
+.topgea .neic .centnva{width:130px;margin-top:4%;margin-left:2%;}
+.topgea .neic .centnva a{font-size:13px;margin-top:7%;height:16px;line-height:16px;}
+.topgea .neic .centnva a.a2{margin-left:3%;}
+.topgea .neic .rightw{width:400px;margin-top:2%;margin-bottom:2%;}
+.topgea .neic .rightw .img{width:17%;margin-left:5%;}
+.topgea .neic .rightw .riginpu{width:71%;float:left;margin-left:3%;}
+.topgea .neic .rightw .riginpu input{width:80%;}
+.bibox .centi,.bibox .centi .toptext,.slideBox,.slideBox .bd img,.conens{width:100%;}
+.corporation .part1{width:49%;margin-right:0;}
+.corporation .part1:nth-child(2n){float:right;}
+.rigpaty{width:100%;}
+.ritht{width:400px;}
+.cinpin .topd .lefts{margin-top:2%;}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

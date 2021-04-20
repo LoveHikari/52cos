@@ -1,0 +1,8 @@
+error：错误
+lacking：不足、身家不足
+success：成功
+other：其他
+exist：存在
+noexist：不存在
+other：未在兑换时间或已兑换
+wrongful：不合法

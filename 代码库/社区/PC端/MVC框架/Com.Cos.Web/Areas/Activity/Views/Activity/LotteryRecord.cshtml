@@ -1,0 +1,58 @@
+﻿@using Com.Cos.Models
+
+@{
+    ViewBag.Title = "抽奖记录";
+    Layout = null;
+
+    IQueryable<Lottery> lotterys = ViewBag.Lotterys;  //奖品列表
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/Content/css/libs/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/css/libs/style-cj.css">
+
+</head>
+<body>
+<div class="main">
+    <div class="banner"><img src="~/Content/img/banner-cj.jpg"/></div>
+
+    <div class="title2">抽奖记录</div>
+    <div class="list1">
+        @if (lotterys == null || !lotterys.Any())
+        {
+            <div class="l1">
+                <p>暂无记录</p>
+            </div>
+        }
+        else
+        {
+            foreach (Lottery lottery in lotterys)
+            {
+                <div class="l1">
+                    <div class="p1">@lottery.PrizeName</div>
+                    <div class="p2">@lottery.GetTime.GetValueOrDefault().ToString("yyyy.M.d HH:mm")</div>
+                </div>
+            }
+        }
+
+    </div>
+    <div class="title3">*温馨提示：中奖后，奖品将于次月10日前到账。</div>
+    <a href="@Url.Action("Lottery","Activity",new {Area="Activity"})" class="bt1">返&nbsp;回</a>
+</div>
+     
+
+ 
+
+		
+
+</body>
+</html>
+

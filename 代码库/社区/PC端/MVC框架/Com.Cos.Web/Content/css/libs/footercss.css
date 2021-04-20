@@ -1,0 +1,50 @@
+﻿@charset "utf-8";
+.buttm{width:100%;margin:0 auto;background:#fff;}
+.buttm .cencont{width:1000px;margin:15px auto 0 auto;}
+.buttm .cencont .lefts{margin-right:16px;float:left;width:365px;border-right:solid 1px #b5b5b5;}
+.buttm .cencont .lefts h3{margin-bottom:7px;padding-top:10px;font-size:26px;color:#fa6599;}
+.buttm .cencont .lefts .libkn a{font-size:16px;color:#666666;line-height:31px;display:inline-block;float:left;width:120px;}
+.buttm .cencont .rightd{border:none;margin-right:0;width:225px;margin-left:0;}
+.buttm .cencont .rightd ul{margin-top:28px;}
+.buttm .cencont .rightd ul li{float:left;text-align:center;width:75px;}
+.buttm .cencont .rightd ul li img{display:block;margin:0 auto;}
+.buttm .cencont .rightd ul li span{display:block;width:100%;line-height:35px;text-align:center;color:#666666;font-size:14px;}
+.buttm  .rightstext{text-align:center;color:#666666;font-size:16px;display:block;line-height:75px;margin-bottom:7px;}
+
+@media(min-width:320px) and (max-width:360px){
+    .buttm .cencont{width:100%;}
+    .buttm .cencont>div{width:100%;}
+    .buttm .cencont .lefts{width:50%;margin:0;margin-left:-1px;}
+    .buttm .cencont .lefts:nth-child(2n){border:none;}
+    .buttm .cencont .lefts h3{text-indent:6px;font-size:15px;}
+    .buttm .cencont .lefts .libkn{width:100%;}
+    .buttm .cencont .lefts .libkn a{width:50%;font-size:12px;text-indent:6px;}
+    .buttm .cencont .rightd{width:100%;clear:both;}
+      .buttm .cencont .rightd ul{margin:4% auto;text-align:center;}
+      .buttm .cencont .rightd ul li{width:30%;margin-left:3%;}
+      .buttm  .rightstext{font-size:12px;line-height:16px;margin:4% auto 5% auto;}
+}
+@media(min-width:361px) and (max-width:600px){
+    .buttm .cencont{width:100%;}
+    .buttm .cencont>div{width:100%;}
+    .buttm .cencont .lefts{width:50%;margin:0;margin-left:-1px;}
+    .buttm .cencont .lefts:nth-child(2n){border:none;}
+    .buttm .cencont .lefts h3{text-indent:10px;font-size:17px;}
+    .buttm .cencont .lefts .libkn{width:100%;}
+    .buttm .cencont .lefts .libkn a{width:50%;font-size:13px;text-indent:10px;}
+    .buttm .cencont .rightd{width:100%;clear:both;}
+      .buttm .cencont .rightd ul{margin:4% auto;text-align:center;}
+      .buttm .cencont .rightd ul li{width:30%;margin-left:3%;}
+      .buttm  .rightstext{font-size:12px;line-height:16px;margin:4% auto 5% auto;}
+}
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,41 @@
+﻿@using Com.Cos.Common
+@using Com.Cos.Web.Areas.Cooperation.Models
+
+@{
+    ViewBag.Title = "合作列表";
+
+    
+}
+
+@section Css{
+    <link rel="stylesheet" type="text/css" href="~/Content/css/libs/huanhuan.css" />
+}
+
+<div class="bibox clearfix">
+    <div class="cinpin clearfix">
+        <div class="conens clearfix">
+            <div class="tops clearfix"><a><img src="~/Content/img/hhsbane.jpg" class="img-style" /></a></div>
+
+            <div class="linkbc clearfix">
+                <div class="bic clearfix"><a href=@Url.Action("Index","Start",new {Area = ""})><span>首页</span></a><span>合作区</span><span style="background:none;">目录浏览</span></div>
+            </div>
+
+            <div class="conens clearfix corporation">
+                @foreach (CooperationViewModel coo in ViewBag.Cooperations)
+                {
+                    <div class="part1">
+                        <a href="@Url.Action("Detail","Cooperation",new{ Area = "Cooperation",id =coo.Id})"><img src="@(TWEBURL.WEB_URL_IMG+coo.Cover)" oneroor="javascript:this.onerror='';this.src='@TWEBURL.WEB_URL_PHOTO';" class="img-style" /></a>
+                        <div class="buttonss">
+                            <div class="icon"><img src="@(TWEBURL.WEB_URL_IMG+coo.Portrait)" onerror="javascript:this.onerror='';this.src='@TWEBURL.WEB_URL_POR';"/>
+                            </div><span>@coo.Nickname</span><font style="font-size: 13px">@coo.ReleaseTime.ToString("yyyy-MM-dd")</font>
+                        </div>
+                        <div class="etnns clearfix"><span>@coo.Title</span><font>@coo.Cont</font><i>@coo.Will</i></div>
+                    </div>
+                }
+            </div>
+        </div>
+        <!--分页-->
+        @Url.GetToPager((int)ViewBag.PageIndex, (int)ViewBag.PageSize, (int)ViewBag.TotalRecord, "Cooperation_new", new { controller = "Cooperation", action = "CooList" })
+        <!--分页-->
+    </div>
+</div>

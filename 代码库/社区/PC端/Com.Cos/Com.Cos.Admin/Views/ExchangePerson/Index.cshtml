@@ -1,0 +1,117 @@
+﻿@using Com.Cos.Admin.Models.ExchangePersonViewModels
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 产品管理 <span class="c-gray en">&gt;</span> 品牌管理 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新"><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+<div class="page-container">
+    <div class="text-c">
+        <form class="Huiform" method="post" action="" target="_self">
+            <input type="text" placeholder="分类名称" value="" class="input-text" style="width:120px">
+            <span class="btn-upload form-group">
+                <input class="input-text upload-url" type="text" name="uploadfile-2" id="uploadfile-2" readonly style="width:200px">
+                <a href="javascript:void();" class="btn btn-primary upload-btn"><i class="Hui-iconfont">&#xe642;</i> 上传logo</a>
+                <input type="file" multiple name="file-2" class="input-file">
+            </span> <span class="select-box" style="width:150px">
+                <select class="select" name="brandclass" size="1">
+                    <option value="1" selected>国内品牌</option>
+                    <option value="0">国外品牌</option>
+                </select>
+            </span><button type="button" class="btn btn-success" id="" name="" onClick="picture_colume_add(this);"><i class="Hui-iconfont">&#xe600;</i> 添加</button>
+        </form>
+    </div>
+    <div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a></span> <span class="r">共有数据：<strong>54</strong> 条</span> </div>
+    <div class="mt-20">
+        <table class="table table-border table-bordered table-bg table-sort">
+            <thead>
+                <tr class="text-c">
+                    <th width="25"><input type="checkbox" name="" value=""></th>
+                    <th width="70">ID</th>
+                    <th width="80">标题</th>
+                    <th width="200">用户id</th>
+                    <th width="120">物流号</th>
+                    <th width="120">收货地址</th>
+                    <th width="120">邮编</th>
+                    <th width="120">收货人</th>
+                    <th width="120">联系方式</th>
+                    <th>兑换状态</th>
+                    <th>兑换时间</th>
+                    <th width="100">操作</th>
+                </tr>
+            </thead>
+            <tbody>
+            @foreach (ExchangePersonViewModel ex in ViewBag.EpList)
+            {
+                <tr class="text-c">
+                    <td><input name="" type="checkbox" value=""></td>
+                    <td>@ex.Id</td>
+                    <td class="text-l">@ex.Title</td>
+                    <td class="text-l">@ex.UserId</td>
+                    <td class="text-l"><a style="text-decoration: none" onclick="show_logistic('查看物流','@Url.Action("Logistic","Exchange")','@ex.LogisticCode','800','500')" href="javascript:;" title="编辑">@ex.LogisticCode</a></td>
+                    <td class="text-l">@ex.Address</td>
+                    <td class="text-l">@ex.ZipCode</td>
+                    <td class="text-l">@ex.Consignee</td>
+                    <td class="text-l">@ex.ConsigneePhone</td>
+                    <td class="text-l">@ex.Examine</td>
+                    <td class="text-l">@ex.AddTime</td>
+                    <td class="f-14 product-brand-manage">
+                        @if (string.IsNullOrEmpty(ex.LogisticCode))
+        {
+                <a class="c-primary" onclick="article_logistic(this, '@ex.EpId')" href="javascript:;" title="填写物流">填写物流</a>
+}
+                        <a style="text-decoration: none" onClick="product_brand_edit('品牌编辑', 'codeing.html', '1')" href="javascript:;" title="编辑"><i class="Hui-iconfont">&#xe6df;</i></a>
+                        <a style="text-decoration: none" class="ml-5" onClick="active_del(this, '10001')" href="javascript:;" title="删除"><i class="Hui-iconfont">&#xe6e2;</i></a>
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section Scripts
+{
+    <script type="text/javascript" src="lib/My97DatePicker/4.8/WdatePicker.js"></script> 
+    <script type="text/javascript" src="lib/datatables/1.10.0/jquery.dataTables.min.js"></script> 
+    <script type="text/javascript" src="lib/laypage/1.2/laypage.js"></script>
+    <script type="text/javascript">
+        $('.table-sort').dataTable({
+            "aaSorting": [[ 1, "desc" ]],//默认第几个排序
+            "bStateSave": true,//状态保存
+            "aoColumnDefs": [
+                //{"bVisible": false, "aTargets": [ 3 ]} //控制列的隐藏显示
+                {"orderable":false,"aTargets":[0,6]}// 制定列不参与排序
+            ]
+        });
+
+        /**
+         * 显示物流信息
+         * @@param id
+         */
+        function show_logistic(title, url, id, w, h) {
+            layer_show(title, url + "?logisticCode=" + id, w, h);
+        }
+        /**
+         * 填写物流
+         * @@param obj
+         * @@param id
+         */
+        function article_logistic(obj, id) {
+            layer.prompt({ title: '输入物流单号，并确认', formType: 3 }, function (text, index) {
+                $.post("@Url.Action("UpdateLogistic","ExchangePerson")", { EpId: id, Logistic: text }, function (msg) {
+                    //var msg = eval("(" + res + ")");
+                    if (msg.status == "true") {
+                        layer.msg('已提交!', { icon: 6, time: 1000 });
+                        $('a.btn-success i').click();
+                        layer.close(index);
+                    }
+
+                });
+
+            });
+
+        }
+    </script>
+
+}

@@ -1,0 +1,215 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.clearfix{
+	clear: both;
+	overflow: hidden;
+}
+.bigBox{
+	font-family: 'Microsoft YaHei';
+	width: 100%;
+	height: 100%;
+}
+.bottom{
+	width: 100%;
+	background: #fef5f5;
+}
+.center{
+	width: 750px;
+	margin: 60px auto 0 auto;
+}
+.backG{
+	width: 1000px;
+	height:600px;
+	background: url(../images/banner.png) center center no-repeat;
+	margin: 20px auto 40px auto;
+}
+.left{
+	display: inline-block;
+	width: 280px;
+	height:405px;
+	float: left;
+	background: url(../images/erwei.png) center center no-repeat;
+}
+.right{
+	position: relative;
+	box-shadow: 0 0 8px #fcb2c8;
+	border-radius: 13px;
+	background: #feeaf0;
+	float: right;
+	display: inline-block;
+	width: 380px;
+	border: 1px solid #fac4d3;
+}
+.user{
+	position:relative;
+	width:270px;
+	border: 1px solid #ff6b98;
+	border-radius: 6px;
+	background: #fde3ea;
+	padding: 8px 10px;
+	margin: 0 auto 15px auto;
+}
+.usTop{
+	margin-top: 30px;
+}
+.user img{
+    float: left;
+	display: inline-block;
+	margin-right: 8px;
+}
+.user input{
+	font-family: 'Microsoft YaHei';
+	border: none;
+	outline: none;
+	height: 23px;
+	line-height: 23px;
+	background: #fde3ea;
+	width: 160px;
+}
+.huoqu{
+	position: absolute;
+	right:0;
+	top:0;
+	background: #ffa5c0;
+	border: 1px solid #ff6b98;
+	border-radius: 4px;
+	color: #fff;
+	height: 37px;
+	line-height: 37px;
+	display: inline-block;
+	font-size: 14px;
+	cursor: pointer;
+}
+.user span{
+	float: right;
+}
+.user span a{
+	color: #fdafc6;
+	font-size: 14px;
+}
+/* input::-webkit-input-placeholder {
+　　color: #fdafc6;
+　　}
+　　input:-moz-placeholder {
+　　color:#fdafc6;
+　　}
+　　input::-moz-placeholder {
+　　color:#fdafc6;
+　　}
+　　input:-ms-input-placeholder {
+　　color:#fdafc6;
+　　} */
+.button{
+	display: block;
+	width: 292px;
+	height: 40px;
+	margin: 15px auto 0 auto;
+	background: url(../images/button_rep.png) repeat-x;
+	border: none;
+	outline: none;
+	color: #fff;
+	font-size: 18px;
+	font-family: 'Microsoft YaHei';
+	letter-spacing: 4px;
+	border-radius: 6px;
+}
+.party{
+	position: relative;
+	margin-top: 24px;
+	color: #f98070;
+	text-align: center;
+	height: 20px;
+}
+.party span{
+	display: block;
+	height: 20px;
+	width: 110px;
+	line-height: 20px;
+	background: #feeaf0;
+	position: absolute;
+	top: 0px;
+	left:50%;margin-left:-55px;z-index:999;
+}
+.party p{
+	height: 0;
+	width: 100%;
+	display: block;margin-top:10px;
+	border-top: 1px solid #fa9e99;
+	z-index: -1;
+}
+.tubiao{
+	margin-top: 20px;
+	margin-bottom:30px;
+}
+.tuMargin{
+	width: 80px;
+	margin: 0 auto;
+}
+.check{
+	margin:10px 0 10px 45px;
+	font-size: 14px;
+	color: #f7583e;
+}
+.youjian a{
+	background: url(../images/youjian.png) right center no-repeat;
+	color: #f7583e;
+	font-size: 14px;
+	padding-right: 10px;
+    float: right;
+    margin: 0 45px 20px 0;
+    text-decoration: none;
+}
+.success{
+	position:absolute;
+	width: 100%;
+	height: 430px;
+	padding-top: 40px;
+	top: 0;
+	left: 0;
+	z-index: 9;
+	background: url(../images/opticy.png) repeat;
+}
+.duigou{
+	height: 165px;
+	background: url(../images/yuanquan.png) center center no-repeat;
+}
+.duigou img{
+    margin: 42px 0 0 150px;
+}
+.success p{
+	text-align: center;
+	color: #fc8b37;
+	margin: 10px 0 30px 0;
+	font-size: 20px;
+	text-indent: 20px;
+}
+.back{
+	text-align: center;
+	padding: 12px 50px;
+	border-radius: 8px;
+	background: #ff6b98;
+	color: #fff;
+	width: 130px;
+	font-size: 20px;
+	letter-spacing: 4px;
+	margin: 0 auto;
+}
+
+@media (min-width:320px) and (max-width:370px){
+	.backG{width:100%;height:900px;background-size:cover;}
+	.center{width:100%;clear:both;}
+	.left{width:100%;}
+	.right{width:100%;}
+
+}
+@media (min-width:371px) and (max-width:900px){
+	.backG{width:100%;height:1100px;background-size:cover;}
+	.center{width:100%;clear:both;}
+	.left{width:100%;}
+	.right{width:100%;}
+
+}
+
+

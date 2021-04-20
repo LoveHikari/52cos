@@ -1,0 +1,594 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FsLib.Tencent.QCloud.SDK</name>
+    </assembly>
+    <members>
+        <member name="M:FsLib.Tencent.QCloud.SDK.Api.CosCloud.#ctor(System.Int32,System.String,System.String)">
+            <summary>
+            CosCloud 构造方法
+            </summary>
+            <param name="appId">授权appid</param>
+            <param name="secretId">授权secret id</param>
+            <param name="secretKey">授权secret key</param>
+            <param name="timeOut">网络超时,默认60秒</param>
+        </member>
+        <member name="M:FsLib.Tencent.QCloud.SDK.Api.CosCloud.GetFileStat(System.String,System.String)">
+            <summary>
+            获取文件信息
+            </summary>
+            <param name="bucketName">bucket名称</param>
+            <param name="remotePath">远程文件路径</param>
+            <returns></returns>
+        </member>
+        <member name="M:FsLib.Tencent.QCloud.SDK.Api.CosCloud.UpdateFile(System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            更新文件信息
+            </summary>
+            <param name="bucketName"> bucket名称</param>
+            <param name="remotePath">远程文件路径</param>
+            <param name="parameterDic">参数Dictionary</param>
+            包含如下可选参数：
+            forbid:0允许访问 0x01进制访问 0x02进制写访问
+            biz_attr:文件属性
+            authority: eInvalid（继承bucket的权限）、eWRPrivate(私有读写)、eWPrivateRPublic(公有读私有写)
+            以下参数会打包到custom_headers对象中,携带到cos系统
+            Cache-Control:
+            Content-Type:
+            Content-Disposition:
+            Content-Language:
+            x-cos-meta-: 以"x-cos-meta-"为前缀的参数
+            <returns></returns>
+        </member>
+        <member name="M:FsLib.Tencent.QCloud.SDK.Api.CosCloud.CopyFile(System.String,System.String,System.String)">
+            <summary>
+            复制文件
+            </summary>
+            <param name="bucketName">bucket名称</param>
+            <param name="remotePath">远程文件路径</param>
+            <param name="destFileid">目标路径（不带路径则为当前路径下，带路径则会复制到携带指定的路径下）</param>
+            <returns></returns>
+        </member>
+        <member name="M:FsLib.Tencent.QCloud.SDK.Api.CosCloud.DownloadFile(System.String,System.String,System.String)">
+            <summary>
+            下载文件
+            </summary>
+            <param name="bucketName">bucket名称</param>
+            <param name="remotePath">远程文件路径</param>
+            <param name="localDir">本地文件目录</param>
+        </member>
+        <member name="M:FsLib.Tencent.QCloud.SDK.Api.CosCloud.MoveFile(System.String,System.String,System.String)">
+            <summary>
+            移动文件
+            </summary>
+            <param name="bucketName">bucket名称</param>
+            <param name="remotePath">远程文件路径</param>
+            <param name="destFileid">目标路径（不带路径则为当前路径下，带路径则会复制到携带指定的路径下）</param>
+            <returns></returns>
+        </member>
+        <member name="M:FsLib.Tencent.QCloud.SDK.Api.CosCloud.DeleteFile(System.String,System.String)">
+            <summary>
+            删除文件
+            </summary>
+            <param name="bucketName">bucket名称</param>
+            <param name="remotePath">远程文件路径</param>
+            <returns></returns>
+        </member>
+        <member name="M:FsLib.Tencent.QCloud.SDK.Api.CosCloud.CreateFolder(System.String,System.String,System.String)">
+            <summary>
+            创建目录
+            </summary>
+            <param name="bucketName">bucket名称</param>
+            <param name="remoteDir">远程目录</param>
+            <param name="bizAttr">目录属性</param>
+            <returns></returns>
+        </member>
+        <member name="M:FsLib.Tencent.QCloud.SDK.Api.CosCloud.GetFolderStat(System.String,System.String)">
+            <summary>
+            查询目录属性
+            </summary>
+            <param name="bucketName">bucket名称</param>
+            <param name="remoteDir">远程目录</param>
+            <returns></returns>
+        </member>
+        <member name="M:FsLib.Tencent.QCloud.SDK.Api.CosCloud.GetFolderList(System.String,System.String,System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            目录列表查询所有目录和文件,前缀搜索
+            </summary>
+            <param name="bucketName">bucket名称</param>
+            <param name="remoteDir">远程目录</param>
+            <param name="context">透传字段,用于翻页,前端不需理解,需要往后翻页则透传回来</param>
+            <param name="prefix">读取文件/文件夹前缀</param>
+            <param name="num">拉取的总数,最大1000,如果不带,则默认num=1000</param>
+            <param name="listFlag">大于0返回全部数据，否则返回部分数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:FsLib.Tencent.QCloud.SDK.Api.CosCloud.DeleteFolder(System.String,System.String)">
+            <summary>
+            删除目录
+            </summary>
+            <param name="bucketName">bucket名称</param>
+            <param name="remoteDir">远程目录</param>
+            <returns></returns>
+        </member>
+        <member name="M:FsLib.Tencent.QCloud.SDK.Api.CosCloud.UpdateFolder(System.String,System.String,System.String)">
+            <summary>
+            更新目录信息
+            </summary>
+            <param name="bucketName"> bucket名称</param>
+            <param name="remoteDir">远程目录</param>
+            <param name="bizAttr">目录属性</param>
+            <returns></returns>
+        </member>
+        <member name="M:FsLib.Tencent.QCloud.SDK.Api.CosCloud.UploadFile(System.String,System.String,System.IO.Stream,System.String,System.Int32,System.Int32)">
+            <summary>
+            文件上传
+            说明: 根据文件大小判断使用单文件上传还是分片上传,当文件大于8M时,内部会进行分片上传,可以携带分片大小sliceSize
+            其中分片上传使用SliceUploadInit SliceUploadData SliceUploadFinihs
+            </summary>
+            <param name="bucketName">bucket名称</param>
+            <param name="remotePath">远程文件路径</param>
+            <param name="localStream">本地文件流</param>
+            <param name="bizAttr">文件属性</param>
+            <param name="insertOnly">0:同名文件覆盖, 1:同名文件不覆盖,默认1</param>
+            <param name="sliceSize">分片大小，可选取值为:64*1024 512*1024，1*1024*1024，2*1024*1024，3*1024*1024</param>
+            <returns></returns>
+        </member>
+        <member name="M:FsLib.Tencent.QCloud.SDK.Api.CosCloud.UploadSliceList(System.String,System.String)">
+            <summary>
+            查询上传分片
+            </summary>
+            <param name="bucketName">bucket名称</param>
+            <param name="remotePath">目标路径</param>
+            <returns></returns>
+        </member>
+        <member name="M:FsLib.Tencent.QCloud.SDK.Api.CosCloud.Upload(System.String,System.String,System.IO.Stream,System.String,System.Int32)">
+            <summary>
+            单个文件上传
+            </summary>
+            <param name="bucketName">bucket名称</param>
+            <param name="remotePath">远程文件路径</param>
+            <param name="localStream">本地文件流</param>
+            <param name="bizAttr">COS 服务调用方自定义属性</param>
+            <param name="insertOnly">同名文件覆盖选项，有效值：0 覆盖（删除已有的重名文件，存储新上传的文件）1 不覆盖（若已存在重名文件，则不做覆盖，返回“上传失败”）。默认为 1 不覆盖。</param>
+            <returns></returns>
+        </member>
+        <member name="M:FsLib.Tencent.QCloud.SDK.Api.CosCloud.SliceUploadInit(System.String,System.String,System.IO.Stream,System.String,System.String,System.Int32)">
+            <summary>
+            初始化分片上传 init,如果上一次分片上传未完成，会返回{"code":-4019,"message":"_ERROR_FILE_NOT_FINISH_UPLOAD"}
+            </summary>
+            <param name="bucketName">bucket名称</param>
+            <param name="remotePath">远程文件路径</param>
+            <param name="localStream">本地文件流</param>
+            <param name="fileSha">文件sha1</param>
+            <param name="bizAttr"></param>
+            <param name="insertOnly">是否覆盖同名文件</param>
+            <returns></returns>
+        </member>
+        <member name="M:FsLib.Tencent.QCloud.SDK.Api.CosCloud.SliceUploadData(System.String,System.String,System.IO.Stream,System.String,System.String,System.Int64,System.Int32,System.String)">
+            <summary>
+            逐个上传分片
+            </summary>
+            <param name="bucketName">bucket名称</param>
+            <param name="remotePath">远程文件路径</param>
+            <param name="localStream">本地文件流</param>
+            <param name="fileSha">文件的sha1</param>
+            <param name="session">init请求返回的session</param>
+            <param name="offset">分片的偏移量</param>
+            <param name="sliceSize">切片大小（字节）,默认为1M</param>
+            <param name="sign">签名</param>
+            <returns></returns>
+        </member>
+        <member name="M:FsLib.Tencent.QCloud.SDK.Api.CosCloud.SliceUploadFinish(System.String,System.String,System.IO.Stream,System.String,System.String)">
+            <summary>
+            结束上传分片 finish
+            </summary>
+            <param name="bucketName">bucket名</param>
+            <param name="remotePath">目标路径</param>
+            <param name="localStream">本地文件流</param>
+            <param name="fileSha">文件的sha1</param>
+            <param name="session">init请求返回的session</param>
+            <returns></returns>
+        </member>
+        <member name="M:FsLib.Tencent.QCloud.SDK.Api.CosCloud.ComputeUploadParts(System.IO.Stream,System.Int32)">
+            <summary>
+            计算上传部件
+            </summary>
+            <param name="localStream"></param>
+            <param name="sliceSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FsLib.Tencent.QCloud.SDK.Api.CosCloud.SliceUploadFile(System.String,System.String,System.IO.Stream,System.String,System.Int32)">
+            <summary>
+            分片上传
+            </summary>
+            <param name="bucketName">bucket名称</param>
+            <param name="remotePath">远程文件路径</param>
+            <param name="localStream">本地文件流</param>
+            <param name="bizAttr">biz属性</param>
+            <param name="insertOnly">是否覆盖同名文件</param>
+            <returns></returns>
+        </member>
+        <member name="M:FsLib.Tencent.QCloud.SDK.Api.CosCloud.GenerateURL(System.String,System.String)">
+            <summary>
+            构造URL
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:FsLib.Tencent.QCloud.SDK.Api.CosCloud.GenerateURL(System.String,System.String,System.String)">
+            <summary>
+            构造URL
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:FsLib.Tencent.QCloud.SDK.Api.CosCloud.AddParameter(System.String,System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            增加参数到data中
+            </summary>
+            <param name="paraName">键</param>
+            <param name="data"></param>
+            <param name="paras"></param>
+        </member>
+        <member name="M:FsLib.Tencent.QCloud.SDK.Api.CosCloud.AddAuthority(System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            增加参数authority到data中
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:FsLib.Tencent.QCloud.SDK.Api.CosCloud.AddCustomerHeaders(System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            增加用户自定义参数到data中
+            </summary>
+            <returns></returns>	
+        </member>
+        <member name="M:FsLib.Tencent.QCloud.SDK.Api.CosCloud.IsCustomerHeader(System.String)">
+            <summary>
+            判断是否为用户自定义参数
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:FsLib.Tencent.QCloud.SDK.Api.CosCloud.GetExpiredTime">
+            <summary>
+            超时时间(当前系统时间+300秒)
+            </summary>
+            <returns></returns>	
+        </member>
+        <member name="M:FsLib.Tencent.QCloud.SDK.Api.CosCloud.GetSliceSize(System.Int32)">
+            <summary>
+            用户传入的slice_size进行规范,[64k,3m],大于1m必须是1m的整数倍
+            </summary>
+            <returns></returns>	
+        </member>
+        <member name="T:FsLib.Tencent.QCloud.SDK.Common.HttpHelper">
+            <summary>
+            获得http信息
+            </summary>
+        </member>
+        <member name="M:FsLib.Tencent.QCloud.SDK.Common.HttpHelper.PostHttpWebRequest(System.String,System.Collections.Generic.Dictionary{System.String,System.Object},System.String,System.Collections.Hashtable,System.String)">
+            <summary>
+            http POST 请求
+            </summary>
+            <param name="url">请求地址</param>
+            <param name="postData">请求主体</param>
+            <param name="chareset">编码，默认utf-8</param>
+            <param name="headerItem"></param>
+            <param name="cookie">cookie容器</param>
+            <returns>响应的页面, 响应的cookie</returns>
+        </member>
+        <member name="M:FsLib.Tencent.QCloud.SDK.Common.HttpHelper.GetHttpWebRequest(System.String,System.String,System.Collections.Hashtable,System.String)">
+            <summary>
+            http GET 请求
+            </summary>
+            <param name="url">请求地址</param>
+            <param name="chareset">编码，默认utf-8</param>
+            <param name="headerItem">请求头</param>
+            <param name="cookie">cookie容器</param>
+            <returns>响应的页面</returns>
+        </member>
+        <member name="M:FsLib.Tencent.QCloud.SDK.Common.HttpHelper.GetHttpWebRequest2(System.String,System.String,System.Collections.Hashtable,System.String)">
+            <summary>
+            http GET 请求
+            </summary>
+            <param name="url">请求地址</param>
+            <param name="chareset">编码，默认utf-8</param>
+            <param name="headerItem">请求头</param>
+            <param name="cookie">cookie容器</param>
+            <returns>响应的页面</returns>
+        </member>
+        <member name="M:FsLib.Tencent.QCloud.SDK.Common.HttpHelper.HttpUploadFile(System.String,System.Collections.Generic.Dictionary{System.String,System.Object},System.IO.Stream,System.String,System.Int64,System.Int32,System.Collections.Hashtable,System.String,System.String)">
+            <summary> 
+            上传文件 
+            </summary> 
+            <param name="url">提交的地址</param>
+            <param name="param">请求body</param>
+            <param name="localStream">文本流</param> 
+            <param name="fileName">文件名称 </param>
+            <param name="offset"></param>
+            <param name="sliceSize">切片大小（字节）</param>
+            <param name="headerItem">header</param>
+            <param name="fileKey"></param> 
+            <param name="cookie">cookie数据</param> 
+            <returns>响应源码</returns> 
+        </member>
+        <member name="M:FsLib.Tencent.QCloud.SDK.Common.HttpHelper.SetHeaderValue(System.Net.HttpWebRequest,System.Collections.Hashtable)">
+            <summary>
+            设置请求头
+            </summary>
+            <param name="request">HttpWebRequest对象</param>
+            <param name="headerItem">header的属性对象</param>
+            <example>调用说明：SetHeaderValue(request.Headers, headerItem);</example>
+        </member>
+        <member name="M:FsLib.Tencent.QCloud.SDK.Common.HttpHelper.GetCookieContainer(System.String,System.String)">
+            <summary>
+            获得cookie容器
+            </summary>
+            <param name="url">url</param>
+            <param name="cookie">cookie字符串</param>
+        </member>
+        <member name="M:FsLib.Tencent.QCloud.SDK.Common.HttpHelper.Decompress(System.IO.Stream)">
+            <summary>
+            gzip解压
+            </summary>
+            <param name="stream"></param>
+            <returns></returns>
+            <remarks>https://wenku.baidu.com/view/dd321f1a59eef8c75fbfb352.html</remarks>
+        </member>
+        <member name="M:FsLib.Tencent.QCloud.SDK.Common.HttpHelper.HttpRequest(System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.Object},System.String,System.Collections.Hashtable,System.Net.WebProxy,System.Net.CookieContainer,System.String)">
+            <summary>
+            http 请求
+            </summary>
+            <param name="url">请求地址</param>
+            <param name="qequest">请求方法，GET、POST</param>
+            <param name="dataStr">请求主体</param>
+            <param name="chareset">编码，默认utf-8</param>
+            <param name="headerItem"></param>
+            <param name="proxy">http代理设置</param>
+            <param name="cookies">cookie容器</param>
+            <param name="cookie">cookie</param>
+            <returns>响应的页面, 响应的cookie</returns>
+            <c>！注意：有时候请求会重定向，但我们就需要从重定向url获取东西，像QQ登录成功后获取sid，但上面的会自动根据重定向地址跳转。我们可以用:
+                request.AllowAutoRedirect = false;设置重定向禁用，你就可以从headers的Location属性中获取重定向地址</c>
+        </member>
+        <member name="M:FsLib.Tencent.QCloud.SDK.Common.HttpHelper.HttpRequestStream(System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.Object},System.String,System.Collections.Hashtable,System.Net.WebProxy,System.Net.CookieContainer,System.String)">
+            <summary>
+            http 请求
+            </summary>
+            <param name="url">请求地址</param>
+            <param name="qequest">请求方法，GET、POST</param>
+            <param name="dataStr">请求主体</param>
+            <param name="chareset">编码，默认utf-8</param>
+            <param name="headerItem"></param>
+            <param name="proxy">http代理设置</param>
+            <param name="cookies">cookie容器</param>
+            <param name="cookie">cookie</param>
+            <returns>响应的页面, 响应的cookie</returns>
+            <c>！注意：有时候请求会重定向，但我们就需要从重定向url获取东西，像QQ登录成功后获取sid，但上面的会自动根据重定向地址跳转。我们可以用:
+                request.AllowAutoRedirect = false;设置重定向禁用，你就可以从headers的Location属性中获取重定向地址</c>
+        </member>
+        <member name="M:FsLib.Tencent.QCloud.SDK.Common.HttpUtils.EncodeRemotePath(System.String)">
+            <summary>
+            远程路径Encode处理,会保证开头是/，结尾也是/
+            </summary>
+            <param name="remotePath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FsLib.Tencent.QCloud.SDK.Common.HttpUtils.StandardizationRemotePath(System.String)">
+            <summary>
+            标准化远程目录路径,会保证开头是/，结尾也是/ ,如果命名不规范，存在保留字符，会返回空字符
+            </summary>
+            <param name="remotePath">要标准化的远程路径</param>
+            <returns></returns>
+        </member>
+        <member name="M:FsLib.Tencent.QCloud.SDK.Common.Sign.Signature(System.Int32,System.String,System.String,System.Int64,System.String)">
+            <summary>
+            多次签名
+            </summary>
+            <param name="appId"></param>
+            <param name="secretId"></param>
+            <param name="secretKey"></param>
+            <param name="expired"></param>
+            <param name="bucketName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FsLib.Tencent.QCloud.SDK.Common.Sign.SignatureOnce(System.Int32,System.String,System.String,System.String,System.String)">
+            <summary>
+            单次签名
+            </summary>
+            <param name="appId"></param>
+            <param name="secretId"></param>
+            <param name="secretKey"></param>
+            <param name="remotePath"></param>
+            <param name="bucketName"></param>
+            <returns></returns>
+        </member>
+        <member name="T:FsLib.Tencent.QCloud.SDK.ResponseModels.CreateFolderResponseModel">
+            <summary>
+            创建目录响应模型
+            </summary>
+        </member>
+        <member name="P:FsLib.Tencent.QCloud.SDK.ResponseModels.CreateFolderResponseModel.Ctime">
+            <summary>
+            创建时间，10 位 Unix 时间戳（UNIX 时间是从协调世界时 1970 年 1 月 1 日 0 时 0 分 0 秒起的总秒数）
+            </summary>
+        </member>
+        <member name="T:FsLib.Tencent.QCloud.SDK.ResponseModels.GetFileStatResponseModel">
+            <summary>
+            获取文件信息响应模型
+            </summary>
+        </member>
+        <member name="P:FsLib.Tencent.QCloud.SDK.ResponseModels.GetFileStatResponseModel.BizAttr">
+            <summary>
+            COS 服务调用方自定义属性
+            </summary>
+        </member>
+        <member name="P:FsLib.Tencent.QCloud.SDK.ResponseModels.GetFileStatResponseModel.FileSize">
+            <summary>
+            文件大小
+            </summary>
+        </member>
+        <member name="P:FsLib.Tencent.QCloud.SDK.ResponseModels.GetFileStatResponseModel.Sha">
+            <summary>
+            文件 SHA-1 校验码
+            </summary>
+        </member>
+        <member name="P:FsLib.Tencent.QCloud.SDK.ResponseModels.GetFileStatResponseModel.Ctime">
+            <summary>
+            创建时间，10 位 Unix 时间戳（UNIX 时间是从协调世界时 1970 年 1 月 1 日 0 时 0 分 0 秒起的总秒数）
+            </summary>
+        </member>
+        <member name="P:FsLib.Tencent.QCloud.SDK.ResponseModels.GetFileStatResponseModel.Mtime">
+            <summary>
+            修改时间，10 位 Unix 时间戳（UNIX 时间是从协调世界时 1970 年 1 月 1 日 0 时 0 分 0 秒起的总秒数）
+            </summary>
+        </member>
+        <member name="P:FsLib.Tencent.QCloud.SDK.ResponseModels.GetFileStatResponseModel.AccessUrl">
+            <summary>
+            通过 CDN 访问该文件的资源链接
+            </summary>
+        </member>
+        <member name="P:FsLib.Tencent.QCloud.SDK.ResponseModels.GetFileStatResponseModel.SourceUrl">
+            <summary>
+            （不通过 CDN ）直接访问 COS 的资源链接
+            </summary>
+        </member>
+        <member name="P:FsLib.Tencent.QCloud.SDK.ResponseModels.GetFileStatResponseModel.Authority">
+            <summary>
+            Object 的权限，默认与 Bucket 权限一致，此时不会返回该字段。如果设置了独立权限，则会返回该字段。有效值：eInvalid 空权限，此时系统会默认调取 Bucket 权限 eWRPrivate 私有读写 eWPrivateRPublic 公有读私有写
+            </summary>
+        </member>
+        <member name="T:FsLib.Tencent.QCloud.SDK.ResponseModels.GetFolderListResponseModel">
+            <summary>
+            列出目录响应模型
+            </summary>
+        </member>
+        <member name="P:FsLib.Tencent.QCloud.SDK.ResponseModels.GetFolderListResponseModel.Listover">
+            <summary>
+            是否有内容可以继续往后翻页
+            </summary>
+        </member>
+        <member name="P:FsLib.Tencent.QCloud.SDK.ResponseModels.GetFolderListResponseModel.InfoList">
+            <summary>
+            文件和文件夹列表，若当前目录下不存在文件或文件夹，则该返回值可能为空
+            </summary>
+        </member>
+        <member name="P:FsLib.Tencent.QCloud.SDK.ResponseModels.FolderInfoModel.Name">
+            <summary>
+            文件名
+            </summary>
+        </member>
+        <member name="P:FsLib.Tencent.QCloud.SDK.ResponseModels.FolderInfoModel.FileSize">
+            <summary>
+            文件大小，当类型为文件时返回
+            </summary>
+        </member>
+        <member name="P:FsLib.Tencent.QCloud.SDK.ResponseModels.FolderInfoModel.FileLen">
+            <summary>
+            文件已传输大小，当类型为文件时返回
+            </summary>
+        </member>
+        <member name="P:FsLib.Tencent.QCloud.SDK.ResponseModels.FolderInfoModel.Sha">
+            <summary>
+            文件 sha，当类型为文件时返回
+            </summary>
+        </member>
+        <member name="P:FsLib.Tencent.QCloud.SDK.ResponseModels.FolderInfoModel.Ctime">
+            <summary>
+            创建时间，10 位 Unix 时间戳（UNIX 时间是从协调世界时 1970 年 1 月 1 日 0 时 0 分 0 秒起的总秒数）
+            </summary>
+        </member>
+        <member name="P:FsLib.Tencent.QCloud.SDK.ResponseModels.FolderInfoModel.Mtime">
+            <summary>
+            修改时间，10 位 Unix 时间戳（UNIX 时间是从协调世界时 1970 年 1 月 1 日 0 时 0 分 0 秒起的总秒数）
+            </summary>
+        </member>
+        <member name="P:FsLib.Tencent.QCloud.SDK.ResponseModels.FolderInfoModel.AccessUrl">
+            <summary>
+            生成的资源可访问的 cdn url，当类型为文件时返回
+            </summary>
+        </member>
+        <member name="P:FsLib.Tencent.QCloud.SDK.ResponseModels.FolderInfoModel.Authority">
+            <summary>
+            如果没有对文件单独设置该属性，则可能不会返回该字段。枚举值：
+            eInvalid（表示继承 bucket 的读写权限）；
+            eWRPrivate（私有读写）；
+            eWPrivateRPublic（公有读私有写）。
+            说明：文件可以和 bucket 拥有不同的权限类型，已经设置过权限的文件如果想要撤销，将会直接被赋值为 eInvalid，即继承 bucket 的权限
+            </summary>
+        </member>
+        <member name="P:FsLib.Tencent.QCloud.SDK.ResponseModels.FolderInfoModel.SourceUrl">
+            <summary>
+            生成的资源可访问的源站 url，当类型为文件时返回
+            </summary>
+        </member>
+        <member name="T:FsLib.Tencent.QCloud.SDK.ResponseModels.GetFolderStatResponseModel">
+            <summary>
+            查询目录属性响应模型
+            </summary>
+        </member>
+        <member name="P:FsLib.Tencent.QCloud.SDK.ResponseModels.GetFolderStatResponseModel.BizAttr">
+            <summary>
+            COS 服务调用方自定义属性，可通过 查询目录属性 获取该属性值
+            </summary>
+        </member>
+        <member name="P:FsLib.Tencent.QCloud.SDK.ResponseModels.GetFolderStatResponseModel.Ctime">
+            <summary>
+            创建时间，10 位 Unix 时间戳（UNIX时间是从协调世界时 1970 年 1 月 1 日 0 时 0 分 0 秒起的总秒数）
+            </summary>
+        </member>
+        <member name="P:FsLib.Tencent.QCloud.SDK.ResponseModels.GetFolderStatResponseModel.Mtime">
+            <summary>
+            修改时间，10 位 Unix 时间戳（UNIX时间是从协调世界时 1970 年 1 月 1 日 0 时 0 分 0 秒起的总秒数）
+            </summary>
+        </member>
+        <member name="P:FsLib.Tencent.QCloud.SDK.ResponseModels.ResponseModel.Code">
+            <summary>
+            服务端返回码，如果没有发生任何错误取值为0；如果发生错误该参数指称具体的错误码。
+            </summary>
+        </member>
+        <member name="P:FsLib.Tencent.QCloud.SDK.ResponseModels.ResponseModel.Message">
+            <summary>
+            服务端提示内容，如果发生错误该字段将详细描述发生错误的情况。
+            </summary>
+        </member>
+        <member name="P:FsLib.Tencent.QCloud.SDK.ResponseModels.UploadFileResponseModel.AccessUrl">
+            <summary>
+            通过 CDN 访问该文件的资源链接（访问速度更快）
+            </summary>
+        </member>
+        <member name="P:FsLib.Tencent.QCloud.SDK.ResponseModels.UploadFileResponseModel.ResourcePath">
+            <summary>
+            该文件在 COS 中的相对路径名，可作为其 ID 标识。格式/APPID/BucketName/ObjectName。推荐业务端存储 resource_path，然后根据业务需求灵活拼接资源 url（通过 CDN 访问 COS 资源的 url 和直接访问 COS 资源的 url 不同）。
+            </summary>
+        </member>
+        <member name="P:FsLib.Tencent.QCloud.SDK.ResponseModels.UploadFileResponseModel.SourceUrl">
+            <summary>
+            （不通过 CDN）直接访问 COS 的资源链接
+            </summary>
+        </member>
+        <member name="P:FsLib.Tencent.QCloud.SDK.ResponseModels.UploadFileResponseModel.Url">
+            <summary>
+            操作文件的 url 。业务端可以将该 url 作为请求地址来进一步操作文件，对应 API ：文件属性、更新文件、删除文件、移动文件中的请求地址。
+            </summary>
+        </member>
+        <member name="P:FsLib.Tencent.QCloud.SDK.ResponseModels.UploadSliceListModel.FileSize">
+            <summary>
+            文件大小
+            </summary>
+        </member>
+        <member name="P:FsLib.Tencent.QCloud.SDK.ResponseModels.UploadSliceListModel.ListParts">
+            <summary>
+            完全上传的文件分片信息
+            </summary>
+        </member>
+        <member name="P:FsLib.Tencent.QCloud.SDK.ResponseModels.UploadSliceListModel.Session">
+            <summary>
+            唯一标识此文件传输过程的 id，命中秒传则不携带
+            </summary>
+        </member>
+        <member name="P:FsLib.Tencent.QCloud.SDK.ResponseModels.UploadSliceListModel.SliceSize">
+            <summary>
+            分片大小，单位为 Byte。有效值：524288 (512 KB), 1048576 (1 MB), 2097152 (2 MB), 3145728 (3 MB)
+            </summary>
+        </member>
+    </members>
+</doc>

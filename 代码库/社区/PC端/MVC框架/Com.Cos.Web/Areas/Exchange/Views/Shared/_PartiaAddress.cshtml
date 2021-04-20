@@ -1,0 +1,32 @@
+﻿@model Com.Cos.Models.Member
+<div class="dizhiss clearfix">
+    <h3>新增收货地址</h3>
+    <div class="dizi clearfix"><label>收货人：</label><input id="name" type="text"></div>
+    <div class="dizi clearfix"><label>手机号码：</label><input id="phone" type="text"></div>
+    <div class="dizi clearfix"><label>邮政编码：</label><input id="zipCode" type="text"></div>
+    <div class="dizi clearfix"><label>省：</label><input id="province" type="text"></div>
+    <div class="dizi clearfix"><label>市：</label><input id="city" type="text"></div>
+    <div class="dizi clearfix"><label>区/县：</label><input id="county" type="text"></div>
+    <div class="dizi clearfix"><label>详细地址：</label><input id="address" type="text"></div>
+    <button class="addAddress_confirm">确定</button>
+</div>
+<script>
+    $(document).ready(function () {
+        $('.addAddress_confirm').click(function () {
+            var obj = {
+                userId: '@Model.User_id',
+                name: $('#name').val(),
+                phone: $('#phone').val(),
+                zipCode: $('#zipCode').val(),
+                province: $('#province').val(),
+                city: $('#city').val(),
+                county: $('#county').val(),
+                address: $('#address').val()
+            };
+            $.post("/Address/Add", obj, function (msg) {
+                if (msg.Status == "true")
+                    location.reload();
+            });
+        });
+    });
+</script>

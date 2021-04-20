@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta http-equiv="Cache-Control" content="no-transform" /><![endif]-->
+    <meta name="renderer" content="webkit" /><meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" /><link rel="profile" href="http://gmpg.org/xfn/11" /><title>
+	52cos平台社区-精英封测
+</title><meta name="keywords" content="cos,cosplay,二次元,二次元社区,52cos,52cos社区,动漫社区,动漫,52,ACG,ACGN" /><meta name="description" content="爱COS，爱精致，我爱精致，52COS" /><link rel="stylesheet" href="Style/font-awesome-4.6.3/css/font-awesome.min.css" type="text/css" media="all" /><link rel="stylesheet" href="Style/css/frontend-default.css" type="text/css" media="all" /><link rel="https://api.w.org/" href="/wp.json" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.xml?rsd" /><link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wlwmanifest.xml" /><meta name="theme-color" content="#ff4081" />
+    <style id="custom-background-css">
+        body.custom-background {
+            background-color: #eeeeee;
+        }
+    </style>
+    <style type="text/css">
+        .caiji {
+            display: none;
+        }
+
+        .weeks {
+            width: 300px;
+            height: 333px;
+            position: relative;
+            left: -26px;
+            top: -27px;
+        }
+
+        .weekItem {
+            width: 266px;
+            height: 32px;
+            border-bottom: 2px solid #f60;
+            padding: 0;
+            margin: 0 0 0 5px;
+        }
+
+            .weekItem li {
+                float: left;
+                height: 32px;
+                width: 38px;
+                line-height: 32px;
+                text-align: center;
+                cursor: pointer;
+                overflow: hidden;
+            }
+
+                .weekItem li.on {
+                    background: #f60;
+                    color: #fff;
+                }
+
+                .weekItem li.hover {
+                    background: #f60;
+                    color: #fff;
+                }
+
+        .box01_c {
+            width: 293px;
+            height: 343px;
+            padding: 5px 0;
+            position: relative;
+            overflow: auto;
+        }
+
+            .box01_c dl {
+                padding: 0 5px 0 5px;
+                line-height: 26px;
+            }
+
+                .box01_c dl dt {
+                    color: #999;
+                }
+
+                .box01_c dl dd {
+                    height: 26px;
+                    overflow: hidden;
+                }
+
+                    .box01_c dl dd span {
+                        float: right;
+                        color: #999;
+                    }
+
+                        .box01_c dl dd span.today {
+                            color: #f60;
+                        }
+
+        dl {
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        dd, dt {
+            line-height: 1.42857143;
+        }
+
+        dt {
+            font-weight: 700;
+        }
+
+        dd {
+            margin-left: 0;
+        }
+
+        .ani-video-main {
+            height: 96%;
+        }
+
+        .ani-box {
+            height: 100%;
+        }
+
+        .ani-player {
+            height: 100%;
+        }
+
+        .ani-player-box {
+            height: 96%;
+        }
+
+        body.in-text-mode #main {
+            max-width: 1440px;
+        }
+
+        .content-reset embed {
+            margin-top: 0rem;
+        }
+
+        @media (max-width:1199px) {
+            .switch {
+                float: none;
+                margin: 0 0 15px;
+            }
+        }
+
+        .switch {
+            position: absolute;
+            display: inline-block;
+            width: 65px;
+            height: 25px;
+            background: url(/Style/img/switch.png) no-repeat 0 0;
+            cursor: pointer;
+            margin: 0;
+            right: 20px;
+        }
+    </style>
+    <link href="Style/css/video.css" rel="stylesheet" media="screen" type="text/css" /><link rel="stylesheet" type="text/css" href="Style/css/cs-select.css" /><link rel="stylesheet" type="text/css" href="Style/css/cs-skin-boxes.css" /><link href="Style/css/frontend-logged-default.css" rel="stylesheet" /><link rel="stylesheet" type="text/css" href="/plugins/SearchBox/css/search-form.css" />
+
+    <script src="../../Style/js/jquery-1.12.3.min.js"></script>
+    <script type='text/javascript' src='Style/js/jquery-migrate.min.js'></script>
+    <script src="Style/js/player.js"></script>
+    <script src="Style/js/mukio-prompt.js"></script>
+    <script src="Style/js/mukio-sect.js"></script>
+    <script src="Style/js/swfobject.js"></script>
+    -<script type="text/javascript" src="Style/js/classie.js"></script>
+    
+    <link href="/plugins/sweetalert/sweetalert.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="/plugins/mo/fonts/font-awesome-4.5.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="/plugins/mo/css/icons.css" />
+</head>
+<body class="home blog">
+    <div>
+
+        <!--导航-->
+        <div class="nav-main top">
+            <div class="g">
+                <form method="post" action="./worksview-162.html?nid=162&amp;type=works" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="93860021" />
+</div>
+                    <a class="logo" href="/index.html" title="52COS平台 - 社区福利站ノ(・ω・)ノ">
+                        <img src="Style/img/logo.png" alt="52COS社区网" width="100" height="40">
+                        <h1 hidden>52COS平台</h1>
+                        <span hidden>社区福利站ノ(・ω・)ノ</span>
+                    </a>
+                    <nav class="menu-header">
+                        <ul id="menu-header" class="menu">
+                            <li id="menu-item-14" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-14"><a href="/zplist-1.html"><i class="fa fa-picture-o"></i>&nbsp;作品图集</a><ul class="sub-menu">
+                                <li id="menu-item-20" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-20"><a href="/zplist-cos-1.html"><i class="fa fa-fw fa-paperclip"></i>&nbsp;COS图集</a></li>
+                                <li id="menu-item-21" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-21"><a href="/zplist-daily-1.html"><i class="fa fa-fw fa-paper-plane"></i>&nbsp;日常图集</a></li>
+                                <li id="menu-item-3390" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3390"><a href="/zplist-painting-1.html"><i class="fa fa-fw fa-dropbox"></i>&nbsp;绘画作品</a></li>
+                                <li id="menu-item-100" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-100"><a href="/zplist-photography-1.html"><i class="fa fa-map-o"></i>&nbsp;轻小说</a></li>
+                            </ul>
+                            </li>
+
+                            <li id="menu-item-38" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-38"><a href="/hzlist-1.html"><i class="fa fa-american-sign-language-interpreting"></i>&nbsp;合作</a><ul class="sub-menu">
+                                <li id="menu-item-40" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-40"><a href="#"><i class="fa fa-circle"></i>&nbsp;需</a></li>
+                                <li id="menu-item-2002" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2002"><a href="#"><i class="fa fa-circle-thin"></i>&nbsp;求</a></li>
+                            </ul>
+                            </li>
+
+                            <li id="menu-item-28" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-28"><a href="/hdlist-1.html"><i class="fa fa-fw fa-amazon"></i>&nbsp;活动</a><ul class="sub-menu">
+                            </ul>
+                            </li>
+
+                            <li id="menu-item-7907" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-7907"><a href="#"><i class="fa fa-fw fa-gamepad"></i>&nbsp;商城</a><ul class="sub-menu">
+                            </ul>
+                            </li>
+                            <li id="menu-item-7908" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-7907"><a href="/fxlist-1.html"><i class="fa fa-link"></i>&nbsp;兑换区</a><ul class="sub-menu">
+                            </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div id="userbar" class="tools"><div class='tool tool-me'>
+                                                    <a href='/zl/zl-56.html'><!--用户主页地址-->
+	                                                    <img class='avatar' width='32' height='32' src='/Upload/Portrait/1.jpg' alt='avatar'><!--头像-->
+	                                                    <i class='fa fa-angle-down'></i>
+                                                    </a>
+                                                    <div class='box'>
+	                                                    <!-- points -->
+	                                                    <div class='box-points'>
+		                                                    <a href='/zl/zl-56.html' alt='0/10000'>
+			                                                    <img src='/Style/img/integral.gif' alt='' width='16' height='16'>
+			                                                    Level 1
+		                                                    </a>
+	                                                    </div>
+	                                                    <div class='box-points'>
+		                                                    <a href='/yh/history.html'>
+			                                                    <img src='/Style/img/integral.gif' alt='' width='16' height='16'>
+			                                                    6 节操 4 热心 0 CN币
+		                                                    </a>
+	                                                    </div>
+	                                                    <ul>
+		                                                    <li class=''>
+			                                                    <a href='/yh/dashboard.html'>
+				                                                    <i class='fa fa-dashboard fa-fw'></i>
+				                                                    用户中心
+			                                                    </a>
+		                                                    </li>
+		                                                    <li class=''>
+			                                                    <a href='/yh/contributions.html'>
+				                                                    <i class='fa fa-paint-brush fa-fw'></i>
+				                                                    文章投稿
+			                                                    </a>
+		                                                    </li>
+		                                                    <li class=''>
+			                                                    <a href='/yh/mytg.html'>
+				                                                    <i class='fa fa-lightbulb-o fa-fw'></i>
+				                                                    我的投稿
+			                                                    </a>
+		                                                    </li>
+		                                                    <li class=''>
+			                                                    <a href='/yh/translate.html'>
+				                                                    <i class='fa fa-envelope fa-fw'></i>
+				                                                    私信
+			                                                    </a>
+		                                                    </li>
+		                                                    <li class=''>
+			                                                    <a href='/yh/bomb.html'>
+				                                                    <i class='fa fa-bomb fa-fw'></i>
+				                                                    轰炸小游戏
+			                                                    </a>
+		                                                    </li>
+		                                                    <li class=''>
+			                                                    <a href='/yh/notifications.html'>
+				                                                    <i class='fa fa-bell fa-fw'></i>
+				                                                    我的提醒
+			                                                    </a>
+		                                                    </li>
+		                                                    <li class=''>
+			                                                    <a href='/yh/history.html'>
+				                                                    <i class='fa fa-history fa-fw'></i>
+				                                                    积分历史
+			                                                    </a>
+		                                                    </li>
+		                                                    <li class=''>
+			                                                    <a href='/yh/settings.html'>
+				                                                    <i class='fa fa-cog fa-fw'></i>
+				                                                    我的设置
+			                                                    </a>
+		                                                    </li>
+		                                                    <li class=''>
+			                                                    <a href='/yh/medal.html'>
+				                                                    <i class='fa fa-bookmark fa-fw'></i>
+				                                                    勋章中心
+			                                                    </a>
+		                                                    </li>
+		                                                    <li class=''>
+			                                                    <a href='/yh/lottery.html'>
+				                                                    <i class='fa fa-yelp fa-fw'></i>
+				                                                    积分商城
+			                                                    </a>
+		                                                    </li>
+		                                                    <li class=''>
+			                                                    <a href='/yh/avatar.html'>
+				                                                    <i class='fa fa-github-alt fa-fw'></i>
+				                                                    我的头像
+			                                                    </a>
+		                                                    </li>
+                                                            <li class=''>
+			                                                    <a href='/yh/recharge.html'>
+				                                                    <i class='fa fa-database'></i>
+				                                                    立刻充值
+			                                                    </a>
+		                                                    </li>
+                                                            <li class=''>
+			                                                    <a href='/yh/exchange.html'>
+				                                                    <i class='fa fa-link'></i>
+				                                                    分享
+			                                                    </a>
+		                                                    </li>
+		                                                    <li class=''>
+			                                                    <a href='/yh/password.html'>
+				                                                    <i class='fa fa-lock fa-fw'></i>
+				                                                    修改密码
+			                                                    </a>
+		                                                    </li>
+		                                                    <li><a href='/prompts.html'><i class='fa fa-sign-out fa-fw'></i>登出</a></li>
+	                                                    </ul>
+                                                    </div>
+                                                    </div><a href="javascript:;" class="tool search fa fa-search fa-2x" data-toggle-target="#fm-search" data-focus-target="#fm-search-s" data-icon-active="fa-arrow-down" data-icon-original="fa-search" title="搜索"></a></div>
+                </form>
+                <form id="fm-search" data-focus-target="#fm-search-s" method="get" action="/Pages/ShowManage/SearchList.aspx">
+                    <input id="fm-search-s" name="s" class="form-control" placeholder="请输入搜索关键词" value="" type="search" required>
+                </form>
+                
+            </div>
+        </div>
+
+        <!---->
+        <div class="nav-main-placeholder"></div>
+        
+    <div class="g">
+        <div class="row">
+            <div id="main" class="main g-desktop-3-4">
+                <!--左边正文部分-->
+                  <article id="post-86" class=" singular-post panel post-86 post type-post status-publish format-standard has-post-thumbnail hentry category-acgtuji category-hjhc tag-18 tag-19 tag-21 tag-20">                    <h2 class="entry-title">【预告】黑执事蓝猫花魁</h2>                    <header class="entry-header">                        <span class="entry-meta post-category" title="分类">                            <i class="fa fa-folder-open"></i>                            <a href="moe/acgtuji.htm" rel="category tag">cos</a><i class="split">, </i><a href="moe/acgtuji/hjhc.htm" rel="category tag"></a>                        </span>                        <time class="entry-meta post-time" datetime="2016-08-11 00:04:24" title="2016年08月11日">                            <i class="fa fa-clock-o"></i>                            13天前                        </time>                        <a class="entry-meta post-author" href="moeauthor/100002.htm" title="查看 coser草办 目录下的所有文章">                            <i class="fa fa-user"></i>                            coser草办                        </a>                        <span class="entry-meta post-views" title="赞数">                            <i class="fa fa-play-circle"></i>                            <span class="number" id="post-views-number-86">1</span>                        </span>                        <a href="#comments" class="entry-meta quick-comment comment-count" data-post-id="86">                            <i class="fa fa-comment"></i>                            <span class="comment-count-number">19</span>                        </a>                    </header>                    <div class="entry-body">                        <div class="ad-container ad-below-post-title">                            <script>var star_code = "705567_0_11_48_728_90_3_1_4_ffffff_808080_808080_cccccc_D70000_0";</script>                            <script charset="utf-8" src="../vip.zhuba8.com/js/cpc2_i.js"></script>                        </div>                        <blockquote class="entry-excerpt">                            PHX：小鸟
+出镜/化妆/后期：草办
+这大概是很久以前我第一次出正片qwq多有不足 请包涵                        </blockquote>                        <div class="entry-content content-reset">                            <p><br data-mce-bogus="1"></p><img src="\Upload\COS\147084504224156432.jpg" alt="">                        </div>                        <div class="entry-circle">                            <div class="meta meta-post-point">                                <a href="javascript:;" class="post-point-btn" title="打赏 3 个CN币" data-post-id="86" data-points="3">                                    <div id="post-point-number-86" class="number">0</div>                                    <div class="tx">打赏</div>                                </a>                                <div class="box">                                    <a href="javascript:;" class="post-point-btn " title="打赏 1 个CN币" data-post-id="86" data-points="1">1</a><a href="javascript:;" class="post-point-btn active" title="打赏 3 个CN币" data-post-id="86" data-points="3">3</a><a href="javascript:;" class="post-point-btn " title="打赏 5 个CN币" data-post-id="86" data-points="5">5</a><a href="javascript:;" class="post-point-btn " title="打赏 7 个CN币" data-post-id="86" data-points="7">7</a><a href="javascript:;" class="post-point-btn " title="打赏 9 个CN币" data-post-id="86" data-points="9">9</a><a href="javascript:;" class="post-point-btn " title="打赏 15 个CN币" data-post-id="86" data-points="15">15</a>                                </div>                            </div>                            <a class="meta meta-post-comments" id="post-good-btn" title="点赞" style='top:-25px'>                                <button class="icobutton icobutton--thumbs-up" style='top:18px'>                                    <span class="fa fa-thumbs-up"></span>                                </button>                            </a>                            <a class="meta meta-post-comments" href="#respond" id="post-comments-btn" title="评论">                                <div id="post-comments-number-86" class="number">                                    19                                </div>                                <div class="tx">吐槽</div>                            </a>                        </div>                        <ul class="entry-source">                            <li>本作品是由 <a href="http://sq.52cos.com">52cos平台社区</a> 会员 <a href="moeauthor/100002.htm">coser草办</a> 的投递作品。</li>                            <li>欢迎转载，但请务必注明来源地址：<a href="http://sq.52cos.cn/Pages/ShowManage/view.aspx?nid=162&type=works" target="_blank" rel="nofollow">http://sq.52cos.cn/Pages/ShowManage/view.aspx?nid=162&type=works</a>。</li>                        </ul>                        <footer class="entry-footer">                            <div class="entry-tags"><a href="moetag/插画.htm" rel="tag">精选</a><a href="moetag/插画.htm" rel="tag">黑执事</a><a href="moetag/插画.htm" rel="tag">花魁</a><a href="moetag/插画.htm" rel="tag">御姐</a>                            </div>                            <div class="entry-share">                                <div class="bdshare_t bdsharebuttonbox" data-tag="bd_share" data-bdshare="{	'bdText':'【pixiv】每日精选插画2015.11.16 by 天才射鸡湿可乐 —— 来自 九妖萌弹幕动漫网',	'bdUrl':'http://www.91moe.com/moe86.html',	'bdPic':'http://img.91moe.com/2015/11/cd31ae1c36eb770a76dd646019fd59d5-320x180.jpg'}">                                    <span class="description">转贴到：</span><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>                                </div>                            </div>                            <div class="entry-report">                                <a class="tooltip top" href="文章问题反馈-1.htm" tppabs="http://www.91moe.com/%e6%96%87%e7%ab%a0%e9%97%ae%e9%a2%98%e5%8f%8d%e9%a6%88" target="_blank" rel="nofollow" title="资源失效提交"><i class="fa fa-flag"></i></a>                            </div>                        </footer>                    </div>                </article>                <nav class="adjacent-posts has-prev has-next row">                    <div class="g-desktop-1-2">                        <a href="/Pages/ShowManage/View.aspx?nid=161&type=works" class="left next-post" title="【正片】不良JK">                            <img class="thumbnail" src="/Style/img/46201453_10.gif" data-src="257" alt="【正片】不良JK" width="320" height="180"><h2 class="title"><i class="fa fa-arrow-circle-left"></i>上一篇：【正片】不良JK</h2>                        </a>                    </div>                    <div class="g-desktop-1-2">                        <a href="/Pages/ShowManage/View.aspx?nid=True&type=works"  class="right prev-post" title="【试妆】利威尔兵长">                            <img class="thumbnail" src="/Style/img/46201453_10.gif"  data-src="264" alt="【试妆】利威尔兵长" width="320" height="180"><h2 class="title"><i class="fa fa-arrow-circle-right"></i>下一篇：【试妆】利威尔兵长</h2>                        </a>                    </div>                </nav>
+                
+                <!---->
+                <!--发表评论-->
+                <div id="respond" class="panel">
+                    <div class="content">
+
+                        <div id="respond-must-login" class="hide-on-logged none">
+                            <div class="tip-status tip-status-small tip-status-info">
+                                <i class="fa fa-exclamation-circle fa-fw"></i>
+                                <a href="/Pages/App_Public/Login.aspx">登录后才能评论哦！
+                                </a>
+                            </div>
+                        </div>
+
+                        <form id="commentform" action="/Service/ShowManage/Reply.ashx" method="post" class="comment-form media ">
+                            <div class="media">
+                                <input type="hidden" name="comment_post_ID" id="comment_post_ID" value="162">
+                                <input type="hidden" name="comment_parent" id="comment_parent" value="works">
+                                <div class="media-left hidden-phone">
+                                    <img id="respond-avatar" src="/Upload/Portrait/1.jpg" tppabs="/Upload/Portrait/1.jpg" alt="one" class="media-object avatar" width="100" height="100">
+                                </div>
+                                <div class="media-body">
+                                    <div class="form-group form-group-textarea">
+                                        <textarea name="comment" id="comment-form-comment" class="form-control" rows="3" placeholder="Hi, 有什么要说的吗？" title="没什么好说的吗？" required></textarea>
+                                    </div>
+                                    <div class="form-group btn-group-submit">
+                                        <div class="comment-emotion-area-pop">
+                                            <div id="theme_comment_emotion-kaomoji" class="pop">
+                                                <a href="javascript:;" data-content="(⊙⊙！)">(⊙⊙！)</a>
+                                                <a href="javascript:;" data-content="ƪ(&oline;&epsilon;&oline;&ldquo;)ʃƪ(">ƪ(&oline;&epsilon;&oline;&ldquo;)ʃƪ(</a>
+                                                <a href="javascript:;" data-content="&Sigma;(&deg;Д&deg;;">&Sigma;(&deg;Д&deg;;</a>
+                                                <a href="javascript:;" data-content="눈_눈">눈_눈</a>
+                                                <a href="javascript:;" data-content="(๑&gt;◡&lt;๑)">(๑&gt;◡&lt;๑)</a>
+                                                <a href="javascript:;" data-content="(❁&acute;▽`❁)">(❁&acute;▽`❁)</a>
+                                                <a href="javascript:;" data-content="(,,Ծ▽Ծ,,)">(,,Ծ▽Ծ,,)</a>
+                                                <a href="javascript:;" data-content="（⺻▽⺻ ）">（⺻▽⺻ ）</a>
+                                                <a href="javascript:;" data-content="乁( ◔ ౪◔)「">乁( ◔ ౪◔)「</a>
+                                                <a href="javascript:;" data-content="ლ(^o^ლ)">ლ(^o^ლ)</a>
+                                                <a href="javascript:;" data-content="(◕ܫ◕)">(◕ܫ◕)</a>
+                                                <a href="javascript:;" data-content="凸(= _=)凸">凸(= _=)凸</a>
+                                            </div>
+                                            <div id="theme_comment_emotion-img" class="pop">
+                                                <a href="javascript:;" data-content="[脸红]">
+                                                    <img data-url="http://ww2.sinaimg.cn/large/686ee05djw1eu8ijxc3p7g201c01c3yd.gif" alt="脸红" width="50" height="50" src="data:image/gif;base64,R0lGODlhAQABAPAAAO7u7v///yH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" title="脸红"></a>
+                                                <a href="javascript:;" data-content="[杯具]">
+                                                    <img data-url="http://ww1.sinaimg.cn/large/686ee05djw1eu8ikpw34jg201e01emx1.gif" alt="杯具" width="50" height="50" src="data:image/gif;base64,R0lGODlhAQABAPAAAO7u7v///yH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" title="杯具"></a>
+                                                <a href="javascript:;" data-content="[亚历山大]">
+                                                    <img data-url="http://ww1.sinaimg.cn/large/686ee05djw1eu8iliwosmg201e01e74h.gif" alt="亚历山大" width="50" height="50" src="data:image/gif;base64,R0lGODlhAQABAPAAAO7u7v///yH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" title="亚历山大"></a>
+                                                <a href="javascript:;" data-content="[想要]">
+                                                    <img data-url="http://ww1.sinaimg.cn/large/686ee05djw1eu8ilzci2jg202s02sglo.gif" alt="想要" width="50" height="50" src="data:image/gif;base64,R0lGODlhAQABAPAAAO7u7v///yH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" title="想要"></a>
+                                                <a href="javascript:;" data-content="[吃惊]">
+                                                    <img data-url="http://ww1.sinaimg.cn/large/686ee05djw1eu8j1vay4ej204h049jrb.jpg" alt="吃惊" width="50" height="50" src="data:image/gif;base64,R0lGODlhAQABAPAAAO7u7v///yH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" title="吃惊"></a>
+                                                <a href="javascript:;" data-content="[好样的]">
+                                                    <img data-url="http://ww3.sinaimg.cn/large/686ee05djw1eu8iomh5cbg203g03cdgx.gif" alt="好样的" width="50" height="50" src="data:image/gif;base64,R0lGODlhAQABAPAAAO7u7v///yH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" title="好样的"></a>
+                                            </div>
+                                        </div>
+                                        <a href="javascript:;" class="comment-emotion-pop-btn" data-target="#theme_comment_emotion-kaomoji" title="颜文字"><i class="fa fa-font"></i></a>
+                                        <a href="javascript:;" class="comment-emotion-pop-btn" data-target="#theme_comment_emotion-img" title="图片表情"><i class="fa fa-smile-o"></i></a>
+                                        <button type="submit" class="submit btn btn-success" title="发表评论">
+                                            <i class="fa fa-check"></i>
+                                            发表评论
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!---->
+                <!--评论列表-->
+                <div id="comments" class="panel comment-wrapper ">
+                    <div class='heading'>
+                        <h2 class='have-comments-title title'>
+                            <i class='fa fa-comments'></i>
+                            <span id='comment-number-86'>19</span>
+                            评论 </h2>
+                    </div>
+
+                    <ul id="comment-list-10589" class="comment-list">
+                        
+                                <li class="comment byuser comment-author-100001 bypostauthor even thread-even depth-1 media is-post-author" id="comment-712">
+                                    <div id="comment-body-712" class="comment-body">
+                                        <div class="media-left">
+                                            <a href="/Pages/AuthorManage/Author.aspx?id=" class="avatar-link" target="_blank">
+                                                <img alt="" src="" srcset=" 2x" class="avatar avatar-50 photo" height="50" width="50"></a>
+                                        </div>
+                                        <div class="media-body">
+                                            <div class="comment-content">
+                                                
+                                            </div>
+                                            <h4 class="media-heading"><span class="comment-meta-data author"><a href="/Pages/AuthorManage/Author.aspx?id=" rel="external nofollow" class="url"></a></span><time class="comment-meta-data time" datetime="2016/6/21 21:46:22">2月前</time></h4>
+                                        </div>
+                                    </div>
+                                </li>
+                            
+                                <li class="comment byuser comment-author-100001 bypostauthor even thread-even depth-1 media is-post-author" id="comment-712">
+                                    <div id="comment-body-712" class="comment-body">
+                                        <div class="media-left">
+                                            <a href="/Pages/AuthorManage/Author.aspx?id=30" class="avatar-link" target="_blank">
+                                                <img alt="" src="/Upload/Portrait/csharp_avatar1_2016050708411695TZZAMT1I.jpg" srcset="/Upload/Portrait/csharp_avatar1_2016050708411695TZZAMT1I.jpg 2x" class="avatar avatar-50 photo" height="50" width="50"></a>
+                                        </div>
+                                        <div class="media-body">
+                                            <div class="comment-content">
+                                                美
+                                            </div>
+                                            <h4 class="media-heading"><span class="comment-meta-data author"><a href="/Pages/AuthorManage/Author.aspx?id=30" rel="external nofollow" class="url">心若在</a></span><time class="comment-meta-data time" datetime="2016/6/25 12:07:00">2月前</time></h4>
+                                        </div>
+                                    </div>
+                                </li>
+                            
+                                <li class="comment byuser comment-author-100001 bypostauthor even thread-even depth-1 media is-post-author" id="comment-712">
+                                    <div id="comment-body-712" class="comment-body">
+                                        <div class="media-left">
+                                            <a href="/Pages/AuthorManage/Author.aspx?id=30" class="avatar-link" target="_blank">
+                                                <img alt="" src="/Upload/Portrait/csharp_avatar1_2016050708411695TZZAMT1I.jpg" srcset="/Upload/Portrait/csharp_avatar1_2016050708411695TZZAMT1I.jpg 2x" class="avatar avatar-50 photo" height="50" width="50"></a>
+                                        </div>
+                                        <div class="media-body">
+                                            <div class="comment-content">
+                                                这张最美了，炒鸡喜欢
+                                            </div>
+                                            <h4 class="media-heading"><span class="comment-meta-data author"><a href="/Pages/AuthorManage/Author.aspx?id=30" rel="external nofollow" class="url">心若在</a></span><time class="comment-meta-data time" datetime="2016/6/25 12:07:51">2月前</time></h4>
+                                        </div>
+                                    </div>
+                                </li>
+                            
+                                <li class="comment byuser comment-author-100001 bypostauthor even thread-even depth-1 media is-post-author" id="comment-712">
+                                    <div id="comment-body-712" class="comment-body">
+                                        <div class="media-left">
+                                            <a href="/Pages/AuthorManage/Author.aspx?id=30" class="avatar-link" target="_blank">
+                                                <img alt="" src="/Upload/Portrait/csharp_avatar1_2016050708411695TZZAMT1I.jpg" srcset="/Upload/Portrait/csharp_avatar1_2016050708411695TZZAMT1I.jpg 2x" class="avatar avatar-50 photo" height="50" width="50"></a>
+                                        </div>
+                                        <div class="media-body">
+                                            <div class="comment-content">
+                                                111
+                                            </div>
+                                            <h4 class="media-heading"><span class="comment-meta-data author"><a href="/Pages/AuthorManage/Author.aspx?id=30" rel="external nofollow" class="url">心若在</a></span><time class="comment-meta-data time" datetime="2016/6/25 14:54:46">2月前</time></h4>
+                                        </div>
+                                    </div>
+                                </li>
+                            
+                                <li class="comment byuser comment-author-100001 bypostauthor even thread-even depth-1 media is-post-author" id="comment-712">
+                                    <div id="comment-body-712" class="comment-body">
+                                        <div class="media-left">
+                                            <a href="/Pages/AuthorManage/Author.aspx?id=30" class="avatar-link" target="_blank">
+                                                <img alt="" src="/Upload/Portrait/csharp_avatar1_2016050708411695TZZAMT1I.jpg" srcset="/Upload/Portrait/csharp_avatar1_2016050708411695TZZAMT1I.jpg 2x" class="avatar avatar-50 photo" height="50" width="50"></a>
+                                        </div>
+                                        <div class="media-body">
+                                            <div class="comment-content">
+                                                我还能说神马？
+                                            </div>
+                                            <h4 class="media-heading"><span class="comment-meta-data author"><a href="/Pages/AuthorManage/Author.aspx?id=30" rel="external nofollow" class="url">心若在</a></span><time class="comment-meta-data time" datetime="2016/7/18 10:14:10">1月前</time></h4>
+                                        </div>
+                                    </div>
+                                </li>
+                            
+                                <li class="comment byuser comment-author-100001 bypostauthor even thread-even depth-1 media is-post-author" id="comment-712">
+                                    <div id="comment-body-712" class="comment-body">
+                                        <div class="media-left">
+                                            <a href="/Pages/AuthorManage/Author.aspx?id=50" class="avatar-link" target="_blank">
+                                                <img alt="" src="/Upload/Portrait/1.jpg" srcset="/Upload/Portrait/1.jpg 2x" class="avatar avatar-50 photo" height="50" width="50"></a>
+                                        </div>
+                                        <div class="media-body">
+                                            <div class="comment-content">
+                                                不错不错
+                                            </div>
+                                            <h4 class="media-heading"><span class="comment-meta-data author"><a href="/Pages/AuthorManage/Author.aspx?id=50" rel="external nofollow" class="url">大牛</a></span><time class="comment-meta-data time" datetime="2016/7/19 10:06:20">1月前</time></h4>
+                                        </div>
+                                    </div>
+                                </li>
+                            
+                                <li class="comment byuser comment-author-100001 bypostauthor even thread-even depth-1 media is-post-author" id="comment-712">
+                                    <div id="comment-body-712" class="comment-body">
+                                        <div class="media-left">
+                                            <a href="/Pages/AuthorManage/Author.aspx?id=50" class="avatar-link" target="_blank">
+                                                <img alt="" src="/Upload/Portrait/1.jpg" srcset="/Upload/Portrait/1.jpg 2x" class="avatar avatar-50 photo" height="50" width="50"></a>
+                                        </div>
+                                        <div class="media-body">
+                                            <div class="comment-content">
+                                                Hah
+                                            </div>
+                                            <h4 class="media-heading"><span class="comment-meta-data author"><a href="/Pages/AuthorManage/Author.aspx?id=50" rel="external nofollow" class="url">大牛</a></span><time class="comment-meta-data time" datetime="2016/7/22 19:10:52">1月前</time></h4>
+                                        </div>
+                                    </div>
+                                </li>
+                            
+                                <li class="comment byuser comment-author-100001 bypostauthor even thread-even depth-1 media is-post-author" id="comment-712">
+                                    <div id="comment-body-712" class="comment-body">
+                                        <div class="media-left">
+                                            <a href="/Pages/AuthorManage/Author.aspx?id=50" class="avatar-link" target="_blank">
+                                                <img alt="" src="/Upload/Portrait/1.jpg" srcset="/Upload/Portrait/1.jpg 2x" class="avatar avatar-50 photo" height="50" width="50"></a>
+                                        </div>
+                                        <div class="media-body">
+                                            <div class="comment-content">
+                                                Haha
+                                            </div>
+                                            <h4 class="media-heading"><span class="comment-meta-data author"><a href="/Pages/AuthorManage/Author.aspx?id=50" rel="external nofollow" class="url">大牛</a></span><time class="comment-meta-data time" datetime="2016/7/22 19:14:35">1月前</time></h4>
+                                        </div>
+                                    </div>
+                                </li>
+                            
+                                <li class="comment byuser comment-author-100001 bypostauthor even thread-even depth-1 media is-post-author" id="comment-712">
+                                    <div id="comment-body-712" class="comment-body">
+                                        <div class="media-left">
+                                            <a href="/Pages/AuthorManage/Author.aspx?id=50" class="avatar-link" target="_blank">
+                                                <img alt="" src="/Upload/Portrait/1.jpg" srcset="/Upload/Portrait/1.jpg 2x" class="avatar avatar-50 photo" height="50" width="50"></a>
+                                        </div>
+                                        <div class="media-body">
+                                            <div class="comment-content">
+                                                Haha
+                                            </div>
+                                            <h4 class="media-heading"><span class="comment-meta-data author"><a href="/Pages/AuthorManage/Author.aspx?id=50" rel="external nofollow" class="url">大牛</a></span><time class="comment-meta-data time" datetime="2016/7/22 19:16:48">1月前</time></h4>
+                                        </div>
+                                    </div>
+                                </li>
+                            
+                                <li class="comment byuser comment-author-100001 bypostauthor even thread-even depth-1 media is-post-author" id="comment-712">
+                                    <div id="comment-body-712" class="comment-body">
+                                        <div class="media-left">
+                                            <a href="/Pages/AuthorManage/Author.aspx?id=50" class="avatar-link" target="_blank">
+                                                <img alt="" src="/Upload/Portrait/1.jpg" srcset="/Upload/Portrait/1.jpg 2x" class="avatar avatar-50 photo" height="50" width="50"></a>
+                                        </div>
+                                        <div class="media-body">
+                                            <div class="comment-content">
+                                                Haha
+                                            </div>
+                                            <h4 class="media-heading"><span class="comment-meta-data author"><a href="/Pages/AuthorManage/Author.aspx?id=50" rel="external nofollow" class="url">大牛</a></span><time class="comment-meta-data time" datetime="2016/7/22 19:38:21">1月前</time></h4>
+                                        </div>
+                                    </div>
+                                </li>
+                            
+                                <li class="comment byuser comment-author-100001 bypostauthor even thread-even depth-1 media is-post-author" id="comment-712">
+                                    <div id="comment-body-712" class="comment-body">
+                                        <div class="media-left">
+                                            <a href="/Pages/AuthorManage/Author.aspx?id=50" class="avatar-link" target="_blank">
+                                                <img alt="" src="/Upload/Portrait/1.jpg" srcset="/Upload/Portrait/1.jpg 2x" class="avatar avatar-50 photo" height="50" width="50"></a>
+                                        </div>
+                                        <div class="media-body">
+                                            <div class="comment-content">
+                                                Tuhfh
+                                            </div>
+                                            <h4 class="media-heading"><span class="comment-meta-data author"><a href="/Pages/AuthorManage/Author.aspx?id=50" rel="external nofollow" class="url">大牛</a></span><time class="comment-meta-data time" datetime="2016/7/24 12:34:40">1月前</time></h4>
+                                        </div>
+                                    </div>
+                                </li>
+                            
+                                <li class="comment byuser comment-author-100001 bypostauthor even thread-even depth-1 media is-post-author" id="comment-712">
+                                    <div id="comment-body-712" class="comment-body">
+                                        <div class="media-left">
+                                            <a href="/Pages/AuthorManage/Author.aspx?id=50" class="avatar-link" target="_blank">
+                                                <img alt="" src="/Upload/Portrait/1.jpg" srcset="/Upload/Portrait/1.jpg 2x" class="avatar avatar-50 photo" height="50" width="50"></a>
+                                        </div>
+                                        <div class="media-body">
+                                            <div class="comment-content">
+                                                嗯，不错的
+                                            </div>
+                                            <h4 class="media-heading"><span class="comment-meta-data author"><a href="/Pages/AuthorManage/Author.aspx?id=50" rel="external nofollow" class="url">大牛</a></span><time class="comment-meta-data time" datetime="2016/7/25 9:54:18">1月前</time></h4>
+                                        </div>
+                                    </div>
+                                </li>
+                            
+                                <li class="comment byuser comment-author-100001 bypostauthor even thread-even depth-1 media is-post-author" id="comment-712">
+                                    <div id="comment-body-712" class="comment-body">
+                                        <div class="media-left">
+                                            <a href="/Pages/AuthorManage/Author.aspx?id=50" class="avatar-link" target="_blank">
+                                                <img alt="" src="/Upload/Portrait/1.jpg" srcset="/Upload/Portrait/1.jpg 2x" class="avatar avatar-50 photo" height="50" width="50"></a>
+                                        </div>
+                                        <div class="media-body">
+                                            <div class="comment-content">
+                                                好漂亮
+                                            </div>
+                                            <h4 class="media-heading"><span class="comment-meta-data author"><a href="/Pages/AuthorManage/Author.aspx?id=50" rel="external nofollow" class="url">大牛</a></span><time class="comment-meta-data time" datetime="2016/7/25 9:55:09">1月前</time></h4>
+                                        </div>
+                                    </div>
+                                </li>
+                            
+                                <li class="comment byuser comment-author-100001 bypostauthor even thread-even depth-1 media is-post-author" id="comment-712">
+                                    <div id="comment-body-712" class="comment-body">
+                                        <div class="media-left">
+                                            <a href="/Pages/AuthorManage/Author.aspx?id=50" class="avatar-link" target="_blank">
+                                                <img alt="" src="/Upload/Portrait/1.jpg" srcset="/Upload/Portrait/1.jpg 2x" class="avatar avatar-50 photo" height="50" width="50"></a>
+                                        </div>
+                                        <div class="media-body">
+                                            <div class="comment-content">
+                                                好漂亮
+                                            </div>
+                                            <h4 class="media-heading"><span class="comment-meta-data author"><a href="/Pages/AuthorManage/Author.aspx?id=50" rel="external nofollow" class="url">大牛</a></span><time class="comment-meta-data time" datetime="2016/7/26 18:07:39">28天前</time></h4>
+                                        </div>
+                                    </div>
+                                </li>
+                            
+                                <li class="comment byuser comment-author-100001 bypostauthor even thread-even depth-1 media is-post-author" id="comment-712">
+                                    <div id="comment-body-712" class="comment-body">
+                                        <div class="media-left">
+                                            <a href="/Pages/AuthorManage/Author.aspx?id=50" class="avatar-link" target="_blank">
+                                                <img alt="" src="/Upload/Portrait/1.jpg" srcset="/Upload/Portrait/1.jpg 2x" class="avatar avatar-50 photo" height="50" width="50"></a>
+                                        </div>
+                                        <div class="media-body">
+                                            <div class="comment-content">
+                                                写的不错
+                                            </div>
+                                            <h4 class="media-heading"><span class="comment-meta-data author"><a href="/Pages/AuthorManage/Author.aspx?id=50" rel="external nofollow" class="url">大牛</a></span><time class="comment-meta-data time" datetime="2016/7/29 11:27:11">26天前</time></h4>
+                                        </div>
+                                    </div>
+                                </li>
+                            
+                                <li class="comment byuser comment-author-100001 bypostauthor even thread-even depth-1 media is-post-author" id="comment-712">
+                                    <div id="comment-body-712" class="comment-body">
+                                        <div class="media-left">
+                                            <a href="/Pages/AuthorManage/Author.aspx?id=50" class="avatar-link" target="_blank">
+                                                <img alt="" src="/Upload/Portrait/1.jpg" srcset="/Upload/Portrait/1.jpg 2x" class="avatar avatar-50 photo" height="50" width="50"></a>
+                                        </div>
+                                        <div class="media-body">
+                                            <div class="comment-content">
+                                                你
+                                            </div>
+                                            <h4 class="media-heading"><span class="comment-meta-data author"><a href="/Pages/AuthorManage/Author.aspx?id=50" rel="external nofollow" class="url">大牛</a></span><time class="comment-meta-data time" datetime="2016/7/29 18:35:04">25天前</time></h4>
+                                        </div>
+                                    </div>
+                                </li>
+                            
+                                <li class="comment byuser comment-author-100001 bypostauthor even thread-even depth-1 media is-post-author" id="comment-712">
+                                    <div id="comment-body-712" class="comment-body">
+                                        <div class="media-left">
+                                            <a href="/Pages/AuthorManage/Author.aspx?id=50" class="avatar-link" target="_blank">
+                                                <img alt="" src="/Upload/Portrait/1.jpg" srcset="/Upload/Portrait/1.jpg 2x" class="avatar avatar-50 photo" height="50" width="50"></a>
+                                        </div>
+                                        <div class="media-body">
+                                            <div class="comment-content">
+                                                漂亮
+                                            </div>
+                                            <h4 class="media-heading"><span class="comment-meta-data author"><a href="/Pages/AuthorManage/Author.aspx?id=50" rel="external nofollow" class="url">大牛</a></span><time class="comment-meta-data time" datetime="2016/8/9 14:55:16">15天前</time></h4>
+                                        </div>
+                                    </div>
+                                </li>
+                            
+                                <li class="comment byuser comment-author-100001 bypostauthor even thread-even depth-1 media is-post-author" id="comment-712">
+                                    <div id="comment-body-712" class="comment-body">
+                                        <div class="media-left">
+                                            <a href="/Pages/AuthorManage/Author.aspx?id=30" class="avatar-link" target="_blank">
+                                                <img alt="" src="/Upload/Portrait/csharp_avatar1_2016050708411695TZZAMT1I.jpg" srcset="/Upload/Portrait/csharp_avatar1_2016050708411695TZZAMT1I.jpg 2x" class="avatar avatar-50 photo" height="50" width="50"></a>
+                                        </div>
+                                        <div class="media-body">
+                                            <div class="comment-content">
+                                                可以的
+                                            </div>
+                                            <h4 class="media-heading"><span class="comment-meta-data author"><a href="/Pages/AuthorManage/Author.aspx?id=30" rel="external nofollow" class="url">心若在</a></span><time class="comment-meta-data time" datetime="2016/8/21 9:28:33">3天前</time></h4>
+                                        </div>
+                                    </div>
+                                </li>
+                            
+                                <li class="comment byuser comment-author-100001 bypostauthor even thread-even depth-1 media is-post-author" id="comment-712">
+                                    <div id="comment-body-712" class="comment-body">
+                                        <div class="media-left">
+                                            <a href="/Pages/AuthorManage/Author.aspx?id=44" class="avatar-link" target="_blank">
+                                                <img alt="" src="\Upload\Portrait\1472005405119212563.jpg" srcset="\Upload\Portrait\1472005405119212563.jpg 2x" class="avatar avatar-50 photo" height="50" width="50"></a>
+                                        </div>
+                                        <div class="media-body">
+                                            <div class="comment-content">
+                                                1
+                                            </div>
+                                            <h4 class="media-heading"><span class="comment-meta-data author"><a href="/Pages/AuthorManage/Author.aspx?id=44" rel="external nofollow" class="url">心若在</a></span><time class="comment-meta-data time" datetime="2016/8/24 14:50:07">5分钟前</time></h4>
+                                        </div>
+                                    </div>
+                                </li>
+                            
+
+                    </ul>
+
+                    <a href="#respond" class="btn btn-success btn-lg btn-block"><i class="fa fa-edit"></i>我要吐槽</a>
+                </div>
+                <!---->
+            </div>
+            <!--右边-->
+            <div id="sidebar-container" class="g-desktop-1-4">
+                <div id="sidebar" class="widget-area" role="complementary">
+                    <aside id="theme_widget_author-2">
+                        <div class="widget theme_widget_author">
+                            <div id="widget-author-card" class="widget-container content">
+                                <a href="/Pages/AuthorManage/Author.aspx?id=55" class="author-link" title="查看作者资料">
+                                    <img alt='' src="\Upload\Portrait\14708457921364161898.jpg" srcset='\Upload\Portrait\14708457921364161898.jpg 2x' class='avatar avatar-100 photo' height='100' width='100' /><h3 class="author-card-name">coser草办</h3>
+                                    <small class="label label-primary">认证作者</small></a><p class="author-card-description" title=""></p>
+                                <div class="author-card-meta-links">
+                                    <a class="tooltip" href="/Pages/AuthorManage/AuthorWorks.aspx?id=55" title="查看作者的文章" target="_blank"><span class="tx"><i class="fa fa-fw fa-file-text"></i></span><span class="count">7</span></a>
+                                    <a class="tooltip" href="/Pages/AuthorManage/AuthorComments.aspx?id=55" title="查看作者的评论" target="_blank"><span class="tx"><i class="fa fa-fw fa-comments"></i></span><span class="count">0</span></a>
+                                    <a class="tooltip" href="/Pages/HomeManage/Bomb.aspx" rel="nofollow" title="开始轰炸，BOOM！" target="_blank"><span class="tx"><i class="fa fa-fw fa-bomb"></i></span><span class="count">4</span></a>
+                                    <a target="_blank" class="tooltip" href="/Pages/HomeManage/Translate.aspx" title="发送私信"><span class="tx"><i class="fa fa-envelope"></i></span><span class="count">勾搭</span></a>
+                                </div>
+
+                                <a class="medal-container" target="_blank" href="/Pages/HomeManage/Medal.aspx">
+                                    
+                                </a>
+                            </div>
+                        </div>
+                    </aside>
+                    <aside id="widget_author_posts-2">
+                        <div class="widget widget_author_posts">
+                            <div class="heading ">
+                                <h2 class="widget-title"><a href="/Pages/AuthorManage/AuthorWorks.aspx?id=55" title="查看更多作者的文章。"><i class="fa fa-file-text"></i>作者文章</a></h2>
+                            </div>
+                            <div class="card-container">
+                                <div class="row widget-author-post-random">
+                                    <article class="g-phone-1-2 card xs">   <a class="card-bg" href="/Pages/ShowManage/View.aspx?nid=168&type=works" title="《红尘赋》" target="_blank">      <div class="thumbnail-container">          <img class="thumbnail" src="/Style/img/46201453_10.gif" data-src="\Upload\COS\14708842351211727301320x180.jpg" alt="《红尘赋》" width="320" height="180">      </div>      <h3 class="title">《红尘赋》</h3>   </a></article><article class="g-phone-1-2 card xs">   <a class="card-bg" href="/Pages/ShowManage/View.aspx?nid=167&type=works" title="寒锦难覆薄玉凉" target="_blank">      <div class="thumbnail-container">          <img class="thumbnail" src="/Style/img/46201453_10.gif" data-src="\Upload\COS\14708838541771501399320x180.jpg" alt="寒锦难覆薄玉凉" width="320" height="180">      </div>      <h3 class="title">寒锦难覆薄玉凉</h3>   </a></article><article class="g-phone-1-2 card xs">   <a class="card-bg" href="/Pages/ShowManage/View.aspx?nid=166&type=works" title="Being He" target="_blank">      <div class="thumbnail-container">          <img class="thumbnail" src="/Style/img/46201453_10.gif" data-src="\Upload\COS\14708837101879001199320x180.jpg" alt="Being He" width="320" height="180">      </div>      <h3 class="title">Being He</h3>   </a></article><article class="g-phone-1-2 card xs">   <a class="card-bg" href="/Pages/ShowManage/View.aspx?nid=165&type=works" title="那年初夏" target="_blank">      <div class="thumbnail-container">          <img class="thumbnail" src="/Style/img/46201453_10.gif" data-src="\Upload\COS\14708836421133968283320x180.jpg" alt="那年初夏" width="320" height="180">      </div>      <h3 class="title">那年初夏</h3>   </a></article><article class="g-phone-1-2 card xs">   <a class="card-bg" href="/Pages/ShowManage/View.aspx?nid=164&type=works" title="【试妆】银发少年" target="_blank">      <div class="thumbnail-container">          <img class="thumbnail" src="/Style/img/46201453_10.gif" data-src="\Upload\COS\147084567437573326320x180.jpg" alt="【试妆】银发少年" width="320" height="180">      </div>      <h3 class="title">【试妆】银发少年</h3>   </a></article><article class="g-phone-1-2 card xs">   <a class="card-bg" href="/Pages/ShowManage/View.aspx?nid=163&type=works" title="【试妆】利威尔兵长" target="_blank">      <div class="thumbnail-container">          <img class="thumbnail" src="/Style/img/46201453_10.gif" data-src="\Upload\COS\1470845463252534150320x180.jpg" alt="【试妆】利威尔兵长" width="320" height="180">      </div>      <h3 class="title">【试妆】利威尔兵长</h3>   </a></article><article class="g-phone-1-2 card xs">   <a class="card-bg" href="/Pages/ShowManage/View.aspx?nid=162&type=works" title="【预告】黑执事蓝猫花魁" target="_blank">      <div class="thumbnail-container">          <img class="thumbnail" src="/Style/img/46201453_10.gif" data-src="\Upload\COS\147084504224156432320x180.jpg" alt="【预告】黑执事蓝猫花魁" width="320" height="180">      </div>      <h3 class="title">【预告】黑执事蓝猫花魁</h3>   </a></article><article class="g-phone-1-2 card xs">   <a class="card-bg" href="/Pages/ShowManage/View.aspx?nid=161&type=works" title="【正片】不良JK" target="_blank">      <div class="thumbnail-container">          <img class="thumbnail" src="/Style/img/46201453_10.gif" data-src="\Upload\COS\14708445431135419726320x180.jpg" alt="【正片】不良JK" width="320" height="180">      </div>      <h3 class="title">【正片】不良JK</h3>   </a></article><article class="g-phone-1-2 card xs">   <a class="card-bg" href="/Pages/ShowManage/View.aspx?nid=160&type=works" title="【预告】文豪野犬 与谢野晶子" target="_blank">      <div class="thumbnail-container">          <img class="thumbnail" src="/Style/img/46201453_10.gif" data-src="\Upload\COS\14708438781205046485320x180.jpg" alt="【预告】文豪野犬 与谢野晶子" width="320" height="180">      </div>      <h3 class="title">【预告】文豪野犬 与谢野晶子</h3>   </a></article><article class="g-phone-1-2 card xs">   <a class="card-bg" href="/Pages/ShowManage/View.aspx?nid=159&type=works" title="【汉服预告】如鹤" target="_blank">      <div class="thumbnail-container">          <img class="thumbnail" src="/Style/img/46201453_10.gif" data-src="\Upload\COS\14708435412028006281320x180.jpg" alt="【汉服预告】如鹤" width="320" height="180">      </div>      <h3 class="title">【汉服预告】如鹤</h3>   </a></article><article class="g-phone-1-2 card xs">   <a class="card-bg" href="/Pages/ShowManage/View.aspx?nid=158&type=works" title="【脑洞剧场】炼狱的吸血鬼" target="_blank">      <div class="thumbnail-container">          <img class="thumbnail" src="/Style/img/46201453_10.gif" data-src="\Upload\COS\14708426411568599813320x180.jpg" alt="【脑洞剧场】炼狱的吸血鬼" width="320" height="180">      </div>      <h3 class="title">【脑洞剧场】炼狱的吸血鬼</h3>   </a></article><article class="g-phone-1-2 card xs">   <a class="card-bg" href="/Pages/ShowManage/View.aspx?nid=157&type=works" title="小说模块测试文章" target="_blank">      <div class="thumbnail-container">          <img class="thumbnail" src="/Style/img/46201453_10.gif" data-src="\Upload\COS\1470806630199021231320x180.jpg" alt="小说模块测试文章" width="320" height="180">      </div>      <h3 class="title">小说模块测试文章</h3>   </a></article>
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
+
+                    <aside id="widget_hot_tags-5">
+                        <div class="widget widget_hot_tags">
+                            <div class="heading ">
+                                <h2 class="widget-title">
+                                    <a title="查看标签索引" href="tags-index.htm" tppabs="http://www.91moe.com/tags-index">
+                                        <i class="fa fa-tags"></i>热门标签 &raquo;
+                                    </a>
+                                </h2>
+                            </div>
+                            <div class="widget-content">
+                                <a class="hot-tag" href="javascript:void(0);" style="font-size: 20pt; color: rgb(108,95,98);">精选</a>
+                                <a class="hot-tag" href="javascript:void(0);" style="font-size: 16.966292134831pt; color: rgb(73,189,199);">绘画</a>
+                                <a class="hot-tag" href="javascript:void(0);" style="font-size: 16.359550561798pt; color: rgb(176,155,113);">插画</a>
+                                <a class="hot-tag" href="javascript:void(0);" style="font-size: 13.073033707865pt; color: rgb(151,63,163);">萝莉</a>
+                                <a class="hot-tag" href="javascript:void(0);" style="font-size: 12.491573033708pt; color: rgb(71,54,181);">福利</a>
+                                <a class="hot-tag" href="javascript:void(0);" style="font-size: 12.466292134831pt; color: rgb(180,151,65);">教程</a>
+                                <a class="hot-tag" href="javascript:void(0);"  style="font-size: 12.365168539326pt; color: rgb(152,149,68);">教学</a>
+                                <a class="hot-tag" href="javascript:void(0);" style="font-size: 12.289325842697pt; color: rgb(56,129,123);">cosplay</a>
+                                <a class="hot-tag" href="javascript:void(0);" style="font-size: 11.758426966292pt; color: rgb(160,162,69);">gif</a>
+                                <a class="hot-tag" href="javascript:void(0);" style="font-size: 11.556179775281pt; color: rgb(186,126,198);">美图</a>
+                                <a class="hot-tag" href="javascript:void(0);" style="font-size: 11.455056179775pt; color: rgb(91,140,140);">绅士</a>
+                                <a class="hot-tag" href="javascript:void(0);" style="font-size: 11.35393258427pt; color: rgb(91,180,114);">恋爱</a>
+                                <a class="hot-tag" href="javascript:void(0);" style="font-size: 11.202247191011pt; color: rgb(152,187,187);">舰队Collection</a>
+                                <a class="hot-tag" href="javascript:void(0);" style="font-size: 11.202247191011pt; color: rgb(148,78,186);">游戏</a>
+                                <a class="hot-tag" href="javascript:void(0);" style="font-size: 11.176966292135pt; color: rgb(166,93,157);">校园</a>
+                                <a class="hot-tag" href="javascript:void(0);" style="font-size: 11.151685393258pt; color: rgb(94,182,110);">战斗</a>
+                                <a class="hot-tag" href="javascript:void(0);" style="font-size: 11.101123595506pt; color: rgb(56,94,99);">冒险</a>
+                                <a class="hot-tag" href="javascript:void(0);" style="font-size: 11.101123595506pt; color: rgb(82,103,176);">后宫</a>
+                                <a class="hot-tag" href="javascript:void(0);" style="font-size: 11.025280898876pt; color: rgb(173,183,192);">我的妹妹哪有这么可爱</a>
+                                <a class="hot-tag" href="javascript:void(0);" style="font-size: 11pt; color: rgb(70,158,124);">画师</a>
+                            </div>
+                        </div>
+                    </aside>
+                    <aside id="nav_menu-7">
+                        <div class="widget widget_nav_menu">
+                            <div class="heading ">
+                                <h2 class="widget-title">快捷导航</h2>
+                            </div>
+                            <div class="menu-container">
+                                <ul id="menu" class="menu">
+                                    <li id="menu-item-9166" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9166"><a href="javascript:void(0);">投稿须知</a></li>
+                                    <li id="menu-item-9167" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9167"><a href="javascript:void(0);">萌币使用说明</a></li>
+                                    <li id="menu-item-4990" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4990"><a href="javascript:void(0);">加入我们</a></li>
+                                    <li id="menu-item-4991" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4991"><a href="javascript:void(0);">赞助我们</a></li>
+                                    <li id="menu-item-4992" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4992"><a href="javascript:void(0);">关于我们</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+            <!---->
+        </div>
+    </div>
+
+
+        <!--广告图-->
+        
+        <!---->
+        <!--底部-->
+        <footer id="footer">
+            
+            <p class="footer-meta copyright">
+                © <a href="http://www.52cos.cn/">52cos平台</a> 2015。 互联网ICP备案：<a href="http://www.miitbeian.gov.cn/" rel="nofollow" title="工业和信息化部ICP/IP地址/域名信息备案管理系统">ICP证 浙B1.B2-20150475</a>
+                <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://"); document.write(unescape("%3Cspan id='cnzz_stat_icon_1256832143'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/stat.php%3Fid%3D1256832143%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+                <script src="/plugins/Allofthelights.js-master/jquery.allofthelights.js"></script>
+                <script>$(document).ready(function () { $(".ani-player-box").allofthelights(); });</script>
+                <a href="http://www.upyun.com" target="_blank">
+                    <img src="/Style/img/36270f20a1d40012753045a615c6e93a.png"></a>
+            </p>
+        </footer>
+        <a href="#" id="back-to-top" class="fa fa-arrow-up fa-2x" title="返回顶部"></a>
+        <script type='text/javascript' src='/Style/js/frontend-entry.js'></script>
+        <script>
+            $(document).ready(function () {
+                var lilist = document.querySelector("nav.menu-header>#menu-header").querySelectorAll("li");
+                var mh;
+                switch (window.menu_header) {
+                    case "cos":
+                        mh = "COS";
+                        break;
+                    case "daily":
+                        mh = "日常";
+                        break;
+                    case "painting":
+                        mh = "绘画";
+                        break;
+                    case "photography":
+                        mh = "轻小说";
+                        break;
+                    case "reprint":
+                        mh = "合作";
+                        break;
+                    case "activity":
+                        mh = "活动";
+                        break;
+                }
+                $.each(lilist, function (n, value) {
+                    if (value.innerHTML.indexOf(window.menu_header) > -1) {
+                        $(lilist[n]).addClass("current-menu-item");
+                        $(lilist[n]).parents('li').addClass("current-menu-item");
+                    }
+                });
+            });
+
+            //将form转为AJAX提交
+            function ajaxSubmit(frm, fn, errfn) {
+                var dataPara = getFormJson(frm);
+                $.ajax({
+                    url: frm.action,
+                    type: frm.method,
+                    data: dataPara,
+                    success: fn,
+                    error: errfn
+                });
+            }
+
+            //将form中的值转换为键值对。
+            function getFormJson(frm) {
+                var o = {};
+                var a = $(frm).serializeArray();
+                $.each(a, function () {
+                    if (o[this.name] !== undefined) {
+                        if (!o[this.name].push) {
+                            o[this.name] = [o[this.name]];
+                        }
+                        o[this.name].push(this.value || '');
+                    } else {
+                        o[this.name] = this.value || '';
+                    }
+                });
+
+                return o;
+            }
+
+            function searchToggle(obj, evt) {
+                var container = $(obj).closest('.search-wrapper');
+
+                if (!container.hasClass('active')) {
+                    container.addClass('active');
+                    evt.preventDefault();
+                }
+                else if (container.hasClass('active') && $(obj).closest('.input-holder').length == 0) {
+                    container.removeClass('active');
+                    // clear input
+                    container.find('.search-input').val('');
+                    // clear and hide result container when we press close
+                    container.find('.result-container').fadeOut(100, function () { $(this).empty(); });
+                }
+            }
+
+            function submitFn(obj, evt) {
+                value = $(obj).find('.search-input').val().trim();
+
+                _html = "Yup yup! Your search text sounds like this: ";
+                if (!value.length) {
+                    _html = "Yup yup! Add some text friend :D";
+                }
+                else {
+                    _html += "<b>" + value + "</b>";
+                }
+
+                $(obj).find('.result-container').html('<span>' + _html + '</span>');
+                $(obj).find('.result-container').fadeIn(100);
+
+                evt.preventDefault();
+            }
+        </script>
+        <!---->
+    </div>
+    
+    <script src="/plugins/sweetalert/sweetalert.min.js"></script>
+    <script src="/plugins/mo/js/mo.min.js"></script>
+    <script src="../../Style/js/view-like.js"></script>
+    <script src="../../plugins/layer/layer.js?v=2.3"></script>
+    <script>
+        $(document).ready(function () {
+            //发表评论
+            $('#commentform').bind('submit', function () {
+                var $logbut = $("button", this);
+                $logbut.attr("disabled", !0);
+                ajaxSubmit(this, function (res) {
+                    var msg = eval("("+res+")");
+                    if (msg.status == "success") {
+                        swal({
+                            title: "",
+                            text: '回复成功',
+                            timer: 3000,
+                            showConfirmButton: false
+                        });
+                        location.reload();
+                    } else {
+                        swal("小2提醒您", "回复失败", "error");
+                        $logbut.attr("disabled", !!0);
+                    }
+                }, function () {
+                    swal("小2提醒您", "系统繁忙，请稍后再试", "error");
+                    $logbut.attr("disabled", !!0);
+                });
+                return false;
+            });
+
+            //点赞
+            $(document).on("click", "#post-good-btn", function () {
+                var _userId = '56';
+                var _worksId = '162';
+                if (_userId == "") {
+                    swal("小2提醒您", "请登录后点赞！", "error");
+                    return false;
+                }
+                $.post("/Service/ShowManage/GoodClick.ashx", {UserId: _userId, WorksId: _worksId}, function (res) {
+                    if (res > 0) {
+                        layer.msg('节操+1，热心+1，成长值+1');
+                    } else {
+                        layer.msg('您已经赞过了呦！');
+                    }
+                }).error(function () { swal("小2提醒您", "系统繁忙，请稍后再试", "error"); });
+            });
+
+            //打赏
+            $(document).on("click", ".post-point-btn", function () {
+                var _userId = '56';
+                var _worksId = '162';
+                var _uid = '55';
+                var _money = $(this).attr("data-points");
+                console.info("_userId=" + _userId);
+                if (_userId == "") {
+                    swal("小2提醒您", "请登录后打赏！", "error");
+                    return false;
+                }
+                if (_userId == _uid) {
+                    swal("小2提醒您", "不能给自己打赏！", "error");
+                    return false;
+                }
+                $.post("/Service/ShowManage/RewardClick.ashx", { UserId: _userId, WorksId: _worksId, Money: _money, Uid: _uid }, function (res) {
+                    if (res > 0) {
+                        layer.msg('节操+1，热心+1，成长值+'+_money*10+'，CN币-'+_money+'');
+                    } else {
+                        layer.msg('您的CN币不足，请充值后再打赏！');
+                    }
+                }).error(function () { swal("小2提醒您", "系统繁忙，请稍后再试", "error"); });
+            });
+        });
+    </script>
+
+</body>
+</html>

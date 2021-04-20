@@ -1,0 +1,31 @@
+﻿@using Com.Cos.Admin.Models.ExchangeViewModels
+
+@{
+    ViewData["Title"] = "查看物流";
+}
+
+<label class="form-label col-xs-4 col-sm-3">物流单号：@ViewBag.Logistic</label>
+<table class="table table-border table-bordered table-bg">
+    <thead>
+        <tr>
+            <th scope="col" colspan="9">物流信息</th>
+        </tr>
+        <tr class="text-c">
+            <th width="40">ID</th>
+            <th width="150">时间</th>
+            <th width="90">描述</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (LogisticViewModel l in (List<LogisticViewModel>)ViewBag.LogisticList)
+    {
+        <tr class="text-c">
+            <td>@l.Id</td>
+            <td>@l.AcceptTime</td>
+            <td>@l.AcceptStation</td>
+        </tr>
+    }
+    
+    </tbody>
+</table>
+

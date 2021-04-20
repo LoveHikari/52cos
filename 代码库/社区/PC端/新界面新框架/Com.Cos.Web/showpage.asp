@@ -1,0 +1,1 @@
+document.write('<scr'+'ipt src="/showpage.asp?u=15377" charset="gb2312" type="text/Javascript"></scr'+'ipt>');

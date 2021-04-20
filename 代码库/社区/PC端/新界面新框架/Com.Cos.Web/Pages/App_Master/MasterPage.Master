@@ -1,0 +1,486 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="Com.Cos.Web.Pages.App_Master.MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta http-equiv="Cache-Control" content="no-transform"><![endif]-->
+    <meta name="renderer" content="webkit" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+    <link rel="profile" href="http://gmpg.org/xfn/11" />
+    <title>二次元社区 幻幻</title>
+    <meta name="keywords" content="cos,cosplay,二次元,二次元社区,52cos,52cos社区,动漫社区,动漫,52,ACG,ACGN,幻幻" />
+    <meta name="description" content="爱COS，爱精致，我爱精致，52COS" />
+    <link rel='stylesheet' href='/Style/font-awesome-4.6.3/css/font-awesome.min.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='/Style/css/frontend-default.css' type='text/css' media='all' />
+    <link rel='https://api.w.org/' href='/wp.json' />
+    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.xml?rsd" />
+    <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wlwmanifest.xml" />
+    <meta name="theme-color" content="#ff4081" />
+    <style id="custom-background-css">
+        body.custom-background {
+            background-color: #eeeeee;
+        }
+    </style>
+    <style type="text/css">
+        .caiji {
+            display: none;
+        }
+
+        .weeks {
+            width: 300px;
+            height: 333px;
+            position: relative;
+            left: -26px;
+            top: -27px;
+        }
+
+        .weekItem {
+            width: 266px;
+            height: 32px;
+            border-bottom: 2px solid #f60;
+            padding: 0;
+            margin: 0 0 0 5px;
+        }
+
+            .weekItem li {
+                float: left;
+                height: 32px;
+                width: 38px;
+                line-height: 32px;
+                text-align: center;
+                cursor: pointer;
+                overflow: hidden;
+            }
+
+                .weekItem li.on {
+                    background: #f60;
+                    color: #fff;
+                }
+
+                .weekItem li.hover {
+                    background: #f60;
+                    color: #fff;
+                }
+
+        .box01_c {
+            width: 293px;
+            height: 343px;
+            padding: 5px 0;
+            position: relative;
+            overflow: auto;
+        }
+
+            .box01_c dl {
+                padding: 0 5px 0 5px;
+                line-height: 26px;
+            }
+
+                .box01_c dl dt {
+                    color: #999;
+                }
+
+                .box01_c dl dd {
+                    height: 26px;
+                    overflow: hidden;
+                }
+
+                    .box01_c dl dd span {
+                        float: right;
+                        color: #999;
+                    }
+
+                        .box01_c dl dd span.today {
+                            color: #f60;
+                        }
+
+        dl {
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        dd, dt {
+            line-height: 1.42857143;
+        }
+
+        dt {
+            font-weight: 700;
+        }
+
+        dd {
+            margin-left: 0;
+        }
+
+        .ani-video-main {
+            height: 96%;
+        }
+
+        .ani-box {
+            height: 100%;
+        }
+
+        .ani-player {
+            height: 100%;
+        }
+
+        .ani-player-box {
+            height: 96%;
+        }
+
+        body.in-text-mode #main {
+            max-width: 1440px;
+        }
+
+        .content-reset embed {
+            margin-top: 0rem;
+        }
+
+        @media (max-width:1199px) {
+            .switch {
+                float: none;
+                margin: 0 0 15px;
+            }
+        }
+
+        .switch {
+            position: absolute;
+            display: inline-block;
+            width: 65px;
+            height: 25px;
+            background: url(/Style/img/switch.png) no-repeat 0 0;
+            cursor: pointer;
+            margin: 0;
+            right: 20px;
+        }
+    </style>
+    <link href="/Style/css/video.css" rel="stylesheet" media="screen" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="/Style/css/cs-select.css" />
+    <link rel="stylesheet" type="text/css" href="/Style/css/cs-skin-boxes.css" />
+    <link href="../../Style/css/frontend-logged-default.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="/plugins/SearchBox/css/search-form.css">
+
+    <script src="../../Style/js/jquery-1.12.3.min.js"></script>
+    <script type='text/javascript' src='/Style/js/jquery-migrate.min.js'></script>
+    <script src="/Style/js/jquery.form.js"></script>
+    <script src="/plugins/layer/layer.js"></script>
+    <script src="/plugins/sweetalert/sweetalert.min.js"></script>
+    <link href="/plugins/sweetalert/sweetalert.css" rel="stylesheet" />
+
+    <script src="/Style/js/player.js"></script>
+    <script src="/Style/js/mukio-prompt.js"></script>
+    <script src="/Style/js/mukio-sect.js"></script>
+    <script src="/Style/js/swfobject.js"></script>
+    -<script type="text/javascript" src="/Style/js/classie.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="home blog">
+    <div>
+
+        <!--导航-->
+        <div class="nav-main top">
+            <div class="g">
+                <form id="form1" runat="server">
+                    <a class="logo" href="/index.html" title="幻幻 - 社区福利站ノ(・ω・)ノ">
+                        <img src="/Style/img/logo-4.png" alt="二次元社区 幻幻" width="100" height="40">
+                        <h1 hidden>幻幻</h1>
+                        <span hidden>社区福利站ノ(・ω・)ノ</span>
+                    </a>
+                    <nav class="menu-header">
+                        <ul id="menu-header" class="menu">
+                            <li id="menu-item-14" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-14"><a href="/zplist-1.html"><i class="fa fa-picture-o"></i>&nbsp;作品图集</a><ul class="sub-menu">
+                                <li id="menu-item-20" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-20"><a href="/zplist-cos-1.html"><i class="fa fa-fw fa-paperclip"></i>&nbsp;COS图集</a></li>
+                                <li id="menu-item-21" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-21"><a href="/zplist-daily-1.html"><i class="fa fa-fw fa-paper-plane"></i>&nbsp;日常图集</a></li>
+                                <li id="menu-item-3390" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3390"><a href="/zplist-painting-1.html"><i class="fa fa-fw fa-dropbox"></i>&nbsp;绘画作品</a></li>
+                                <li id="menu-item-100" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-100"><a href="/zplist-photography-1.html"><i class="fa fa-map-o"></i>&nbsp;轻小说</a></li>
+                            </ul>
+                            </li>
+
+                            <li id="menu-item-38" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-38"><a href="/hzlist-1.html"><i class="fa fa-american-sign-language-interpreting"></i>&nbsp;合作</a><ul class="sub-menu">
+                                <li id="menu-item-40" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-40"><a href="#"><i class="fa fa-circle"></i>&nbsp;需</a></li>
+                                <li id="menu-item-2002" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2002"><a href="#"><i class="fa fa-circle-thin"></i>&nbsp;求</a></li>
+                            </ul>
+                            </li>
+
+                            <li id="menu-item-28" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-28"><a href="/hdlist-1.html"><i class="fa fa-fw fa-amazon"></i>&nbsp;活动</a><ul class="sub-menu">
+                            </ul>
+                            </li>
+
+                            <li id="menu-item-7907" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-7907"><a href="#"><i class="fa fa-fw fa-gamepad"></i>&nbsp;商城</a><ul class="sub-menu">
+                            </ul>
+                            </li>
+                            <li id="menu-item-7908" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-7907"><a href="/fxlist-1.html"><i class="fa fa-link"></i>&nbsp;兑换区</a><ul class="sub-menu">
+                            </ul>
+                            </li>
+                            <li id="menu-item-7909" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-7907"><a href="/czlist-1.html"><i class="fa fa-link"></i>&nbsp;出租区</a><ul class="sub-menu">
+                            </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="tools" id="userbar" runat="server">
+                        <asp:Repeater runat="server" ID="Repeater1">
+                            <HeaderTemplate>
+                                <div class='tool tool-me'>
+                                    <a href='/zl/zl-<%=this.MemberEntity.User_id %>.html'>
+                                        <!--用户主页地址-->
+                                        <img class='avatar' width='32' height='32' src='<%=this.MemberEntity.Portrait %>' alt='avatar'><!--头像-->
+                                        <i class='fa fa-angle-down'></i>
+                                    </a>
+                                    <div class='box'>
+                                        <!-- points -->
+                                        <div class='box-points'>
+                                            <a href='/zl/zl-<%=this.MemberEntity.User_id %>.html' alt='0/10000'>
+                                                <img src='/Style/img/integral.gif' alt='' width='16' height='16'>
+                                                Level <%=this.MemberEntity.Ugrade %>
+                                            </a>
+                                        </div>
+                                        <div class='box-points'>
+                                            <a href='/yh/history.html'>
+                                                <img src='/Style/img/integral.gif' alt='' width='16' height='16' title='{2} 节操 {3} 热心 {4} CN币 {6} 身家'>
+                                                <%=this.MemberEntity.integral %> 节操 <%=string.Format("{0:F2}",this.MemberEntity.Shenjia) %> 身家
+                                            </a>
+                                        </div>
+                                        <ul>
+                            </HeaderTemplate>
+                            <ItemTemplate>
+                                <li class=''>
+                                    <a href='<%#Eval("RefHref") %>'>
+                                        <i class='fa <%#Eval("RefClass") %> fa-fw'></i>
+                                        <%#Eval("RefTxt") %>
+                                    </a>
+                                </li>
+                            </ItemTemplate>
+                            <FooterTemplate>
+                                <li><a href='/prompts.html'><i class='fa fa-sign-out fa-fw'></i>登出</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                            </FooterTemplate>
+                        </asp:Repeater>
+                        <%if (Repeater1.Items.Count < 1) Response.Write("<a class=\"tool-login tool mx-account-btn\" href=\"/login.html\">登录 </a>"); %>
+                        <a href="javascript:;" class="tool search fa fa-search fa-2x" data-toggle-target="#fm-search" data-focus-target="#fm-search-s" data-icon-active="fa-arrow-down" data-icon-original="fa-search" title="搜索"></a>
+                    </div>
+                </form>
+                <form id="fm-search" data-focus-target="#fm-search-s" method="get" action="/Pages/ShowManage/SearchList.aspx">
+                    <input id="fm-search-s" name="s" class="form-control" placeholder="请输入搜索关键词" value="" type="search" required>
+                </form>
+                <%--<div class="menu-wrapper">
+                        <div class="search-wrapper">
+                            <div class="input-holder">
+                                <input type="text" class="search-input" placeholder="搜索从这里开始" />
+                                <button class="search-icon" onclick="searchToggle(this, event);"><span></span></button>
+                            </div>
+                            <span class="close" onclick="searchToggle(this, event);"></span>
+                            <div class="result-container">
+                            </div>
+                        </div>
+                    </div>--%>
+            </div>
+        </div>
+
+        <!---->
+        <div class="nav-main-placeholder"></div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+        <!--广告图-->
+        <%--<div class="g ad-container ad-above-footer">
+            <script charset="gb2312" src="/showpage.asp?u=15377"></script>
+            <a href="http://www.sslyapp.com" target="_blank">
+                <img src="http://danmu.gameker.net/ssly.jpg" widht="100%" height="100px" /></a>
+            <script src="/Style/js/91moe.js"></script>
+        </div>--%>
+        <!---->
+        <!--底部-->
+        <footer id="footer">
+            <%--<div class="g">
+                <div class="widget-area row">
+                    <div class="g-desktop-1-4">
+                        <aside id="nav_menu-8">
+                            <div class="widget widget_nav_menu">
+                                <div class="heading ">
+                                    <h2 class="widget-title">快捷导航</h2>
+                                </div>
+                                <div class="menu-%e5%bf%ab%e6%8d%b7-container">
+                                    <ul id="menu-%e5%bf%ab%e6%8d%b7" class="menu">
+                                        <li id="menu-item-9166" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9166"><a href="http://www.91moe.com/tougao">投稿须知</a></li>
+                                        <li id="menu-item-9167" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9167"><a href="http://www.91moe.com/91mb-get">萌币使用说明</a></li>
+                                        <li id="menu-item-4990" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4990"><a href="http://www.91moe.com/join-us">加入我们</a></li>
+                                        <li id="menu-item-4991" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4991"><a href="http://www.91moe.com/jz">赞助我们</a></li>
+                                        <li id="menu-item-4992" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4992"><a href="http://danmu.gameker.net">关于我们</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </aside>
+                    </div>
+                    <div class="g-desktop-1-4">
+                        <aside id="widget_hot_tags-2">
+                            <div class="widget widget_hot_tags">
+                                <div class="heading ">
+                                    <h2 class="widget-title"><a title="查看标签索引" href="http://www.91moe.com/tags-index"><i class="fa fa-tags"></i>热门标签 &raquo;</a></h2>
+                                </div>
+                                <div class="widget-content"><a class="hot-tag" href="http://www.91moe.com/moetag/%e7%b2%be%e9%80%89" style="font-size: 20pt; color: rgb(129,55,74);">精选</a><a class="hot-tag" href="http://www.91moe.com/moetag/%e7%bb%98%e7%94%bb" style="font-size: 16.923728813559pt; color: rgb(186,165,102);">绘画</a><a class="hot-tag" href="http://www.91moe.com/moetag/%e6%8f%92%e7%94%bb" style="font-size: 16.338983050847pt; color: rgb(108,107,140);">插画</a><a class="hot-tag" href="http://www.91moe.com/moetag/%e8%90%9d%e8%8e%89" style="font-size: 13.059322033898pt; color: rgb(119,154,122);">萝莉</a><a class="hot-tag" href="http://www.91moe.com/moetag/%e6%95%99%e7%a8%8b" style="font-size: 12.474576271186pt; color: rgb(82,100,164);">教程</a><a class="hot-tag" href="http://www.91moe.com/moetag/%e7%a6%8f%e5%88%a9" style="font-size: 12.449152542373pt; color: rgb(93,185,64);">福利</a><a class="hot-tag" href="http://www.91moe.com/moetag/%e6%95%99%e5%ad%a6" style="font-size: 12.372881355932pt; color: rgb(194,118,72);">教学</a><a class="hot-tag" href="http://www.91moe.com/moetag/cosplay" style="font-size: 12.296610169492pt; color: rgb(111,186,81);">cosplay</a><a class="hot-tag" href="http://www.91moe.com/moetag/gif" style="font-size: 11.762711864407pt; color: rgb(192,191,136);">gif</a><a class="hot-tag" href="http://www.91moe.com/moetag/%e7%be%8e%e5%9b%be" style="font-size: 11.559322033898pt; color: rgb(182,60,145);">美图</a><a class="hot-tag" href="http://www.91moe.com/moetag/%e7%bb%85%e5%a3%ab" style="font-size: 11.457627118644pt; color: rgb(142,189,113);">绅士</a><a class="hot-tag" href="http://www.91moe.com/moetag/%e6%81%8b%e7%88%b1" style="font-size: 11.35593220339pt; color: rgb(115,102,167);">恋爱</a><a class="hot-tag" href="http://www.91moe.com/moetag/%e8%88%b0%e9%98%9fcollection" style="font-size: 11.203389830508pt; color: rgb(99,100,84);">舰队Collection</a><a class="hot-tag" href="http://www.91moe.com/moetag/%e6%b8%b8%e6%88%8f" style="font-size: 11.203389830508pt; color: rgb(81,91,116);">游戏</a><a class="hot-tag" href="http://www.91moe.com/moetag/%e6%a0%a1%e5%9b%ad" style="font-size: 11.177966101695pt; color: rgb(153,57,132);">校园</a><a class="hot-tag" href="http://www.91moe.com/moetag/%e6%88%98%e6%96%97" style="font-size: 11.152542372881pt; color: rgb(138,111,94);">战斗</a><a class="hot-tag" href="http://www.91moe.com/moetag/%e5%86%92%e9%99%a9" style="font-size: 11.101694915254pt; color: rgb(194,87,182);">冒险</a><a class="hot-tag" href="http://www.91moe.com/moetag/%e5%90%8e%e5%ae%ab" style="font-size: 11.101694915254pt; color: rgb(91,128,157);">后宫</a><a class="hot-tag" href="http://www.91moe.com/moetag/%e6%88%91%e7%9a%84%e5%a6%b9%e5%a6%b9%e5%93%aa%e6%9c%89%e8%bf%99%e4%b9%88%e5%8f%af%e7%88%b1" style="font-size: 11.025423728814pt; color: rgb(52,177,114);">我的妹妹哪有这么可爱</a><a class="hot-tag" href="http://www.91moe.com/moetag/%e7%94%bb%e5%b8%88" style="font-size: 11pt; color: rgb(186,123,94);">画师</a></div>
+                            </div>
+                        </aside>
+                    </div>
+                    <div class="g-desktop-1-4">
+                        <aside id="text-2">
+                            <div class="widget widget_text">
+                                <div class="heading ">
+                                    <h2 class="widget-title">联系我们</h2>
+                                </div>
+                                <div class="textwidget">
+                                    <p>
+                                        声明：<br />
+                                        本网站提供的资源均系收集于各大视频网站，并不提供影片资源存储，也不参与录制、上传,若本站收录的节目无意侵犯了贵司版权，请给 freddy@91moe.com来信，我们会及时处理和回复，谢谢。
+                                    </p>
+                                    <p>【如果有商务合作,聊天,任何方式的合作,以及游戏联运,均可直接连接qq 201159389。期待您的到来】</p>
+                                </div>
+                            </div>
+                        </aside>
+                    </div>
+                    <div class="g-desktop-1-4">
+                        <aside id="text-3">
+                            <div class="widget widget_text">
+                                <div class="heading ">
+                                    <h2 class="widget-title">关于我们</h2>
+                                </div>
+                                <div class="textwidget">91moe成立于 2015双11，目标是建设最大的绅士福利站，并在为此努力的路上。我们分享来自全球的动漫资源，无门槛下载资源给你最佳的体验。我们的核心成员遍布全球，以分享优质资源为己任，为了更好的体验，我们一直在努力！</div>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+                <div class="widget panel links-container">
+                    <div class="heading">
+                        <h2 class="widget-title">
+                            <i class="fa fa-link"></i>友情链接 </h2>
+                    </div>
+                    <div class="content">
+                        <nav class="menu-222-container">
+                            <ul id="links-footer" class="menu">
+                                <li id="menu-item-560" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-560"><a href="http://www.gameker.net"><i class="fa fa-fw fa-gamepad"></i>&nbsp;Gameker爱玩客-游戏资讯站</a></li>
+                                <li id="menu-item-2003" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2003"><a href="http://www.fuli.moe">&nbsp;福利萌</a></li>
+                                <li id="menu-item-4407" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4407"><a href="http://hpoi.net">&nbsp;Hpoi手办维基</a></li>
+                                <li id="menu-item-8394" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8394"><a href="http://www.acgtouch.com">&nbsp;大角虫</a></li>
+                                <li id="menu-item-8800" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8800"><a href="http://www.idmzx.com">&nbsp;灵动漫</a></li>
+                                <li id="menu-item-9885" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9885"><a href="http://bbs.bdvideo.cn">&nbsp;BD动漫社</a></li>
+                                <li id="menu-item-9902" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9902"><a href="http://bbs.fxykx.com">&nbsp;繁星动漫</a></li>
+                                <li id="menu-item-11094" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11094"><a href="http://lifan.moe">&nbsp;里番萌</a></li>
+                                <li id="menu-item-11477" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11477"><a href="http://www.9game.cn/yulanzhanzheng/">&nbsp;蔚蓝战争</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>--%>
+            <p class="footer-meta copyright">
+                © <a href="http://www.52cos.cn/">幻幻</a> 2015。 互联网ICP备案：<a href="http://www.miitbeian.gov.cn/" rel="nofollow" title="工业和信息化部ICP/IP地址/域名信息备案管理系统">ICP证 浙B1.B2-20150475</a>
+                <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://"); document.write(unescape("%3Cspan id='cnzz_stat_icon_1256832143'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/stat.php%3Fid%3D1256832143%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+                <script src="/plugins/Allofthelights.js-master/jquery.allofthelights.js"></script>
+                <script>$(document).ready(function () { $(".ani-player-box").allofthelights(); });</script>
+                <a href="http://www.upyun.com" target="_blank">
+                    <img src="/Style/img/36270f20a1d40012753045a615c6e93a.png"></a>
+            </p>
+        </footer>
+        <a href="#" id="back-to-top" class="fa fa-arrow-up fa-2x" title="返回顶部"></a>
+        <script type='text/javascript' src='/Style/js/frontend-entry.js'></script>
+        <script>
+            $(document).ready(function () {
+                var lilist = document.querySelector("nav.menu-header>#menu-header").querySelectorAll("li");
+                var mh;
+                switch (window.menu_header) {
+                    case "cos":
+                        mh = "COS";
+                        break;
+                    case "daily":
+                        mh = "日常";
+                        break;
+                    case "painting":
+                        mh = "绘画";
+                        break;
+                    case "photography":
+                        mh = "轻小说";
+                        break;
+                    case "reprint":
+                        mh = "合作";
+                        break;
+                    case "activity":
+                        mh = "活动";
+                        break;
+                }
+                $.each(lilist, function (n, value) {
+                    if (value.innerHTML.indexOf(window.menu_header) > -1) {
+                        $(lilist[n]).addClass("current-menu-item");
+                        $(lilist[n]).parents('li').addClass("current-menu-item");
+                    }
+                });
+            });
+
+            //将form转为AJAX提交
+            function ajaxSubmit(frm, fn, errfn) {
+                var dataPara = getFormJson(frm);
+                $.ajax({
+                    url: frm.action,
+                    type: frm.method,
+                    data: dataPara,
+                    success: fn,
+                    error: errfn
+                });
+            }
+
+            //将form中的值转换为键值对。
+            function getFormJson(frm) {
+                var o = {};
+                var a = $(frm).serializeArray();
+                $.each(a, function () {
+                    if (o[this.name] !== undefined) {
+                        if (!o[this.name].push) {
+                            o[this.name] = [o[this.name]];
+                        }
+                        o[this.name].push(this.value || '');
+                    } else {
+                        o[this.name] = this.value || '';
+                    }
+                });
+
+                return o;
+            }
+
+            function searchToggle(obj, evt) {
+                var container = $(obj).closest('.search-wrapper');
+
+                if (!container.hasClass('active')) {
+                    container.addClass('active');
+                    evt.preventDefault();
+                }
+                else if (container.hasClass('active') && $(obj).closest('.input-holder').length == 0) {
+                    container.removeClass('active');
+                    // clear input
+                    container.find('.search-input').val('');
+                    // clear and hide result container when we press close
+                    container.find('.result-container').fadeOut(100, function () { $(this).empty(); });
+                }
+            }
+
+            function submitFn(obj, evt) {
+                value = $(obj).find('.search-input').val().trim();
+
+                _html = "Yup yup! Your search text sounds like this: ";
+                if (!value.length) {
+                    _html = "Yup yup! Add some text friend :D";
+                }
+                else {
+                    _html += "<b>" + value + "</b>";
+                }
+
+                $(obj).find('.result-container').html('<span>' + _html + '</span>');
+                $(obj).find('.result-container').fadeIn(100);
+
+                evt.preventDefault();
+            }
+        </script>
+        <!---->
+    </div>
+    <asp:ContentPlaceHolder runat="server" ID="javascript">
+    </asp:ContentPlaceHolder>
+</body>
+</html>

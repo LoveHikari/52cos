@@ -1,0 +1,333 @@
+﻿@using Com.Cos.Common
+@using Com.Cos.Models
+@using Com.Cos.Web.Models
+@model Com.Cos.Web.Models.LoginViewModel
+
+@{
+    ViewBag.Title = "首页";
+    Member member = ViewBag.Member;
+}
+@section Css
+{
+    
+}
+<div class="bibox clearfix">
+    <div class="centi clearfix">
+        <div class="toptext clearfix">
+            <div id="slideBox" class="slideBox">
+                <div class="hd">
+                    <ul>
+                        @foreach (Slide slide in ViewBag.Slides)
+                        {
+                            <li></li>
+                        }
+                    </ul>
+                </div>
+                <div class="bd">
+                    <ul>
+                        @foreach (Slide slide in ViewBag.Slides)
+                        {
+                            <li><a href="@slide.ImgHref"><img src="@(TWEBURL.WEB_URL_BANNER+slide.ImgUrl)" /></a></li>
+                        }
+                    </ul>
+                </div>
+                <script src="/Scripts/plugins/jquery.SuperSlide.2.1.1.js"></script>
+                <script type="text/javascript">jQuery(".slideBox").slide({ mainCell: ".bd ul", autoPlay: true });</script>
+            </div>
+            <div class="ritht">
+                <!--未登录-->
+                @if (!Request.IsAuthenticated)
+                {
+                    string verificationCode = RandomHelper.CreateVerificationText(4);
+                    TempData["VerificationCode"] = verificationCode.ToUpper();
+                    using (Html.BeginForm("Login", "Start",FormMethod.Post))
+                    {
+                        @Html.ValidationSummary(true)
+                        @Html.AntiForgeryToken()
+                        <div class="tup clearfix">
+                            <div class="spo userinfot">
+                                @Html.LabelFor(model => model.UserName)
+                                @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @placeholder = "手机号或邮箱" } })
+                                @Html.ValidationMessageFor(model => model.UserName)
+                            </div>
+                            <div class="spo userinfot nifirstas">
+                                @Html.LabelFor(model => model.Password, new { @style = "color: #fff;" })
+                                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @style = "border: solid 2px #fff;", @placeholder = "您的密码" } })
+                                @Html.ValidationMessageFor(model => model.Password)
+                                @Html.HiddenFor(model => model.VerificationCode, new { @Value = verificationCode })
+                            </div>
+                            <div class="spo">
+                                <div class="check">
+                                    <em><i></i><img src="~/Content/img/img1.png" style="display: inline;" /></em><font>自动登录</font>
+                                    <input type="hidden" id="RememberMe" name="RememberMe" />
+                                </div><a class="aaling">忘记密码？</a>
+                            </div>
+                            <div class="neincu clearfix">
+                                <button type="submit">登录</button>
+                                <div class="righttx">
+                                    <div class="tip clearfix">
+                                        <div class="toprr clearfix">
+                                            <span></span><font>使用QQ或微博</font>
+                                        </div>
+                                        <a style="margin-left: 50px;" href="@Url.Action("TencentLogin", "Start", new {Area = "", ReturnUrl=Request.UrlReferrer?.AbsoluteUri})"><img src="~/Content/img/qq.png" /></a><a style="margin-top: 5px;"><img src="~/Content/img/weibo.png" /></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <button id="butnbutton" onclick="javascript:window.location.href='@Url.Action("Register","Start",new{area=""})';return false;">立即注册</button>
+                        </div>
+                    }
+                }
+                else
+                {
+                    <div class="denglh">
+                        <div class="lilist">
+                            <ul>
+                                <li>
+                                    <div class="ee er" style="width: 150px;"><img src="~/Content/img/imgicon.jpg"/>
+                                    <a href="@Url.Action("BuyVip","Member",new{Area="Member"})"><span>会员充值</span></a>
+                                    </div>
+                                    <div class="ee "><img src="~/Content/img/wwwe.jpg"/>
+                                    <a href="@Url.Action("Recharge","Member",new{Area="Member"})"><span>身家充值</span></a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="er ee" style="width: 150px;"><img src="~/Content/img/imgsel.jpg"/>
+                                        <a href="@Url.Action("Publish","Exchange",new{Area="Exchange"})"><span>发布兑换</span></a>
+                                    </div>
+                                    <div class="ee "><img src="~/Content/img/erte.jpg"/>
+                                        <a href="@Url.Action("Publish","Cooperation",new{Area="Cooperation"})"><span>发布合作</span></a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="er ee" style="width: 150px;"><img src="~/Content/img/mign.jpg"/>
+                                        <a href="@Url.Action("Index","Member",new{Area="Member"})"><span>我的私信</span></a>
+                                    </div>
+                                    <div class="ee"><img src="~/Content/img/ttiy.jpg"/>
+                                        <a href="@Url.Action("History","Member",new{Area="Member"})"><span>积分历史</span></a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="er ee" style="width: 150px;"><img src="~/Content/img/imghs.jpg"/>
+                                        <a href="@Url.Action("Password","Member",new{Area="Member"})"><span>修改密码</span></a>
+                                    </div>
+                                    <div class="ee "><img src="~/Content/img/yyyi.jpg"/>
+                                        <a href="@Url.Action("Account","Member",new{Area="Member"})"><span>我的设置</span></a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="er ee" style="width: 150px;"><img src="~/Content/img/imgjs.jpg"/>
+                                        <a href="@Url.Action("Avatar","Member",new{Area="Member"})"><span>我的头像</span></a>
+                                    </div>
+                                    <div class="ee "><img src="~/Content/img/mima.jpg"/>
+                                        <a href="@Url.Action("Dashboard","Member",new{Area="Member"})"><span>用户中心</span></a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="er ee" style="width: 150px;"><img src="~/Content/img/imuj.jpg"/>
+                                        <a href="@Url.Action("Publish","Member",new{Area="Member"})"><span>我的发布</span></a>
+                                    </div>
+                                    <div class="ee "><img src="~/Content/img/imgo.jpg"/>
+                                        <a href="@Url.Action("Participate","Member",new{Area="Member"})"><span>我的参与</span></a>
+                                    </div>
+                                </li>
+                                <li style="border: none;">
+                                    <div class="er ee" style="width: 150px; height: 20px;"></div>
+                                    <div class="ee "><button onclick="return signOut();">退出</button>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="idont clearfix"><img src="@member.Portrait" /></div>
+                        <h4 class="hh4">@member.nickname</h4>
+                        <span class="ll">Level@(member.Ugrade)</span>
+                        <div class="vutt clearfix"><button>@member.Shenjia.GetValueOrDefault().ToString("0")</button><button style="float:right;">@member.integral</button></div>
+                        <div class="ebe clearfix"><span>身家值</span><span>节操</span></div>
+                        <p>当前会员兑换次数为@(member.RemainingConversions??0)次</p>
+                    </div>
+                }
+
+
+                <div class="butontet clearfix">
+                    <div class="lerts"><h3>幻幻平台APP</h3><h4>省钱兑换棒棒哒~</h4><span>iphone</span></div>
+                    <img src="~/Content/img/img_30.jpg" />
+                </div>
+            </div>
+        </div>
+        <div class="cinpin clearfix">
+            <div class="topd clearfix"><div class="lefts"><img src="~/Content/img/huahua.png" /><span>新品区</span></div><a href="@Url.Action("ExcList","Exchange",new{Area="Exchange"})">更多</a></div>
+            <div class="conens clearfix" id="centtwo">
+                <div class="leftse lefttwenty">
+                    @for (int i = 1; i < 3; i++)
+                    {
+                        ExchangeViewModel ex2 = ViewBag.Exchanges[i];
+                    <div class="clearfix">
+                        <a href="@Url.Action("Detail","Exchange",new{Area="Exchange",Id=ex2.Id})">
+                            <img src="@ex2.Cover" style="" /><h4 class="tit">@ex2.Title</h4>
+                            <div class="shuow"></div>
+                            <div class="cct3ext">
+                                <div class="imgh">
+                                    <img src="@ex2.Portrait" />
+                                </div><h6>@ex2.Nickname</h6>
+                                <h2>@ex2.Title</h2><h4>最终值：@ex2.Official</h4><h4>兑换状态：@ex2.Examine</h4>
+                            </div>
+                        </a>
+                    </div>
+                    }
+                </div>
+                <div class="cetnrs">
+                    @{
+                        ExchangeViewModel ex1 = ViewBag.Exchanges[0];
+                    <a href="@Url.Action("Detail","Exchange",new{Area="Exchange",Id=ex1.Id})">
+                        <img src="@ex1.Cover" /><h4 class="tit">@ex1.Title</h4>
+                        <div class="shuow"></div>
+                        <div class="cct3ext">
+                            <div class="imgh">
+                                <img src="@ex1.Portrait" />
+                            </div><h6>@ex1.Nickname</h6>
+                            <h2>@ex1.Title</h2><h4>最终值：@ex1.Official</h4><h4>兑换状态：@ex1.Examine</h4>
+                        </div>
+                    </a>
+                    }
+                </div>
+                <div class="leftse lefttwenty">
+                    @for (int i = 3; i < 5; i++)
+                    {
+                        ExchangeViewModel ex2 = ViewBag.Exchanges[i];
+                    <div class="clearfix">
+                        <a href="@Url.Action("Detail","Exchange",new{Area="Exchange",Id=ex2.Id})">
+                            <img src="@ex2.Cover" style="" />
+                            <h4 class="tit">@ex2.Title</h4>
+                            <div class="shuow"></div>
+                            <div class="cct3ext">
+                                <div class="imgh">
+                                    <img src="@ex2.Portrait" />
+                                </div><h6>@ex2.Nickname</h6>
+                                <h2>@ex2.Title</h2><h4>最终值：@ex2.Official</h4><h4>兑换状态：@ex2.Examine</h4>
+                            </div>
+                        </a>
+                    </div>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="cinpin clearfix">
+            <div class="topd clearfix" style="margin-top:0;"><div class="lefts"><img src="~/Content/img/huahua2.png" /><span>兑换区</span></div><a href="@Url.Action("ExcList","Exchange",new{Area="Exchange"})">更多</a></div>
+            <div class="conens clearfix">
+                <div class="tops clearfix"><a><img src="~/Content/img/img_56.jpg" class="img-style" /></a></div>
+                <ul class="yuhuanqu clearfix">
+                    @for (int i = 0; i < ViewBag.Exchanges2.Count; i++)
+                    {
+                        ExchangeViewModel ex = ViewBag.Exchanges2[i];
+                        <li @(i==0?"class=\"lili1\"":"")>
+                            <a href="@Url.Action("Detail","Exchange",new{Area="Exchange",Id=ex.Id})">
+                                @Html.Raw(i==0? "<span class=\"ppopp\"></span>":"")
+                                <img src="@ex.Cover" @(i > 0 ? "class=\"img-style\"" : "")/>
+                                <h3 class="hh"></h3>
+                                <div class="cct3ext">
+                                    <div class="imgh">
+                                        <img src="@ex.Portrait"/>
+                                    </div><h6>@ex.Nickname</h6>
+                                    <h2>@ex.Title</h2><h4>最终值：@ex.Official</h4><h4>兑换状态：@ex.Examine</h4>
+                                </div>
+                                <h3 class="liu"></h3>
+                                <p>@ex.Title</p>
+                            </a>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+        <div class="cinpin clearfix">
+            <div class="topd clearfix"><div class="lefts"><img src="~/Content/img/huahua3.png" /><span>合作区</span></div><a href="@Url.Action("CooList","Cooperation",new{area="Cooperation"})">更多</a></div>
+            <div class="conens clearfix">
+                @for (int i = 0; i < 2; i++)
+                {
+                    CooperationViewModel coo = ViewBag.Coos[i];
+                <div class="part1 @(i==1?"parts2":"")">
+                    <a href="@Url.Action("Detail", "Cooperation", new {Area = "Cooperation", Id = coo.Id})">
+                        <img src="@coo.Cover" class="img-style imgp" />
+                    </a>
+                    <div class="buttonss">
+                        <div class="icon">
+                            <img src="@coo.Portrait" />
+                        </div><span>@coo.Nickname</span><font>@coo.ReleaseTime.ToString("yyyy-MM-dd")</font>
+                    </div>
+                    <div class="etnns clearfix">
+                        <span>@coo.Title</span><font>@coo.Cont</font><i>@coo.Will</i>
+                    </div>
+                </div>
+                }
+                <div class="rigpaty">
+                    <ul class="clearfix">
+                        @for (int i = 2; i < ViewBag.Coos.Count; i++)
+                        {
+                            CooperationViewModel coo = ViewBag.Coos[i];
+                        <li>
+                            <a href="@Url.Action("Detail", "Cooperation", new {Area = "Cooperation", Id = coo.Id})">
+                                <img src="@coo.Cover" class="img-style row1" />
+                            </a>
+                            <div class="buttonss">
+                                <div class="icon">
+                                    <img src="@coo.Portrait" />
+                                </div><span>@coo.Nickname</span><font>@coo.ReleaseTime.ToString("yyyy-MM-dd")</font>
+                            </div>
+                            <div class="etnns clearfix">
+                                <span>@coo.Title</span>
+                            </div>
+                        </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    
+
+    <script>
+        $(document).ready(function () {
+            $("form[action$='Login']").submit(function () {
+                if ($('.check em').find('img').is(":visible")) {
+                    $("#RememberMe").val(true);
+                } else {
+                    $("#RememberMe").val(false);
+                }
+                //$.post($(this).attr("action"), $(this).serialize(), function (msg) {
+                //    //var msg = eval("(" + res + ")");
+                //    if (msg.status == "success") {
+                //        swalAlert.swalAlert("Good", msg.message, "3000", "success", false).then(function (result) {
+                //            window.location.reload();
+                //        });
+                //    } else {
+                //        swal("OMG",msg.message,"error");
+                //    }
+                //});
+
+                //return false;
+            });
+        });
+
+    </script>
+@if (ViewBag.Message == "success")
+{
+    <script>
+        $(document).ready(function () {
+        swalAlert.swalAlert("Good", "登录成功", "3000", "success", false).then(function (result) {
+            window.location.reload();
+            });
+        });
+    </script>
+}
+@if (ViewBag.Message == "error")
+{
+    <script>
+        $(document).ready(function () {
+            swal("OMG","错误请求","error");
+        });
+    </script>
+}
+
+}
+

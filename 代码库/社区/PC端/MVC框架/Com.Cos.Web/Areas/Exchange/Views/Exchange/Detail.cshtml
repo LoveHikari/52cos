@@ -1,0 +1,123 @@
+﻿@using Com.Cos.Common
+@using Com.Cos.Models
+
+
+
+@{
+    ViewBag.Title = "兑换详情页";
+    Exchange exchange = ViewBag.Exchange;
+    Member member = ViewBag.Member;
+
+}
+
+@section Css{
+    <link rel="stylesheet" href="~/Content/css/libs/exchange.css">
+}
+
+<div class="big">
+    <div class="content clearfix">
+        <div class="leftContent">
+            <div class="leftTop">
+                <h3>@exchange.Title<span>发布时间：@exchange.AddTime.ToString("yyyy-MM-dd")</span></h3>
+                <p>物品包括：<span>@exchange.Constitute</span></p>
+                <p>物品来源：<span>@exchange.Source</span></p>
+                <p>物品分类：<span>@exchange.ClassId</span></p>
+                <p>其他描述：<span>@exchange.Describe</span></p>
+                <p>原价：<span>@exchange.Price</span></p>
+                @*<p>购买凭证：<span></span></p>
+                    <div class="pingzheng">
+                        <img src="@exchange.Certificate">
+                    </div>*@
+            </div>
+            <div class="leftMiddle">
+                <h3>物品详情图</h3>
+                @{
+                    string[] imgs = exchange.ImgList.Split(',');
+                    foreach (string img in imgs)
+                    {
+                        <img src="@img" />
+                    }
+                }
+            </div>
+            <div class="leftBottom clearfix">
+                <input type="hidden" name="eid" value="@exchange.Id" />
+                <div class="pingfen clearfix">
+                    <span>状态：</span>
+                    <div class="progress" style="padding-right: 25px; margin: 25px 0 0 20px;">
+                        <ul class="clearfix">
+                            <li>审核中</li>
+                            <li>回收中</li>
+                            <li>可兑换</li>
+                            <li>已兑换</li>
+                            <li>已结束</li>
+                        </ul>
+                        <div class="gress">
+                            <span class="blueGress" style="width: @(365 / 5 * (exchange.Examine.ToInt32()))px">
+                                <i>
+                                    <img src="~/Content/img/icon.png" />
+                                </i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                @*<div class="pingfen clearfix">
+                        <span>公投值：</span>
+                        <div class="mark">
+                            <img src="~/Content/img/xinxin.png">
+                            <span>@exchange.Valuation1</span>
+                        </div>
+                        <div class="mark">
+                            <img src="~/Content/img/xinxin.png">
+                            <span>@exchange.Valuation2</span>
+                        </div>
+                        <div class="mark">
+                            <img src="~/Content/img/xinxin.png">
+                            <span>@exchange.Valuation3</span>
+                        </div>
+                    </div>*@
+                <div class="pingfen clearfix">
+                    <span>最终值：</span>
+                    <div class="mark">
+                        <img src="~/Content/img/xinxin.png">
+                        <span>@exchange.Official</span>
+                    </div>
+                </div>
+                <div class="butChange">
+                    <button type="submit" data-value="0">兑换</button>
+                    <button type="submit" data-value="1">租借</button>
+                </div>
+            </div>
+        </div>
+        <!--右侧 Start-->
+        @Html.Partial("_PartialRight", member)
+        <!--右侧 End-->
+
+    </div>
+</div>
+
+@section Scripts
+{
+    <script>
+        $(document).ready(function () {
+            $("button[type='submit']").click(function () {
+                var eid = $("input[name='eid']").val();
+                var type = $(this).attr("data-value");
+                $.post('@Url.Action("Detail", "Exchange", new {Area="Exchange",})', { Eid: eid }, function (msg) {
+                    if (msg.status == "success") {
+                        if (type == 0) {
+                            window.location.href = '@Url.Action("ConfirmOrder", "Exchange", new {Area="Exchange", id = exchange.Id,type=0 })';
+                        } else {
+                            window.location.href = '@Url.Action("ConfirmOrder", "Exchange", new {Area="Exchange", id = exchange.Id,type=1 })';
+                        }
+
+                    } else {
+                        swal('OMG', '该兑换不在兑换状态！', 'error');
+                    }
+                });
+
+                return false;
+            });
+        });
+    </script>
+
+}

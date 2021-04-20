@@ -1,0 +1,24 @@
+﻿@model Com.Cos.Web.Areas.Member.Models.PhoneViewModel
+
+<div class="bigh clearfix">
+    @Html.LabelFor(model => model.OldPhoneMob)
+    <div class="ttrt">
+        @Html.TextBoxFor(model => model.OldPhoneMob, new { @type = "number" })
+        <span id="getCode" style="cursor:pointer">获取验证码</span>
+    </div>
+</div>
+@Html.ValidationMessageFor(model => model.OldPhoneMob)
+<div class="bigh clearfix">
+    @Html.LabelFor(model => model.SMSCode)
+    <div class="ttrt">
+        @Html.TextBoxFor(model => model.SMSCode, new { @type = "number" })
+    </div>
+</div>
+@Html.ValidationMessageFor(model => model.SMSCode)
+<div class="bigh clearfix">
+    @Html.LabelFor(model => model.PhoneMob)
+    <div class="ttrt">
+        @Html.TextBoxFor(model => model.PhoneMob, new { @type = "number" })
+    </div>
+</div>
+@Html.ValidationMessageFor(model => model.PhoneMob)

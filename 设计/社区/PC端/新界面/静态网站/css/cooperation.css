@@ -1,0 +1,281 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.clearfix{
+	clear: both;
+	overflow: hidden;
+}
+.big{
+	font-family: 'Microsoft YaHei';
+	width: 100%;
+	height: 100%;
+	background: #fef5f5;
+}
+.content{
+	width: 1000px;
+	background: #fef5f5;
+	margin: 0 auto;
+}
+.leftContent{
+	width: 740px;
+	margin-top: 20px;
+	float: left;
+}
+.rightContent{
+	width: 240px;
+}
+.leftTop{
+	position: relative;
+	background: #fff;
+}
+.touxi img{
+	float: left;
+	margin: 3px 5px 0 5px;
+}
+.touxi span{
+	line-height: 56px;
+	color: #eb6877;
+	font-size: 18px;
+}
+.touxi font{
+	float: right;
+	color: #999999;
+	font-size: 14px;
+	line-height: 56px;
+}
+.userInfo{
+	border-bottom: 1px solid #fe98bc;
+}
+.userInfo .touxi{
+	border: 56px;
+	height: 56px;
+}
+.leftTop h3, .leftMiddle h3{
+	color: #ff4c7d;
+	font-size: 24px;
+	padding:10px 10px 8px 10px;
+	border-bottom: 1px solid #fe98bc;
+	font-weight: 100;
+}
+.leftTop h3 span{
+	float: right;
+	color: #999999;
+	font-size: 14px;
+    margin-top: 10px
+}
+.leftTop button{
+	position: absolute;
+	right: 5px;
+	bottom: 10px;
+	border: none;
+	outline: none;
+	background: #fe98bc;
+	border-radius: 4px;
+	padding: 7px 19px;
+	color: #fff;
+}
+.leftTop p{
+	font-size: 20px;
+	padding: 0 10px;
+	line-height: 35px;
+}
+.pingzheng{
+	padding: 0 10px 10px 10px;
+}
+.leftMiddle{
+	background: #fff;
+	margin: 20px 0;
+}
+.leftMiddle img{
+	margin:10px auto 20px auto;
+    display: block;
+}
+.leftBottom{
+	background: #fff;
+	margin-bottom: 40px;
+}
+.pingfen{
+	margin: 10px 0px;
+	padding: 0 10px;
+}
+.pingfen span{
+	float: left;
+	line-height: 49px;
+}
+.progress{
+	position: relative;
+	display: inline-block;
+}
+.gress{
+	background: url(../img/tiaoBack.jpg) center center no-repeat;
+	width: 430px;
+	height: 7px;
+}
+.progress ul{
+	position: absolute;
+	top: -25px;
+	left: -15px;
+}
+.progress ul li{
+	float: left;
+	list-style: none;
+	color: #5ddaf2;
+	font-size: 14px;
+	margin-right: 65px;
+}
+.progress ul li:nth-child(5){
+	margin-right: 0;
+}
+.blueGress{
+	position: relative;
+	background: url(../img/bluePX.png) repeat-x;
+	border-radius: 7px;
+	width: 325px;
+	height: 7px;
+}
+.blueGress i{
+	position: absolute;
+	right: -12px;
+	top: -17px;
+}
+
+.mark{
+	position: relative;
+	display: inline-block;
+}
+.mark span{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	color: #fff;
+	display: block;
+	width: 55px;
+	text-align: center;
+}
+.butChange{
+	border-top: 1px solid #fe98bc;
+}
+.butChange button{
+	display: block;
+	width: 220px;
+	height: 50px;
+	margin: 15px auto 15px auto;
+	background: url(../img/duihuanBtn.png) repeat-x;
+	border: none;
+	outline: none;
+	color: #fff;
+	font-size: 18px;
+	font-family: 'Microsoft YaHei';
+	letter-spacing: 4px;
+	border-radius: 6px;
+}
+.rightContent{
+	width: 240px;
+	float: right;
+	margin-top: 20px;
+}
+.user{
+	position: relative;
+	border-bottom: 1px solid #fe98bc;
+	padding: 10px 0;
+}
+.touxiang{
+	width: 36px;
+	height: 36px;
+	box-shadow: 0 0 8px #b8b7b7;
+	border-radius: 36px;
+	margin: 0 auto;
+}
+.touxiang img{
+	display: block;
+	width: 100%;
+}
+.user p{
+	text-align: center;
+	margin-top: 5px;
+}
+.user span{
+	position: absolute;
+	top: 2px;
+	right: 37px;
+	color: #fff;
+	background: #fe98bc;
+	padding: 3px 4px;
+	border-radius: 4px;
+	font-size: 12px;
+}
+.think{
+	display: inline-block;
+	float: left;
+	width: 24.4%;
+	border-right: 1px solid #fe98bc;
+	margin: 10px 0 15px 0;
+}
+.think:last-child{
+	border-right: none;
+}
+.think p{
+	text-align: center;
+	margin-top: 5px;
+	font-size: 14px;
+}
+.think img{
+	display: block;
+	margin: 0 auto;
+}
+.Navigation{
+	margin-top: 20px;
+	background: #fff;
+}
+.rightTop{
+	background: #fff;
+}
+.Navigation h3{
+	color: #ff4c7d;
+	font-size: 24px;
+	padding:10px 10px 8px 10px;
+	font-weight: 100;
+}
+.Navigation ul{
+	padding: 0 10px;
+	margin-bottom: 20px;
+}
+.Navigation ul li{
+	float: left;
+	width: 50%;
+	list-style: none;
+	color:#666;font-size:16px;line-height:30px;
+}
+@media (min-width:320px) and (max-width:360px){
+	.leftTop h3, .leftMiddle h3{font-size:18px;}
+	.leftTop h3 span{margin-top:10px;}
+	.leftContent,.content{width:100%;}
+	.leftMiddle img{width:100%;}
+	.gress{width:230px;}
+	.progress ul li{font-size:12px;margin-right:5%;}
+	.progress ul{width:230px;}
+	.blueGress{width:200px;}
+	.rightContent{margin-left:18%;float:left;margin-top:0;}
+}
+@media (min-width:361px) and (max-width:480px){
+	.leftTop h3, .leftMiddle h3{font-size:18px;}
+	.leftTop h3 span{margin-top:10px;}
+	.leftContent,.content{width:100%;}
+	.leftMiddle img{width:100%;}
+	.gress{width:230px;}
+	.progress ul li{font-size:12px;margin-right:5%;}
+	.progress ul{width:230px;}
+	.blueGress{width:200px;}
+	.rightContent{margin-left:18%;float:left;margin-top:0;}
+}
+@media (min-width:481px) and (max-width:600px){
+	.leftTop h3, .leftMiddle h3{font-size:18px;}
+	.leftTop h3 span{margin-top:10px;}
+	.leftContent,.content{width:100%;}
+	.leftMiddle img{width:100%;}
+	.rightContent{margin-left:18%;float:left;margin-top:0;}
+}
+
+
+

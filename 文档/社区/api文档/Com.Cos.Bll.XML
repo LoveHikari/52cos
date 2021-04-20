@@ -1,0 +1,329 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Com.Cos.Bll</name>
+    </assembly>
+    <members>
+        <member name="T:Com.Cos.Bll.ActivityBll">
+            <summary>
+            活动表摘要说明
+            </summary>
+        </member>
+        <member name="M:Com.Cos.Bll.ActivityBll.GetList(System.Int32,System.String,System.String)">
+            <summary>
+            获得前几行数据
+            </summary>
+            <param name="Top"></param>
+            <param name="strWhere">条件</param>
+            <param name="filedOrder">排序</param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.Cos.Bll.ActivityBll.Add(Com.Cos.Entity.ActivityEntity)">
+            <summary>
+            增加一条数据
+            </summary>
+        </member>
+        <member name="M:Com.Cos.Bll.ActivityBll.GetRecordCount(System.String)">
+            <summary>
+            获取记录总数
+            </summary>
+        </member>
+        <member name="M:Com.Cos.Bll.ActivityBll.GetModel(System.Int32)">
+            <summary>
+            得到一个对象实体
+            </summary>
+        </member>
+        <member name="M:Com.Cos.Bll.ActivityBll.GetList(System.String)">
+            <summary>
+            获得数据列表
+            </summary>
+        </member>
+        <member name="M:Com.Cos.Bll.ActivityBll.GetListByPage(System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            分页获取数据列表
+            </summary>
+        </member>
+        <member name="T:Com.Cos.Bll.CooperationBll">
+            <summary>
+            合作表摘要说明
+            </summary>
+        </member>
+        <member name="M:Com.Cos.Bll.CooperationBll.GetList(System.Int32,System.String,System.String)">
+            <summary>
+            获得前几行数据
+            </summary>
+            <param name="Top"></param>
+            <param name="strWhere">条件</param>
+            <param name="filedOrder">排序</param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.Cos.Bll.CooperationBll.Add(Com.Cos.Entity.CooperationEntity)">
+            <summary>
+            增加一条数据
+            </summary>
+        </member>
+        <member name="M:Com.Cos.Bll.CooperationBll.GetModel(System.Int32)">
+            <summary>
+            得到一个对象实体
+            </summary>
+        </member>
+        <member name="M:Com.Cos.Bll.CooperationBll.GetList(System.String)">
+            <summary>
+            获得数据列表
+            </summary>
+        </member>
+        <member name="M:Com.Cos.Bll.CooperationBll.GetRecordCount(System.String)">
+            <summary>
+            获取记录总数
+            </summary>
+        </member>
+        <member name="M:Com.Cos.Bll.CooperationBll.GetListByPage(System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            分页获取数据列表
+            </summary>
+        </member>
+        <member name="M:Com.Cos.Bll.ImgBll.Add(Com.Cos.Entity.ImgEntity)">
+            <summary>
+            增加一条数据
+            </summary>
+        </member>
+        <member name="T:Com.Cos.Bll.IntegralChangeBll">
+            <summary>
+            积分变更记录表
+            </summary>
+        </member>
+        <member name="M:Com.Cos.Bll.IntegralChangeBll.Add(Com.Cos.Entity.IntegralChangeEntity)">
+            <summary>
+            增加一条数据
+            </summary>
+        </member>
+        <member name="M:Com.Cos.Bll.IntegralChangeBll.GetList(System.Int32,System.String,System.String)">
+            <summary>
+            获得前几行数据
+            </summary>
+        </member>
+        <member name="M:Com.Cos.Bll.LoginIPBll.ExistsIp(System.String,System.DateTime)">
+            <summary>
+            是否存在该记录
+            </summary>
+        </member>
+        <member name="M:Com.Cos.Bll.LoginIPBll.Add(Com.Cos.Entity.LoginIPEntity)">
+            <summary>
+            增加一条数据
+            </summary>
+        </member>
+        <member name="M:Com.Cos.Bll.MedalBll.GetAllList">
+            <summary>
+            获得数据列表
+            </summary>
+        </member>
+        <member name="M:Com.Cos.Bll.MemberBll.GetModel(System.Int32)">
+            <summary>
+            得到一个对象实体
+            </summary>
+        </member>
+        <member name="M:Com.Cos.Bll.MemberBll.GetList(System.String)">
+            <summary>
+            获得数据列表
+            </summary>
+            <param name="strWhere">条件</param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.Cos.Bll.MemberBll.Add(Com.Cos.Entity.MemberEntity)">
+            <summary>
+            增加一条数据
+            </summary>
+        </member>
+        <member name="M:Com.Cos.Bll.MemberBll.Update(Com.Cos.Entity.MemberEntity)">
+            <summary>
+            更新一条数据
+            </summary>
+        </member>
+        <member name="M:Com.Cos.Bll.MemberBll.UpdateIntegral(System.String,System.String,System.String)">
+            <summary>
+            修改积分或热心或成长值或CN币
+            </summary>
+            <param name="userId"></param>
+            <param name="t">积分或热心或成长值或CN币对应的字段（integral、ardent、Growth、Cnbi）</param>
+            <param name="integral">要修改的数值</param>
+        </member>
+        <member name="M:Com.Cos.Bll.PersonMedalBll.GetList(System.String)">
+            <summary>
+            获得数据列表
+            </summary>
+        </member>
+        <member name="T:Com.Cos.Bll.RechargeRecordBll">
+            <summary>
+            充值记录表
+            </summary>
+        </member>
+        <member name="M:Com.Cos.Bll.RechargeRecordBll.Add(Com.Cos.Entity.RechargeRecordEntity)">
+            <summary>
+            增加一条数据
+            </summary>
+        </member>
+        <member name="M:Com.Cos.Bll.ReplyBll.Add(Com.Cos.Entity.ReplyEntity)">
+            <summary>
+            增加一条数据
+            </summary>
+        </member>
+        <member name="M:Com.Cos.Bll.ReplyBll.GetList(System.String)">
+            <summary>
+            获得数据列表
+            </summary>
+        </member>
+        <member name="M:Com.Cos.Bll.ReplyBll.GetList(System.Int32,System.String,System.String)">
+            <summary>
+            获得前几行数据
+            </summary>
+        </member>
+        <member name="M:Com.Cos.Bll.ReplyBll.UpdateStatus(System.String,System.String)">
+            <summary>
+            更新状态
+            </summary>
+            <param name="worksId">作品id</param>
+            <param name="status">状态码：1或0</param>
+            <returns></returns>
+        </member>
+        <member name="T:Com.Cos.Bll.RewardBll">
+            <summary>
+            打赏表
+            </summary>
+        </member>
+        <member name="M:Com.Cos.Bll.RewardBll.UpdateStatus(System.String,System.String)">
+            <summary>
+            更新状态
+            </summary>
+            <param name="worksId">作品id</param>
+            <param name="status">状态码：1或0</param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.Cos.Bll.RewardBll.Add(Com.Cos.Entity.RewardEntity)">
+            <summary>
+            增加一条数据
+            </summary>
+        </member>
+        <member name="M:Com.Cos.Bll.SmallImgBll.Add(Com.Cos.Entity.SmallImgEntity)">
+            <summary>
+            增加一条数据
+            </summary>
+        </member>
+        <member name="M:Com.Cos.Bll.SmallImgBll.GetModel(System.Int32)">
+            <summary>
+            得到一个对象实体
+            </summary>
+        </member>
+        <member name="T:Com.Cos.Bll.TransactionsBll">
+            <summary>
+            充值交易记录表
+            </summary>
+        </member>
+        <member name="M:Com.Cos.Bll.TransactionsBll.Add(Com.Cos.Entity.TransactionsEntity)">
+            <summary>
+            增加一条数据
+            </summary>
+        </member>
+        <member name="M:Com.Cos.Bll.UserGoodBll.ExistsByUserId(System.String,System.String)">
+            <summary>
+            是否存在该记录
+            </summary>
+            <param name="userId">会员id</param>
+            <param name="workId">作品id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.Cos.Bll.UserGoodBll.Add(Com.Cos.Entity.UserGoodEntity)">
+            <summary>
+            增加一条数据
+            </summary>
+        </member>
+        <member name="M:Com.Cos.Bll.WorkImgBll.Add(Com.Cos.Entity.WorkImgEntity)">
+            <summary>
+            增加一条数据
+            </summary>
+        </member>
+        <member name="M:Com.Cos.Bll.WorksBll.GetList(System.Int32,System.String,System.String)">
+            <summary>
+            获得前几行数据
+            </summary>
+        </member>
+        <member name="M:Com.Cos.Bll.WorksBll.Add(Com.Cos.Entity.WorksEntity)">
+            <summary>
+            增加一条数据
+            </summary>
+        </member>
+        <member name="M:Com.Cos.Bll.WorksBll.GetModel(System.Int32)">
+            <summary>
+            得到一个对象实体
+            </summary>
+        </member>
+        <member name="M:Com.Cos.Bll.WorksBll.GetList(System.String)">
+            <summary>
+            获得数据列表
+            </summary>
+        </member>
+        <member name="M:Com.Cos.Bll.WorksBll.GetList(System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            获得数据列表
+            </summary>
+        </member>
+        <member name="M:Com.Cos.Bll.WorksBll.GetRecordCount(System.String)">
+            <summary>
+            获取记录总数
+            </summary>
+        </member>
+        <member name="M:Com.Cos.Bll.WorksBll.GetListByPage(System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            分页获取数据列表
+            </summary>
+        </member>
+        <member name="M:Com.Cos.Bll.WorksBll.GetRandList(System.Int32,System.String,System.String)">
+            <summary>
+            随机获得作品
+            </summary>
+            <param name="Top"></param>
+            <param name="strWhere">条件</param>
+            <param name="filedOrder">排序</param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.Cos.Bll.WorksBll.UpdateStatus(System.String,System.String)">
+            <summary>
+            更新状态
+            </summary>
+            <param name="worksId">作品id</param>
+            <param name="status">状态码：1或0</param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.Cos.Bll.WorksBll.UpdateIntegral(System.String,System.String,System.String)">
+            <summary>
+            修改被赞数或打赏数
+            </summary>
+            <param name="workId"></param>
+            <param name="t">被赞数或打赏数对应的字段（GoodNo、reward）</param>
+            <param name="integral">要修改的数值</param>
+        </member>
+        <member name="M:Com.Cos.Bll.SysParaBll.GetAllSysPara">
+            <summary>
+            获得全部系统信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Com.Cos.Bll.SysParaBll.GetSysParaTable(System.Data.DataTable,System.String)">
+            <summary>
+            获得指定类型的表
+            </summary>
+            <param name="sysPara"></param>
+            <param name="refType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.Cos.Bll.SysParaBll.GetList(System.String)">
+            <summary>
+            获得数据列表
+            </summary>
+        </member>
+        <member name="M:Com.Cos.Bll.SysParaBll.GetModel(System.Int32)">
+            <summary>
+            得到一个对象实体
+            </summary>
+        </member>
+    </members>
+</doc>

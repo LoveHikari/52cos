@@ -1,0 +1,38 @@
+﻿@using Com.Cos.Common
+@using Com.Cos.Models
+@model Com.Cos.Web.Areas.Member.Models.PublishViewModel
+
+<div class="middleTop clearfix" style="padding-bottom:20px;">
+    <div class="title" style="border-bottom:none;padding-bottom:0;">
+        <span>我参与的</span>
+        <img src="~/Content/img/hongjian_1.jpg">
+        @Ajax.ActionLink("我参与的合作", "ParticipateCooperation", "Member","", new AjaxOptions { UpdateTargetId = "tb" }, new { @class = "aa" })
+    </div>
+    <div class="centbi">
+        @foreach (var exchange in ((List<Com.Cos.Models.Exchange>)Model.Model).AsQueryable())
+            {
+                Exchange ex = (Exchange)exchange;
+            <div class="lilik clearfix">
+                <img src="@ex.Cover">
+                <div class="rirt">
+                    <div class="tops clearfix">
+                        <span>@ex.Title</span><font>兑换</font>
+                    </div>
+                    <p class="pp clearfix">发布合作时间：@ex.AddTime.ToString("yyyy-MM-dd HH:mm:ss")</p>
+                    <div class="button clearfix">
+                        <span style="margin-left: 0">兑换状态：@ex.Examine</span>
+                        <p>物流单号：</p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<!--分页-->
+@Url.GetToPager(Ajax, Model.PageIndex, Model.PageSize, Model.TotalRecord, "ParticipateExchange", "Member")
+<!--分页-->
+
+<script>
+    $(function () { window.scrollTo(0, 0); });
+</script>

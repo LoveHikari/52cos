@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Pomelo.EntityFrameworkCore.Extensions.ToSql" Version="2.0.0-rtm-10002" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Com.Cos.Application.DTO\Com.Cos.Application.DTO.csproj" />
+    <ProjectReference Include="..\Com.Cos.Application.Interfaces\Com.Cos.Application.Interfaces.csproj" />
+    <ProjectReference Include="..\Com.Cos.Domain.Repository.Interfaces\Com.Cos.Domain.Repository.Interfaces.csproj" />
+    <ProjectReference Include="..\Com.Cos.Infrastructure\Com.Cos.Infrastructure.csproj" />
+    <ProjectReference Include="..\Com.Cos.Repository\Com.Cos.Repository.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="FsLib.Common">
+      <HintPath>..\Com.Cos.Infrastructure\dllImport\FsLib.Common.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

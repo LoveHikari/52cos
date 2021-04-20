@@ -1,0 +1,67 @@
+﻿@using Com.Cos.Common
+@using Com.Cos.Models
+@using Com.Cos.Web.Areas.Exchange.Models
+
+@{
+    ViewBag.Title = "兑换列表页";
+}
+
+@section Css
+{
+    
+}
+
+<div class="bibox clearfix">
+    <div class="cinpin clearfix">
+        <div class="conens clearfix">
+            <div class="tops clearfix"><a><img src="~/Content/img/hhsbane.jpg" class="img-style" /></a></div>
+
+            <div class="linkbc clearfix">
+                <div class="bic clearfix"><a href=@Url.Action("Index","Start",new {Area = ""})><span>首页</span></a><span>兑换区</span><span style="background:none;">目录浏览</span></div>
+                <div class="shenge clearfix">
+                    <h3>筛选</h3>
+                    <div class="lihkk clearfix">
+                        <label>兑换状态：</label>
+                        <a href="@Url.RouteUrl("Exchange_list", new { controller = "Exchange", action = "ExcList",examineUsName="all", classUsName = ViewBag.ClassUsName })"><span @(ViewBag.ExamineUsName=="all"||string.IsNullOrEmpty(ViewBag.ExamineUsName) ?"class=on":"")>全部</span></a>
+                        @foreach (ExchangeExamine examine in ViewBag.Examines)
+                        {
+                            <a href="@Url.RouteUrl("Exchange_list", new { controller = "Exchange", action = "ExcList", examineUsName = examine.ExamineUsName, classUsName = ViewBag.ClassUsName })"><span @(examine.ExamineUsName==ViewBag.ExamineUsName?"class=on":"")>@examine.ExamineName</span></a>
+                        }
+                    </div>
+                    <div class="lihkk clearfix">
+                        <label>分&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;类：</label>
+                        <a href="@Url.RouteUrl("Exchange_list", new { controller = "Exchange", action = "ExcList", examineUsName = ViewBag.ExamineUsName??"all",classUsName="all"  })"><span @(ViewBag.ClassUsName == "all"||string.IsNullOrEmpty(ViewBag.ClassUsName) ?"class=on":"")>全部</span></a>
+                        @foreach (ExchangeClass cl in ViewBag.Classes)
+                        {
+                            <a href="@Url.RouteUrl("Exchange_list", new { controller = "Exchange", action = "ExcList", examineUsName = ViewBag.ExamineUsName??"all", classUsName = cl.ClassUsName })"><span @(cl.ClassUsName == ViewBag.ClassUsName ? "class=on" : "")>@cl.ClassName</span></a>
+                        }
+                    </div>
+                </div>
+            </div>
+            <ul class="yuhuanqu yunhugtt clearfix">
+                @for (int i = 0; i < ViewBag.Exchanges.Count; i++)
+                {
+                    ExchangeViewModel exchange = ViewBag.Exchanges[i];
+                    <li @(i%4==0?"class=\"lili1\"":"")>
+                        <a href="@Url.Action("Detail","Exchange",new{Area="Exchange",Id=exchange.Id})">
+                            @(i % 4 == 0 ? Html.Raw("<span class=\"ppopp\"></span>") : Html.Raw(""))
+                            <img src="@exchange.Cover" style="width: 230px;height: 300px"/>
+                            <h3 class="hh"></h3>
+                            <div class="cct3ext">
+                                <div class="imgh">
+                                    <img src="@exchange.Portrait"/>
+                                </div><h6>@exchange.Nickname</h6>
+                                <h2>@exchange.Title</h2><h4>最终值：@exchange.Official</h4><h4>兑换状态：@exchange.Examine</h4>
+                            </div>
+                            <h3 class="liu lilis"></h3>
+                            <p>@exchange.Title</p>
+                        </a>
+                    </li>
+                }
+            </ul>
+        </div>
+        <!--分页-->
+        @Url.GetToPager((int)ViewBag.PageIndex, (int)ViewBag.PageSize, (int)ViewBag.TotalRecord, "Exchange_list", new { controller = "Exchange", action = "ExcList", examineUsName = ViewBag.ExamineUsName, classUsName = ViewBag.ClassUsName })
+        <!--分页-->
+    </div>
+</div>

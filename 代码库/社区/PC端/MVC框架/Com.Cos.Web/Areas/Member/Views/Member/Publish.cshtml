@@ -1,0 +1,26 @@
+﻿@using System.Activities.Expressions
+@using Com.Cos.Models
+@using Com.Cos.Web.Areas.Member.Models
+
+@{
+    ViewBag.Title = "我的发布";
+}
+@section Css{
+    <link href="~/Content/css/libs/ReleaseCps.css" rel="stylesheet" />
+}
+<div class="big">
+    <div class="content clearfix">
+        <!--左侧菜单 Start-->
+        @Html.Partial("_PartialLeftMenu")
+        <!--左侧菜单 End-->
+        <!--内容-->
+        <div class="middleContent" id="tb">
+            @Html.Partial("_PartialPublishExchange",new PublishViewModel{Model = (List<Exchange>)ViewBag.Exchanges ,PageIndex = (int)ViewBag.PageIndex, PageSize = (int)ViewBag.PageSize, TotalRecord = (int)ViewBag.TotalRecord })
+        </div>
+    </div>
+</div>
+
+@section Scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}

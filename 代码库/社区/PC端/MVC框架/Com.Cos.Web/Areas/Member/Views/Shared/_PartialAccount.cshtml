@@ -1,0 +1,80 @@
+﻿@using Com.Cos.Common
+@model Com.Cos.Web.Areas.Member.Models.AccountViewModel
+
+<div class="niutng clearfix" style="margin-top: 20px;">
+    @Html.LabelFor(model => model.Nickname)
+    <div class="rigt">
+        @Html.EditorFor(model => model.Nickname, new { @Value = Model.Nickname })
+        @Html.ValidationMessageFor(model => model.Nickname)
+    </div>
+</div>
+<div class="niutng clearfix">
+    @Html.LabelFor(model => model.Email)
+    <div class="rigt">
+        @Html.EditorFor(model => model.Email, new { @Value = Model.Email })
+        @Html.ValidationMessageFor(model => model.Email)
+    </div>
+</div>
+<div class="niutng clearfix">
+    @Html.LabelFor(model => model.RealName)
+    <div class="rigt">
+        @Html.EditorFor(model => model.RealName, new { @Value = Model.RealName })
+        @Html.ValidationMessageFor(model => model.RealName)
+    </div>
+</div>
+<div class="niutng clearfix">
+    @Html.LabelFor(model => model.Gender)
+    <div class="rigt chongzhi">
+        <ul>
+            <li><i></i><span style="margin-right: 5px" data-value="-1">无性动物</span></li>
+            <li><i></i><span style="margin-right: 5px" data-value="0">萝莉</span></li>
+            <li><i></i><span data-value="1">正太</span></li>
+        </ul>
+        @Html.HiddenFor(model => model.Gender, new { @Value = Model.Gender })
+        @Html.ValidationMessageFor(model => model.Gender)
+    </div>
+</div>
+<div class="niutng clearfix">
+    @Html.LabelFor(model => model.Birthday)
+    <div class="rigt">
+        @Html.EditorFor(model => model.Birthday, new {@Value = Model.Birthday})
+        @Html.ValidationMessageFor(model => model.Birthday)
+    </div>
+</div>
+<div class="niutng clearfix">
+    @Html.LabelFor(model => model.PhoneMob)
+    <div class="rigt">
+        @Html.TextBoxFor(model => model.PhoneMob, new { @Value = Model.PhoneMob.Replace("*",4,7), @Readonly = true })
+        <i class="ii">@Ajax.ActionLink("修改手机号","Phone","Member",new{Area="Member"},new AjaxOptions{UpdateTargetId = "di",HttpMethod = "get", InsertionMode = InsertionMode.Replace})</i>
+        @Html.ValidationMessageFor(model => model.PhoneMob)
+    </div>
+</div>
+<div class="niutng clearfix">
+    @Html.LabelFor(model => model.Describe)
+    <div class="rigt">
+        @Html.EditorFor(model => model.Describe, new { @Value = Model.Describe, htmlAttributes = new { @placeholder = "请编辑个性签名" } })
+        @Html.ValidationMessageFor(model => model.Describe)
+    </div>
+</div>
+<script src="~/Scripts/plugins/timeData/timeData.js" type="text/javascript" charset="utf-8"></script>
+<link href="~/Scripts/plugins/timeData/timeData.css" rel="stylesheet" />
+<script>
+    $(function () {
+        //选择性别
+        $('.chongzhi ul li').eq(@(Model.Gender.ToInt32(-1)+1)).addClass('on').siblings().removeClass('on');
+        $('.chongzhi ul li').click(function() {
+            $(this).addClass('on').siblings().removeClass('on');
+            var v = $("span", this).attr("data-value");
+            $("#Gender").val(v);
+        });
+
+        //生日选择
+        $("#Birthday").off("timeData").on("timeData",function(event){
+			if(timei==1) {
+			    //alert("回调函数");
+				timei=0;
+			}
+
+		}).dataYear();
+	})
+</script>

@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta http-equiv="Cache-Control" content="no-transform" /><![endif]-->
+    <meta name="renderer" content="webkit" /><meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" /><link rel="profile" href="http://gmpg.org/xfn/11" /><title>
+	52cos平台社区-精英封测
+</title><meta name="keywords" content="cos,cosplay,二次元,二次元社区,52cos,52cos社区,动漫社区,动漫,52,ACG,ACGN" /><meta name="description" content="爱COS，爱精致，我爱精致，52COS" /><link rel="stylesheet" href="Style/font-awesome-4.6.3/css/font-awesome.min.css" type="text/css" media="all" /><link rel="stylesheet" href="Style/css/frontend-default.css" type="text/css" media="all" /><link rel="https://api.w.org/" href="/wp.json" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.xml?rsd" /><link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wlwmanifest.xml" /><meta name="theme-color" content="#ff4081" />
+    <style id="custom-background-css">
+        body.custom-background {
+            background-color: #eeeeee;
+        }
+    </style>
+    <style type="text/css">
+        .caiji {
+            display: none;
+        }
+
+        .weeks {
+            width: 300px;
+            height: 333px;
+            position: relative;
+            left: -26px;
+            top: -27px;
+        }
+
+        .weekItem {
+            width: 266px;
+            height: 32px;
+            border-bottom: 2px solid #f60;
+            padding: 0;
+            margin: 0 0 0 5px;
+        }
+
+            .weekItem li {
+                float: left;
+                height: 32px;
+                width: 38px;
+                line-height: 32px;
+                text-align: center;
+                cursor: pointer;
+                overflow: hidden;
+            }
+
+                .weekItem li.on {
+                    background: #f60;
+                    color: #fff;
+                }
+
+                .weekItem li.hover {
+                    background: #f60;
+                    color: #fff;
+                }
+
+        .box01_c {
+            width: 293px;
+            height: 343px;
+            padding: 5px 0;
+            position: relative;
+            overflow: auto;
+        }
+
+            .box01_c dl {
+                padding: 0 5px 0 5px;
+                line-height: 26px;
+            }
+
+                .box01_c dl dt {
+                    color: #999;
+                }
+
+                .box01_c dl dd {
+                    height: 26px;
+                    overflow: hidden;
+                }
+
+                    .box01_c dl dd span {
+                        float: right;
+                        color: #999;
+                    }
+
+                        .box01_c dl dd span.today {
+                            color: #f60;
+                        }
+
+        dl {
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        dd, dt {
+            line-height: 1.42857143;
+        }
+
+        dt {
+            font-weight: 700;
+        }
+
+        dd {
+            margin-left: 0;
+        }
+
+        .ani-video-main {
+            height: 96%;
+        }
+
+        .ani-box {
+            height: 100%;
+        }
+
+        .ani-player {
+            height: 100%;
+        }
+
+        .ani-player-box {
+            height: 96%;
+        }
+
+        body.in-text-mode #main {
+            max-width: 1440px;
+        }
+
+        .content-reset embed {
+            margin-top: 0rem;
+        }
+
+        @media (max-width:1199px) {
+            .switch {
+                float: none;
+                margin: 0 0 15px;
+            }
+        }
+
+        .switch {
+            position: absolute;
+            display: inline-block;
+            width: 65px;
+            height: 25px;
+            background: url(/Style/img/switch.png) no-repeat 0 0;
+            cursor: pointer;
+            margin: 0;
+            right: 20px;
+        }
+    </style>
+    <link href="Style/css/video.css" rel="stylesheet" media="screen" type="text/css" /><link rel="stylesheet" type="text/css" href="Style/css/cs-select.css" /><link rel="stylesheet" type="text/css" href="Style/css/cs-skin-boxes.css" /><link href="Style/css/frontend-logged-default.css" rel="stylesheet" /><link rel="stylesheet" type="text/css" href="/plugins/SearchBox/css/search-form.css" />
+
+    <script src="../../Style/js/jquery-1.12.3.min.js"></script>
+    <script type='text/javascript' src='Style/js/jquery-migrate.min.js'></script>
+    <script src="Style/js/player.js"></script>
+    <script src="Style/js/mukio-prompt.js"></script>
+    <script src="Style/js/mukio-sect.js"></script>
+    <script src="Style/js/swfobject.js"></script>
+    -<script type="text/javascript" src="Style/js/classie.js"></script>
+    
+    <script src="/plugins/sweetalert/sweetalert.min.js"></script>
+    <link href="/plugins/sweetalert/sweetalert.css" rel="stylesheet" />
+    <!-- 引入ystep样式 -->
+    <link rel="stylesheet" href="/plugins/ystep/css/ystep.css">
+    <!-- 引入ystep插件 -->
+    <script src="/plugins/ystep/js/ystep.js"></script>
+</head>
+<body class="home blog">
+    <div>
+
+        <!--导航-->
+        <div class="nav-main top">
+            <div class="g">
+                <form method="post" action="./shareview-14.html?nid=14" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="0wxTcBQ5ycT4WWu80JFzdzV35DKQNTv0c01+o3NPHTTqn3nETn3Z6E/MGSWJuI3+fXGi7I7twUF+wGxMkLX7vV6lEcjvr7b4AdJd9HO3Fm0iK3g4wHdU7T9Hc417XbfTkW/mFfzwO+HHMgAr6H2xcyNqTnd/YYk9rYbKajdOtBj+PzR6Vww4eRnKB/CEPxo0GhI61CVCd2ziVbJYAfqSkleDgFg4ZkTVHXltH16ILDYjL1ftoAmUz4xs99mvVF1WygIn6WggksXupdV5+AjecT5FsLLYI9DW63jtXBEUL8zq/GsgU3M3FGram03VisT95gcrA0FIsvtenJbxjqQgzta0+m6XOG4IDXjUBaYoyKZ6GBKOZ3rxtp4Ov/e4CldoVCMHU9/J5rYx25gpw0N7ejpO9iITzGvr2rZUlwtASdLi3KTkQklZd+6veXnQUHlp+BA7BnDzNqfsSh9g/RIZZDkPn1vO9elkf7RuxpEEDuMXHmwEZyoH1X3jY/b8CmDP93qrdpbhGAy+DnwYx2IC34eZjrDzYkrIC7u4f501ydHtuZAu6N1P3TmT43hBdVuCtXoVH4awF3Pu33PgQmds2yLLi9O1fmYjmSqj1w6v4gUtFLEyJgpdY6ISQnmMehdF3soPiPb/XUYMzANEDhvZmg==" />
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="C5E67038" />
+</div>
+                    <a class="logo" href="/index.html" title="52COS平台 - 社区福利站ノ(・ω・)ノ">
+                        <img src="Style/img/logo.png" alt="52COS社区网" width="100" height="40">
+                        <h1 hidden>52COS平台</h1>
+                        <span hidden>社区福利站ノ(・ω・)ノ</span>
+                    </a>
+                    <nav class="menu-header">
+                        <ul id="menu-header" class="menu">
+                            <li id="menu-item-14" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-14"><a href="/zplist-1.html"><i class="fa fa-picture-o"></i>&nbsp;作品图集</a><ul class="sub-menu">
+                                <li id="menu-item-20" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-20"><a href="/zplist-cos-1.html"><i class="fa fa-fw fa-paperclip"></i>&nbsp;COS图集</a></li>
+                                <li id="menu-item-21" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-21"><a href="/zplist-daily-1.html"><i class="fa fa-fw fa-paper-plane"></i>&nbsp;日常图集</a></li>
+                                <li id="menu-item-3390" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3390"><a href="/zplist-painting-1.html"><i class="fa fa-fw fa-dropbox"></i>&nbsp;绘画作品</a></li>
+                                <li id="menu-item-100" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-100"><a href="/zplist-photography-1.html"><i class="fa fa-map-o"></i>&nbsp;轻小说</a></li>
+                            </ul>
+                            </li>
+
+                            <li id="menu-item-38" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-38"><a href="/hzlist-1.html"><i class="fa fa-american-sign-language-interpreting"></i>&nbsp;合作</a><ul class="sub-menu">
+                                <li id="menu-item-40" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-40"><a href="#"><i class="fa fa-circle"></i>&nbsp;需</a></li>
+                                <li id="menu-item-2002" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2002"><a href="#"><i class="fa fa-circle-thin"></i>&nbsp;求</a></li>
+                            </ul>
+                            </li>
+
+                            <li id="menu-item-28" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-28"><a href="/hdlist-1.html"><i class="fa fa-fw fa-amazon"></i>&nbsp;活动</a><ul class="sub-menu">
+                            </ul>
+                            </li>
+
+                            <li id="menu-item-7907" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-7907"><a href="#"><i class="fa fa-fw fa-gamepad"></i>&nbsp;商城</a><ul class="sub-menu">
+                            </ul>
+                            </li>
+                            <li id="menu-item-7908" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-7907"><a href="/fxlist-1.html"><i class="fa fa-link"></i>&nbsp;兑换区</a><ul class="sub-menu">
+                            </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div id="userbar" class="tools">
+                        <a class="tool-login tool mx-account-btn" href="/login.html">登录 </a>
+                        <a href="javascript:;" class="tool search fa fa-search fa-2x" data-toggle-target="#fm-search" data-focus-target="#fm-search-s" data-icon-active="fa-arrow-down" data-icon-original="fa-search" title="搜索"></a>
+                    </div>
+                </form>
+                <form id="fm-search" data-focus-target="#fm-search-s" method="get" action="/Pages/ShowManage/SearchList.aspx">
+                    <input id="fm-search-s" name="s" class="form-control" placeholder="请输入搜索关键词" value="" type="search" required>
+                </form>
+                
+            </div>
+        </div>
+
+        <!---->
+        <div class="nav-main-placeholder"></div>
+        
+    <div class="g">
+        <div class="row">
+            <div id="main" class="main g-desktop-3-4">
+                <!--左边正文部分-->
+                <article id="post-86" class=" singular-post panel post-86 post type-post status-publish format-standard has-post-thumbnail hentry category-acgtuji category-hjhc tag-18 tag-19 tag-21 tag-20">
+                    <h2 class="entry-title">长安幻夜-万安公主-蓝色宫装</h2>
+                    <header class="entry-header">
+                        <span class="entry-meta post-category" title="分类">
+                            <i class="fa fa-folder-open"></i>
+                            <a href="/fxlist-1.html" rel="category tag">分享</a>
+                        </span>
+                        <time class="entry-meta post-time" datetime="2016-08-24 10:03:30" title="2016年08月24日">
+                            <i class="fa fa-clock-o"></i>3小时前
+                        </time>
+                        <a class="entry-meta post-author" href="/zl/gj-30.html" title="查看心若在目录下的所有文章">
+                            <i class="fa fa-user"></i>
+                        </a>
+                    </header>
+                    <div class="entry-body">
+                        <div class="entry-content content-reset">
+                            物品名称：<span>长安幻夜-万安公主-蓝色宫装</span><br />
+                            物品包括：<span>上衣，长裙，抹胸，腰封</span><br />
+                            物品来自：<span>裁缝定制款</span><br />
+                            其他描述：<span>衣服是找裁缝定制的，S码，穿过一次后就放在那了，9成新、无损坏</span><br />
+                            原价：<span>500</span>
+                        </div>
+                        <div class="entry-content content-reset">
+                            <img src='/Upload/COS/14720040421976614893.jpg' alt=''>
+                        </div>
+                        <div class="entry-content content-reset">
+                            <img src='/Upload/COS/1472004027203388103.jpg' alt=''><img src='/Upload/COS/14720040611387058776.jpg' alt=''><img src='/Upload/COS/14720040631148251673.jpg' alt=''><img src='/Upload/COS/1472004064602685208.jpg' alt=''><img src='/Upload/COS/1472004066476274780.jpg' alt=''><img src='/Upload/COS/1472004068462261027.jpg' alt=''>
+                        </div>
+                        <footer class="entry-footer">
+                            <div class="entry-tags">
+                                <a href="javascript:void(0);" rel="tag">进行中</a>
+                                <div class="ystep1"></div>
+                            </div>
+                        </footer>
+                        <footer class="entry-footer">
+                            <div style="display: inline">公投值：</div>
+                            <div class="">
+                                <div class="button">
+                                    <a href="javascript:void(0);" name="vote" data-val="1" rel="tag">￥460<span style="font-size: 12px; margin-left: 14px;">1</span></a>
+                                </div>
+                                <div class="button">
+                                    <a href="javascript:void(0);" name="vote" data-val="1" rel="tag">￥480<span style="font-size: 12px; margin-left: 14px;">0</span></a>
+                                </div>
+                                <div class="button">
+                                    <a href="javascript:void(0);" name="vote" data-val="1" rel="tag">￥480<span style="font-size: 12px; margin-left: 14px;">0</span></a>
+                                </div>
+                                <style>
+                                    .button {
+                                        width: 80px;
+                                        height: 60px;
+                                        background-image: url(/Style/img/button.png);
+                                        background-repeat: no-repeat;
+                                        display: inline-block;
+                                    }
+
+                                        .button a {
+                                            float: left;
+                                            font-size: 16px;
+                                            font-family: "微软雅黑";
+                                            line-height: 15px;
+                                            margin-left: 10px;
+                                            margin-top: 6px;
+                                        }
+
+                                        .button:hover {
+                                            background-image: url(/Style/img/button-2.png);
+                                            background-repeat: no-repeat;
+                                        }
+
+                                        .button a:hover {
+                                            color: #FFF;
+                                        }
+
+                                        .button span {
+                                            display: block;
+                                        }
+                                </style>
+                            </div>
+                        </footer>
+                        <footer class="entry-footer" style="display: none">
+                            <div style="display: inline">最终值：</div>
+                            <div class="">
+                                <div class="button">
+                                    <a href="javascript:void(0);" name="official" data-val="1" rel="tag">￥</a>
+                                </div>
+                                <div>
+                                    <a href="javascript:void(0);" onclick="SignUp('30', '14')" rel="tag">兑换</a>
+                                </div>
+                            </div>
+                        </footer>
+                    </div>
+                </article>
+
+            </div>
+            <!--右边-->
+            <div id="sidebar-container" class="g-desktop-1-4">
+                <div id="sidebar" class="widget-area" role="complementary">
+                    
+        <aside id="theme_widget_author-2">
+            <div class="widget theme_widget_author">
+                <div id="widget-author-card" class="widget-container content">
+                    <a href="/Pages/AuthorManage/Author.aspx?id=30" class="author-link" title="查看作者资料">
+                        <img alt='' src="/Upload/Portrait/csharp_avatar1_2016050708411695TZZAMT1I.jpg" srcset='/Upload/Portrait/csharp_avatar1_2016050708411695TZZAMT1I.jpg 2x' class='avatar avatar-100 photo' height='100' width='100' /><h3 class="author-card-name">心若在</h3>
+                        <small class="label label-primary">认证作者</small></a><p class="author-card-description" title=""></p>
+                    <div class="author-card-meta-links">
+                        <a class="tooltip" href="/Pages/AuthorManage/AuthorWorks.aspx?id=30" title="查看作者的文章" target="_blank"><span class="tx"><i class="fa fa-fw fa-file-text"></i></span><span class="count">87</span></a>
+                        <a class="tooltip" href="/Pages/AuthorManage/AuthorComments.aspx?id=30" title="查看作者的评论" target="_blank"><span class="tx"><i class="fa fa-fw fa-comments"></i></span><span class="count">6</span></a>
+                        <a class="tooltip" href="/Pages/HomeManage/Bomb.aspx" rel="nofollow" title="开始轰炸，BOOM！" target="_blank"><span class="tx"><i class="fa fa-fw fa-bomb"></i></span><span class="count">101</span></a>
+                        <a target="_blank" class="tooltip" href="/Pages/HomeManage/Translate.aspx" title="发送私信"><span class="tx"><i class="fa fa-envelope"></i></span><span class="count">勾搭</span></a>
+                    </div>
+
+                    <a class="medal-container" target="_blank" href="/Pages/HomeManage/Medal.aspx">
+                        
+                    </a>
+                </div>
+            </div>
+        </aside>
+                    
+    <aside id="widget_hot_tags-5">
+        <div class="widget widget_hot_tags">
+            <div class="heading ">
+                <h2 class="widget-title">
+                    <a title="查看标签索引" href="tags-index.htm" tppabs="http://www.91moe.com/tags-index">
+                        <i class="fa fa-tags"></i>热门标签 &raquo;
+                    </a>
+                </h2>
+            </div>
+            <div class="widget-content">
+                <a class="hot-tag" href="javascript:void(0);" style="font-size: 20pt; color: rgb(108,95,98);">精选</a>
+                <a class="hot-tag" href="javascript:void(0);" style="font-size: 16.966292134831pt; color: rgb(73,189,199);">绘画</a>
+                <a class="hot-tag" href="javascript:void(0);" style="font-size: 16.359550561798pt; color: rgb(176,155,113);">插画</a>
+                <a class="hot-tag" href="javascript:void(0);" style="font-size: 13.073033707865pt; color: rgb(151,63,163);">萝莉</a>
+                <a class="hot-tag" href="javascript:void(0);" style="font-size: 12.491573033708pt; color: rgb(71,54,181);">福利</a>
+                <a class="hot-tag" href="javascript:void(0);" style="font-size: 12.466292134831pt; color: rgb(180,151,65);">教程</a>
+                <a class="hot-tag" href="javascript:void(0);"  style="font-size: 12.365168539326pt; color: rgb(152,149,68);">教学</a>
+                <a class="hot-tag" href="javascript:void(0);" style="font-size: 12.289325842697pt; color: rgb(56,129,123);">cosplay</a>
+                <a class="hot-tag" href="javascript:void(0);" style="font-size: 11.758426966292pt; color: rgb(160,162,69);">gif</a>
+                <a class="hot-tag" href="javascript:void(0);" style="font-size: 11.556179775281pt; color: rgb(186,126,198);">美图</a>
+                <a class="hot-tag" href="javascript:void(0);" style="font-size: 11.455056179775pt; color: rgb(91,140,140);">绅士</a>
+                <a class="hot-tag" href="javascript:void(0);" style="font-size: 11.35393258427pt; color: rgb(91,180,114);">恋爱</a>
+                <a class="hot-tag" href="javascript:void(0);" style="font-size: 11.202247191011pt; color: rgb(152,187,187);">舰队Collection</a>
+                <a class="hot-tag" href="javascript:void(0);" style="font-size: 11.202247191011pt; color: rgb(148,78,186);">游戏</a>
+                <a class="hot-tag" href="javascript:void(0);" style="font-size: 11.176966292135pt; color: rgb(166,93,157);">校园</a>
+                <a class="hot-tag" href="javascript:void(0);" style="font-size: 11.151685393258pt; color: rgb(94,182,110);">战斗</a>
+                <a class="hot-tag" href="javascript:void(0);" style="font-size: 11.101123595506pt; color: rgb(56,94,99);">冒险</a>
+                <a class="hot-tag" href="javascript:void(0);" style="font-size: 11.101123595506pt; color: rgb(82,103,176);">后宫</a>
+                <a class="hot-tag" href="javascript:void(0);" style="font-size: 11.025280898876pt; color: rgb(173,183,192);">我的妹妹哪有这么可爱</a>
+                <a class="hot-tag" href="javascript:void(0);" style="font-size: 11pt; color: rgb(70,158,124);">画师</a>
+            </div>
+        </div>
+    </aside>
+                    
+    <aside id="nav_menu-7">
+        <div class="widget widget_nav_menu">
+            <div class="heading ">
+                <h2 class="widget-title">快捷导航</h2>
+            </div>
+            <div class="menu-container">
+                <ul id="menu" class="menu">
+                    <li id="menu-item-9166" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9166"><a href="javascript:void(0);">投稿须知</a></li>
+                    <li id="menu-item-9167" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9167"><a href="javascript:void(0);">萌币使用说明</a></li>
+                    <li id="menu-item-4990" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4990"><a href="javascript:void(0);">加入我们</a></li>
+                    <li id="menu-item-4991" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4991"><a href="javascript:void(0);">赞助我们</a></li>
+                    <li id="menu-item-4992" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4992"><a href="javascript:void(0);">关于我们</a></li>
+                </ul>
+            </div>
+        </div>
+    </aside>
+                </div>
+            </div>
+            <!---->
+        </div>
+    </div>
+
+        <!--广告图-->
+        
+        <!---->
+        <!--底部-->
+        <footer id="footer">
+            
+            <p class="footer-meta copyright">
+                © <a href="http://www.52cos.cn/">52cos平台</a> 2015。 互联网ICP备案：<a href="http://www.miitbeian.gov.cn/" rel="nofollow" title="工业和信息化部ICP/IP地址/域名信息备案管理系统">ICP证 浙B1.B2-20150475</a>
+                <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://"); document.write(unescape("%3Cspan id='cnzz_stat_icon_1256832143'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/stat.php%3Fid%3D1256832143%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+                <script src="/plugins/Allofthelights.js-master/jquery.allofthelights.js"></script>
+                <script>$(document).ready(function () { $(".ani-player-box").allofthelights(); });</script>
+                <a href="http://www.upyun.com" target="_blank">
+                    <img src="/Style/img/36270f20a1d40012753045a615c6e93a.png"></a>
+            </p>
+        </footer>
+        <a href="#" id="back-to-top" class="fa fa-arrow-up fa-2x" title="返回顶部"></a>
+        <script type='text/javascript' src='/Style/js/frontend-entry.js'></script>
+        <script>
+            $(document).ready(function () {
+                var lilist = document.querySelector("nav.menu-header>#menu-header").querySelectorAll("li");
+                var mh;
+                switch (window.menu_header) {
+                    case "cos":
+                        mh = "COS";
+                        break;
+                    case "daily":
+                        mh = "日常";
+                        break;
+                    case "painting":
+                        mh = "绘画";
+                        break;
+                    case "photography":
+                        mh = "轻小说";
+                        break;
+                    case "reprint":
+                        mh = "合作";
+                        break;
+                    case "activity":
+                        mh = "活动";
+                        break;
+                }
+                $.each(lilist, function (n, value) {
+                    if (value.innerHTML.indexOf(window.menu_header) > -1) {
+                        $(lilist[n]).addClass("current-menu-item");
+                        $(lilist[n]).parents('li').addClass("current-menu-item");
+                    }
+                });
+            });
+
+            //将form转为AJAX提交
+            function ajaxSubmit(frm, fn, errfn) {
+                var dataPara = getFormJson(frm);
+                $.ajax({
+                    url: frm.action,
+                    type: frm.method,
+                    data: dataPara,
+                    success: fn,
+                    error: errfn
+                });
+            }
+
+            //将form中的值转换为键值对。
+            function getFormJson(frm) {
+                var o = {};
+                var a = $(frm).serializeArray();
+                $.each(a, function () {
+                    if (o[this.name] !== undefined) {
+                        if (!o[this.name].push) {
+                            o[this.name] = [o[this.name]];
+                        }
+                        o[this.name].push(this.value || '');
+                    } else {
+                        o[this.name] = this.value || '';
+                    }
+                });
+
+                return o;
+            }
+
+            function searchToggle(obj, evt) {
+                var container = $(obj).closest('.search-wrapper');
+
+                if (!container.hasClass('active')) {
+                    container.addClass('active');
+                    evt.preventDefault();
+                }
+                else if (container.hasClass('active') && $(obj).closest('.input-holder').length == 0) {
+                    container.removeClass('active');
+                    // clear input
+                    container.find('.search-input').val('');
+                    // clear and hide result container when we press close
+                    container.find('.result-container').fadeOut(100, function () { $(this).empty(); });
+                }
+            }
+
+            function submitFn(obj, evt) {
+                value = $(obj).find('.search-input').val().trim();
+
+                _html = "Yup yup! Your search text sounds like this: ";
+                if (!value.length) {
+                    _html = "Yup yup! Add some text friend :D";
+                }
+                else {
+                    _html += "<b>" + value + "</b>";
+                }
+
+                $(obj).find('.result-container').html('<span>' + _html + '</span>');
+                $(obj).find('.result-container').fadeIn(100);
+
+                evt.preventDefault();
+            }
+        </script>
+        <!---->
+    </div>
+    
+    <script>var menu_header = '分享'</script>
+    <script src="../../plugins/layer/layer.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".ystep1").loadStep({
+                size: "large",
+                color: "blue",
+                steps: [{
+                    title: "公审中",
+                    content: "UP主发起的项目，三天的公共投票时间"
+                }, {
+                    title: "审核中",
+                    content: "等待官方确认"
+                }, {
+                    title: "回收中",
+                    content: "正在等待官方收件"
+                }, {
+                    title: "兑换中",
+                    content: "物品已在官方手中，可以兑换"
+                }, {
+                    title: "已兑换",
+                    content: "物品已被兑换"
+                }]
+            });
+            $(".ystep1").setStep(1);
+
+            $("a[name='vote']").click(function () {
+                var _index = $(this).attr("data-val");
+                var _id = '14';
+                var _userId = '';
+                if (_userId == "") {
+                    swal("小2提醒您", "请先登录", "error");
+                    return false;
+                }
+                $.post("/Service/ShowManage/EvaluationVote.ashx", { Index: _index, Id: _id, UserId: _userId }, function (res) {
+                    var msg = eval("(" + res + ")");
+
+                    if (msg.status == "success") {
+                        alert( "投票成功");
+                    } else if (msg.status == "已参与") {
+                        alert("已参与");
+                    } else {
+                        alert("投票失败");
+                    }
+                }).error(function () { alert("系统繁忙，请稍后再试"); });
+            });
+
+        });
+        //兑换
+        function SignUp(_userId, _exId) {
+            layer.open({
+                type: 2,
+                title: false,
+                shadeClose: true,
+                shade: 0.8,
+                area: ['380px', '90%'],
+                content: '/Pages/ShowManage/SelectAddress.aspx?uid=' + _userId + "&exId=" + _exId //iframe的url
+            });
+
+        }
+    </script>
+
+</body>
+</html>

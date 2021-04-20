@@ -1,0 +1,59 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Pages/App_Master/MasterPage.Master" AutoEventWireup="true" CodeBehind="AccountMaster.master.cs" Inherits="Com.Cos.Web.Pages.App_Master.AccountMaster" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div class="g">
+        <div class="row">
+            <!--左侧导航-->
+            <div id="account-navbar" class="g-desktop-1-6">
+                <ul class="nav nav-vertical">
+                    <asp:Repeater runat="server" ID="Repeater1">
+                        <ItemTemplate>
+                            <li class=""><a href="<%#Eval("RefHref") %>">
+                                <i class="fa <%#Eval("RefClass") %> fa-fw"></i>
+                                <%#Eval("RefTxt") %>
+                            </a></li>
+                        </ItemTemplate>
+                    </asp:Repeater>
+                </ul>
+            </div>
+            <!---->
+
+            <div class="g-desktop-5-6">
+                <div id="account-content">
+                    <div class="panel">
+                        <div class="content">
+                            <asp:ContentPlaceHolder ID="form" runat="server">
+                            </asp:ContentPlaceHolder>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="javascript" runat="server">
+    <script>
+        $(document).ready(function () {
+            var lilist = document.querySelector("div#account-navbar").querySelectorAll("li");
+            $.each(lilist, function (n, value) {
+                if (value.innerHTML.indexOf(window.active_menu) > -1) {
+                    $(lilist[n]).addClass("active");
+                }
+            });
+
+            var lilist2 = document.querySelector("div.tool-me>.box").querySelectorAll("li");
+            $.each(lilist2, function (n, value) {
+                console.info(value.innerText);
+                if (value.innerHTML.indexOf(window.active_menu) > -1) {
+                    $(lilist2[n]).addClass("active");
+                }
+            });
+        });
+    </script>
+    <asp:ContentPlaceHolder ID="javascript" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>

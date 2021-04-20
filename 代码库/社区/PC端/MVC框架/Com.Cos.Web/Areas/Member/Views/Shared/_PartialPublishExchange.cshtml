@@ -1,0 +1,40 @@
+﻿@using Com.Cos.Common
+@using Com.Cos.Models
+@model Com.Cos.Web.Areas.Member.Models.PublishViewModel
+
+<div class="middleTop clearfix" style="padding-bottom:20px;">
+    <div class="title" style="border-bottom:none;padding-bottom:0;">
+        <span>我发布的</span>
+        <img src="~/Content/img/hongjian_1.jpg"/>
+        @Ajax.ActionLink("我发布的合作", "PublishCooperation","Member","",new AjaxOptions{UpdateTargetId = "tb"}, new { @class = "aa" })
+    </div>
+    <div class="centbi">
+        @for(int i=0;i< ((List<Exchange>)Model.Model).Count; i++)
+        {
+            var ex = ((List<Exchange>) Model.Model)[i];
+            <div class="lilik clearfix" style="@(i==((List<Exchange>)Model.Model).Count-1?"border:none;":"")">
+                <img src="@ex.Cover">
+                <div class="rirt">
+                    <div class="tops clearfix">
+                        <span>@ex.Title</span><font>兑换</font>
+                    </div>
+                    <p class="pp clearfix">发布合作时间：@ex.AddTime.ToString("yyyy-MM-dd HH:mm:ss")</p>
+                    <div class="button clearfix">
+                        <span style="margin-left: 0">兑换状态：@ex.Examine</span>
+                        @*<p>等待官方确认</p>*@
+                    </div>
+                </div>
+            </div>
+
+        }
+
+    </div>
+</div>
+<!--分页-->
+@Url.GetToPager(Ajax,Model.PageIndex, Model.PageSize, Model.TotalRecord, "PublishExchange", "Member")
+<!--分页-->
+
+<script>
+    $(function () { window.scrollTo(0, 0); });
+</script>
+

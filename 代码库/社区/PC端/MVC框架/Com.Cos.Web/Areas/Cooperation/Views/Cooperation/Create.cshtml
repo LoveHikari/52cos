@@ -1,0 +1,142 @@
+﻿@model Com.Cos.Web.Areas.Cooperation.Models.CooperationViewModel
+
+@{
+    ViewBag.Title = "发布合作";
+}
+
+@section Css
+{
+    <link rel="stylesheet" href="~/Content/css/libs/ReleaseCps.css">
+}
+
+<div class="big">
+    <div class="content clearfix">
+        <!--左侧菜单 Start-->
+        @Html.Partial("_PartialLeftMenu")
+        <!--左侧菜单 End-->
+        @using (Html.BeginForm("Publish", "Cooperation"))
+        {
+            @Html.AntiForgeryToken()
+            <div class="middleContent">
+                <div class="middleTop clearfix">
+                    <div class="title">
+                        <span>发布合作</span>
+                        <img src="~/Content/img/hongjian_1.jpg">
+                    </div>
+                    @Html.ValidationSummary(true)
+                    <div class="inputBox">
+                        @Html.LabelFor(model => model.Title)
+                        @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @placeholder = "请输入" } })
+                    </div>
+                    <div class="inputBox">
+                        @Html.LabelFor(model => model.EnrollEnd)
+                        @Html.EditorFor(model => model.EnrollEnd, new { htmlAttributes = new { @placeholder = "请输入",@class="laydate-icon" } })
+                    </div>
+                    <div class="inputBox">
+                        @Html.LabelFor(model => model.Address)
+                        @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @placeholder = "请输入" } })
+                    </div>
+                    <div class="inputBox">
+                        @Html.LabelFor(model => model.Cont)
+                        @Html.EditorFor(model => model.Cont, new { htmlAttributes = new { @placeholder = "请输入" } })
+                    </div>
+                    <div class="inputBox">
+                        @Html.LabelFor(model => model.Budget)
+                        @Html.TextBoxFor(model => model.Budget,  new { @placeholder = "请输入",@type= "number", @min="0.0", @step = "0.1" })
+                    </div>
+                </div>
+                <div class="middleBottom clearfix">
+                    <div class="title">
+                        <span>添加图片</span>
+                        <img src="~/Content/img/hongjian_1.jpg">
+                    </div>
+                    <p>请添加图片</p>
+                    <div class="upload">
+                        <a href="javascript:void(0);" id="aImgs">
+                            <img src="~/Content/img/upload.jpg">
+                        </a>
+                        <input type="hidden" name="hidItemBigImgs" id="hidItemBigImgs" />
+                        <input type="hidden" name="hidItemSmallImgs" id="hidItemSmallImgs" />
+                        @Html.HiddenFor(model => model.ImgList)
+                    </div>
+                    <ul class="imglist" id="map2"></ul>
+                </div>
+                <button class="fabuBtn" type="submit">发布</button>
+            </div>
+        }
+    </div>
+</div>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Scripts/libs/exif.js" type="text/javascript" language="javascript"></script>
+    <script src="~/Scripts/libs/canvasJs.js" type="text/javascript" language="javascript"></script>
+    <script src="~/Scripts/libs/picture.js" type="text/javascript" language="javascript"></script>
+    <script src="~/Scripts/plugins/laydate-v1.1/laydate.js?v=1.1"></script>
+    <script>
+        $(document).ready(function () {
+            laydate.skin("molv");
+            var endTime = {
+                elem: '#EnrollEnd',
+                format: 'YYYY-MM-DD',
+                min: laydate.now(), //设定最小日期为当前日期
+                max: '2099-06-16 23:59:59', //最大日期
+                istime: false,
+                istoday: true,
+                choose: function (datas) {
+                    
+                }
+            };
+            laydate(endTime);
+
+            //多选，上传一张，缩略图显示容器，图片缓存容器，缩略图缓存容器
+            $('#aImgs').fileUpload({ multiple: "multiple", maxnum: 7, mapsel: 'map2', imgBox: '#hidItemBigImgs', imgBox2: "#hidItemSmallImgs", fileInput: "file-input2" }); //初始化图片上传
+
+            $("form[action$='Publish']").submit(function () {
+                $("button[type='submit']", this).text("正在发布...").attr("disabled", "disabled").css("cursor", "not-allowed");
+
+                //保存图片
+                saveItemImg();
+
+                return false;
+            });
+        });
+
+        //保存物品图
+        function saveItemImg() {
+            var bigImg = $("#hidItemBigImgs").val();
+            var smallImg = $("#hidItemSmallImgs").val();
+            $.post("@Url.Action("Create", "Img", new { area = "" })", { BigImg: bigImg, SmallImg: smallImg }, function (msg) {
+                if (msg.status == "success") {
+                    $("input[name='ImgList']").val(msg.imgIds);
+                    Save();
+                } else {
+                    swal("OMG", msg.message, "error");
+                    return false;
+                }
+            },"JSON").error(function() {
+                swal("OMG", "系统繁忙，请稍后再试", "error");
+                return false;
+            });
+        }
+
+        function Save() {
+            var thisObj = "form[action$='Publish']";
+            $.post($(thisObj).attr("action"), $(thisObj).serialize(), function (msg) {
+                //var msg = eval("(" + res + ")");
+                if (msg.status == "success") {
+                    swalAlert.swalAlert("Good", msg.message, "3000", "success", false).then(function (result) {
+                        $("button[type='submit']", this).text("发布").removeAttr("disabled").css("cursor", "pointer");
+                        window.location.reload();
+                    });
+                } else {
+                    swal("OMG", msg.message, "error");
+                }
+            }).error(function () {
+                swal("OMG", "系统繁忙，请稍后再试", "error");
+                return false;
+            });;
+        }
+    </script>
+}

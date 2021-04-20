@@ -1,0 +1,106 @@
+﻿@model Com.Cos.Web.Areas.Exchange.Models.ExchangeViewModel
+
+@{
+    ViewBag.Title = "发布兑换";
+}
+
+@section Css
+{
+    <link rel="stylesheet" href="~/Content/css/libs/ReleaseCps.css">
+}
+<div class="big">
+    <div class="content clearfix">
+        <!--左侧菜单 Start-->
+        @Html.Partial("_PartialLeftMenu")
+        <!--左侧菜单 End-->
+        @using (Html.BeginForm("Publish", "Exchange", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+            <div class="middleContent" id="tb">
+                @Html.Partial("_PartialCreate", Model)
+            </div>
+        }
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Scripts/libs/exif.js" type="text/javascript" language="javascript"></script>
+    <script src="~/Scripts/libs/canvasJs.js" type="text/javascript" language="javascript"></script>
+    <script src="~/Scripts/libs/picture.js" type="text/javascript" language="javascript"></script>
+    <script>
+        $(document).ready(function () {
+            //单选，上传一张，缩略图显示容器，图片缓存容器，缩略图缓存容器
+            //$('#aCertificate').fileUpload({ multiple: "", maxnum: 1, mapsel: 'map1', imgBox: '#hidCerBigImgs', imgBox2: "#hidCerSmallImgs", fileInput:"file-input1" }); //初始化图片上传
+            //多选，上传一张，缩略图显示容器，图片缓存容器，缩略图缓存容器
+            $('#aImgs').fileUpload({ multiple: "multiple", maxnum: 7, mapsel: 'map2', imgBox: '#hidItemBigImgs', imgBox2: "#hidItemSmallImgs", fileInput: "file-input2",index:0 }); //初始化图片上传
+
+            //发布事件
+            $("form[action$='Publish']").submit(function () {
+                $("button[type='submit']", this).text("正在发布...").attr("disabled", "disabled").css("cursor", "not-allowed");
+
+                //保存图片
+                saveItemImg();
+
+                return false;
+            });
+
+        });
+
+        //保存凭证图
+        @*function saveCertificate() {
+            var bigImg = $("#hidCerBigImgs").val();
+            var smallImg = $("#hidCerSmallImgs").val();
+            $.post("@Url.Action("Create", "Img", new { area = "" })", { BigImg: bigImg, SmallImg: smallImg }, function (msg) {
+                if (msg.status == "success") {
+                    $("input[name='Certificate']").val(msg.imgIds);
+                    saveItemImg();
+                } else {
+                    swal("OMG", msg.message, "error");
+                    return false;
+                }
+            },"JSON").error(function() {
+                swal("OMG", "系统繁忙，请稍后再试", "error");
+                return false;
+            });
+        }*@
+        //保存物品图
+        function saveItemImg() {
+            var bigImg = $("#hidItemBigImgs").val();
+            var smallImg = $("#hidItemSmallImgs").val();
+            $.post("@Url.Action("Create", "Img", new { area = "" })", { BigImg: bigImg, SmallImg: smallImg }, function (msg) {
+                if (msg.status == "success") {
+                    $("input[name='ImgList']").val(msg.imgIds);
+                    Save();
+                } else {
+                    swal("OMG", msg.message, "error");
+                    return false;
+                }
+            },"JSON").error(function() {
+                swal("OMG", "系统繁忙，请稍后再试", "error");
+                return false;
+            });
+        }
+
+        function Save() {
+            var thisObj = "form[action$='Publish']";
+            //发布
+            $.post($(thisObj).attr("action"), $(thisObj).serialize(), function (msg) {
+                if (msg.status == "success") {
+                    swalAlert.swalAlert("Good", msg.message, "3000", "success", false).then(function (result) {
+                        $("button[type='submit']", this).text("发布").removeAttr("disabled").css("cursor", "pointer");
+                        window.location.reload();
+                    });
+                } else if (msg.status == "error") {
+                    swal("OMG", msg.message, "error");
+                } else {
+                    document.getElementById("tb").innerHTML = msg;
+                }
+            }).error(function () {
+                swal("OMG", "系统繁忙，请稍后再试", "error");
+                return false;
+            });
+        }
+    </script>
+}

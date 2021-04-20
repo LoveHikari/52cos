@@ -1,0 +1,12 @@
+图片上传逻辑：
+
+缩略图尺寸：截取320X180 px
+原图尺寸：宽度最大800px，高度自动
+
+接口：http://115.28.161.185/Service/HomeManage/UploadImgs.ashx
+连接方式：post
+参数列表：b  ， b2    (原图，缩略图的base64)
+
+返回值：
+成功：{"status":"success","imgid":"原图id","img2id":"缩略图id","img":"原图地址","img2":"缩略图地址"}
+失败：{"status":"error"}

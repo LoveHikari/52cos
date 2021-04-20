@@ -1,0 +1,93 @@
+﻿@model Com.Cos.Web.Areas.Exchange.Models.ExchangeViewModel
+
+
+<div class="middleTop clearfix">
+    <div class="title">
+        <span>发布兑换</span>
+        <img src="~/Content/img/hongjian_1.jpg">
+    </div>
+    @Html.ValidationSummary(true)
+    <div class="inputBox">
+        @Html.LabelFor(model => model.Title)
+        @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @placeholder = "请输入", @required= "required" } })
+        @Html.ValidationMessageFor(model => model.Title)
+    </div>
+    <div class="inputBox">
+        @Html.LabelFor(model => model.ItemName)
+        @Html.EditorFor(model => model.ItemName, new { htmlAttributes = new { @placeholder = "请输入", @required = "required" } })
+        @Html.ValidationMessageFor(model => model.ItemName)
+    </div>
+    <div class="inputBox">
+        @Html.LabelFor(model => model.ItemCharacter)
+        @Html.EditorFor(model => model.ItemCharacter, new { htmlAttributes = new { @placeholder = "请输入", @required = "required" } })
+        @Html.ValidationMessageFor(model => model.ItemCharacter)
+    </div>
+    <div class="inputBox">
+        @Html.LabelFor(model => model.Constitute)
+        @Html.EditorFor(model => model.Constitute, new { htmlAttributes = new { @placeholder = "请输入", @required = "required" } })
+        @Html.ValidationMessageFor(model => model.Constitute)
+    </div>
+    <div class="inputBox">
+        @Html.LabelFor(model => model.Source)
+        @Html.EditorFor(model => model.Source, new { htmlAttributes = new { @placeholder = "请输入", @required = "required" } })
+        @Html.ValidationMessageFor(model => model.Source)
+    </div>
+    <div class="inputBox">
+        @Html.LabelFor(model => model.Price)
+        @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @placeholder = "请输入", @required = "required" } })
+        @Html.ValidationMessageFor(model => model.Price)
+    </div>
+    <div class="inputBox">
+        @Html.LabelFor(model => model.ClassId)
+        @Html.DropDownList("ClassId", new SelectList(ViewBag.Classes, "ClassId", "ClassName"))
+        @Html.ValidationMessageFor(model => model.ClassId)
+    </div>
+    <div class="inputBox">
+        @Html.LabelFor(model => model.Describe)
+        @Html.TextAreaFor(model => model.Describe, new { @placeholder = "请输入", @required = "required", @style= "width:100%;border:none;resize:none;outline:none" })
+        @Html.ValidationMessageFor(model => model.Describe)
+    </div>
+</div>
+@*<div class="gongtou clearfix">
+    <div class="title">
+        <span>公投值</span>
+        <img src="~/Content/img/hongjian_1.jpg">
+    </div>
+    <p>请填写三个公投值：</p>
+    <div class="inputG">
+        @Html.EditorFor(model => model.Valuation1, new { htmlAttributes = new { @placeholder = "公投值1", @required = "required" } })
+        @Html.EditorFor(model => model.Valuation2, new { htmlAttributes = new { @placeholder = "公投值2", @required = "required" } })
+        @Html.EditorFor(model => model.Valuation3, new { htmlAttributes = new { @placeholder = "公投值3", @required = "required" } })
+    </div>
+</div>*@
+<div class="middleBottom clearfix">
+    <div class="title">
+        <span>添加图片</span>
+        <img src="~/Content/img/hongjian_1.jpg">
+    </div>
+    @*<p>请添加购买凭证图片</p>
+    <div class="bigcone clearfix">
+        <div class="upload" style="margin-bottom: 20px">
+            <a href="javascript:void(0);" id="aCertificate">
+                <img id="img" src="~/Content/img/upload.jpg" />
+            </a>
+            <input type="hidden" name="hidCerBigImgs" id="hidCerBigImgs" />
+            <input type="hidden" name="hidCerSmallImgs" id="hidCerSmallImgs" />
+            @Html.HiddenFor(model => model.Certificate)
+        </div>
+        <ul class="imglist" id="map1"></ul>
+    </div>*@
+    <p style="border-top:1px solid #f894af">请添加物品详情图片</p>
+    <div class="bigcone clearfix">
+        <div class="upload">
+            <a href="javascript:void(0);" id="aImgs">
+                <img src="~/Content/img/upload.jpg">
+            </a>
+            <input type="hidden" name="hidItemBigImgs" id="hidItemBigImgs" />
+            <input type="hidden" name="hidItemSmallImgs" id="hidItemSmallImgs" />
+            @Html.HiddenFor(model => model.ImgList)
+        </div>
+        <ul class="imglist" id="map2"></ul>
+    </div>
+</div>
+<button class="fabuBtn" type="submit" style="margin-bottom: 40px">发布</button>

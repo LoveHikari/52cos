@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta http-equiv="Cache-Control" content="no-transform" /><![endif]-->
+    <meta name="renderer" content="webkit" /><meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" /><link rel="profile" href="http://gmpg.org/xfn/11" /><title>
+	二次元社区 幻幻
+</title><meta name="keywords" content="cos,cosplay,二次元,二次元社区,52cos,52cos社区,动漫社区,动漫,52,ACG,ACGN,幻幻" /><meta name="description" content="爱COS，爱精致，我爱精致，52COS" /><link rel="stylesheet" href="Style/font-awesome-4.6.3/css/font-awesome.min.css" type="text/css" media="all" /><link rel="stylesheet" href="Style/css/frontend-default.css" type="text/css" media="all" /><link rel="https://api.w.org/" href="/wp.json" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.xml?rsd" /><link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wlwmanifest.xml" /><meta name="theme-color" content="#ff4081" />
+    <style id="custom-background-css">
+        body.custom-background {
+            background-color: #eeeeee;
+        }
+    </style>
+    <style type="text/css">
+        .caiji {
+            display: none;
+        }
+
+        .weeks {
+            width: 300px;
+            height: 333px;
+            position: relative;
+            left: -26px;
+            top: -27px;
+        }
+
+        .weekItem {
+            width: 266px;
+            height: 32px;
+            border-bottom: 2px solid #f60;
+            padding: 0;
+            margin: 0 0 0 5px;
+        }
+
+            .weekItem li {
+                float: left;
+                height: 32px;
+                width: 38px;
+                line-height: 32px;
+                text-align: center;
+                cursor: pointer;
+                overflow: hidden;
+            }
+
+                .weekItem li.on {
+                    background: #f60;
+                    color: #fff;
+                }
+
+                .weekItem li.hover {
+                    background: #f60;
+                    color: #fff;
+                }
+
+        .box01_c {
+            width: 293px;
+            height: 343px;
+            padding: 5px 0;
+            position: relative;
+            overflow: auto;
+        }
+
+            .box01_c dl {
+                padding: 0 5px 0 5px;
+                line-height: 26px;
+            }
+
+                .box01_c dl dt {
+                    color: #999;
+                }
+
+                .box01_c dl dd {
+                    height: 26px;
+                    overflow: hidden;
+                }
+
+                    .box01_c dl dd span {
+                        float: right;
+                        color: #999;
+                    }
+
+                        .box01_c dl dd span.today {
+                            color: #f60;
+                        }
+
+        dl {
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        dd, dt {
+            line-height: 1.42857143;
+        }
+
+        dt {
+            font-weight: 700;
+        }
+
+        dd {
+            margin-left: 0;
+        }
+
+        .ani-video-main {
+            height: 96%;
+        }
+
+        .ani-box {
+            height: 100%;
+        }
+
+        .ani-player {
+            height: 100%;
+        }
+
+        .ani-player-box {
+            height: 96%;
+        }
+
+        body.in-text-mode #main {
+            max-width: 1440px;
+        }
+
+        .content-reset embed {
+            margin-top: 0rem;
+        }
+
+        @media (max-width:1199px) {
+            .switch {
+                float: none;
+                margin: 0 0 15px;
+            }
+        }
+
+        .switch {
+            position: absolute;
+            display: inline-block;
+            width: 65px;
+            height: 25px;
+            background: url(/Style/img/switch.png) no-repeat 0 0;
+            cursor: pointer;
+            margin: 0;
+            right: 20px;
+        }
+    </style>
+    <link href="Style/css/video.css" rel="stylesheet" media="screen" type="text/css" /><link rel="stylesheet" type="text/css" href="Style/css/cs-select.css" /><link rel="stylesheet" type="text/css" href="Style/css/cs-skin-boxes.css" /><link href="../Style/css/frontend-logged-default.css" rel="stylesheet" /><link rel="stylesheet" type="text/css" href="/plugins/SearchBox/css/search-form.css" />
+
+    <script src="../../Style/js/jquery-1.12.3.min.js"></script>
+    <script type='text/javascript' src='Style/js/jquery-migrate.min.js'></script>
+    <script src="Style/js/jquery.form.js"></script>
+    <script src="Style/js/player.js"></script>
+    <script src="Style/js/mukio-prompt.js"></script>
+    <script src="Style/js/mukio-sect.js"></script>
+    <script src="Style/js/swfobject.js"></script>
+    -<script type="text/javascript" src="Style/js/classie.js"></script>
+    
+    
+    <link rel='stylesheet' id='frontend-css' href='/Style/css/frontend-logged-default.css' type='text/css' media='all' />
+
+
+</head>
+<body class="home blog">
+    <div>
+
+        <!--导航-->
+        <div class="nav-main top">
+            <div class="g">
+                <form method="post" action="./medal.html" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="PzHbWRoQ2rg4tSqUpZ8xox/VkuvSsugK0NrjOt0JeBm6ZT+ShKYP9BPKCmhyKy73gXCuV6sZdZWlQoEEpfcBNtubCfUVm/s0GXvatB/5M555UeS9/AjzmcwGRF7DU93mAyN3Q+85pmX8cLpHqbDlNyNeiemE8DkDta05WvNMeexuGMhDALeeY5J6Hx6blmQDSCfHcB8J2fttPOL6LX0QCVN9auMoWakZebwttxKuwVJMBaB/IQmFqfBvTzs9Nke8en4OOZIO0kxQV2yte2O6YZNtk4/eQKpZPQyvEKJVZNX/kpOjKk8pQieSj+dO9uJGwuEJplggGHVERx6zZYSzmd5vQWwGsqO71KxMrka1gWpPSeN0+X1naDOlLFRYeWNac4m5u1h5QqmC3hE/9yMfulrVCJ78noVKLey7UNCqZmIAXa4AbW66ypociAEPKg6w6yjMN3xbdI6Xb74+cIZMoNfXvB6Ak1CTcS7pgGLb9JWiTHPWMJFItfjdnix/ARzHEM11oC96tT/XsRx7saEvx5aiyNZfZP6osDrr6CzcMnHWRH2hw2Xgkp3wi/5G144RDNr3O+zTG88no37FNJ/M5PNYmdHGQ3r0oN8huSQ2MwxY1Lvth7S5UGXDknFkcr7xjBlONsnvsjNyCiTpSEOO1/d6Xc1PsBlIF8izWz++PwlrYhcIkyg7kOQ3tx1RznNMgQdqs3F30rioCzs77q9Pj67IeagLYAPYwDQy1ja4u9ILAr2B+Qgr861WORx+gMNa2nfJfvkGXi01fkcqJRKzNGb9Khg19AHoTTS0QjQhnYieKOU3oyTE6S6bfcUGo5JpcZjr6U5l52FXPT/E3rsw/mW8udWrA6WG3sN8dG3XU/Hhkv0+blTQKhlZfDKvvLejNzTEviSf03wLooZDfip6YQvywTdxH6l5EBxRGwLfrg6euJwt9pHxy4G4vSEmHG4mj33qNl38NE1ZBPBG8kFHQc0e+n2WahnVFNMQq4CIBTMQZinxxr645Q8vwfYVMH9NzDqXHZDaKp9r1byzGYLW8GOAvZMoDlON62yw6gPTUxay40eh/sAp3lJPSq+ro5zcmRcokhQlMa1DszoUKUO6oAHyr6m9GL9gL2ZSpvXuRM9ennEpZDY0BE1AtmaS1xAhlbVLXUpayQwhs/pGKpHwoPp/M8YDlEil5IS/k9EvvdiirOp+OpUSA3ztJDMxEcP+fOJXTuGJLX3oP3CVmjbXpOyOVWTWEyLkTk/zGdBDLhN3DKq6QYWcSYLvhsKgCbZwUuTNAaVUo7W0gcNjFoeLcTVLC4VwN6E/diDV6CTliojul4yHNBhqksrlkwFnX3a6Zcu5+JlqJoPx0I2CVuttNIfJJyh64OQ0+Lh+fYDMgZacCl9JCDfbBpyMQxZI44fYTYa7MU5T27M/f1XqAaJrXdrsqG/N+MKDnzQnNxUD96+hTx9fj+fJ77B4++A1KpgSYbz9icvhCmKR+vPU9gVBvji6qk2gQUaWFlcTC1F0UiSZ3+oKklZLpBXYMnX8rpDsMvx65ReZMo1+8s8WxRNO+5w7TYZiJ+sDZfpsqMWFS0V57QnoK6DL8kRNZLi2x2slc2ldFW1Z1765xVZNHRT9wfrRawEMaaa0ln11gJ7/49Mad3Qa1SkKQQi/AYus1ImVGYPowFESu/0qXF8LCa4eCWKxLdru2F/a0TanKJ0T/ItUBf7AF4UM5NpEI2Bh66JkQUoBbdR4OD3kWsgXlxhDktBve20m5dtCz7sQ8zx4rrpbXga+uJRa6mN4pq1CKunGaiUrTTHUo+pkDLgvL5baKcIiBP/b2aYSGDi9p21SosSp8usRyAlXwOon5wCn4pM8xnsNu4SwVaD17XhdcrdaRkeSkIPiHBtH4YxSPULlAMHExem68gGtYDOHjA5KNwzzJwcwyw3UPa9sa2PVnq8YnL7dm7ZWWvLD+K7fYfxi1/E9bsiM8tAugPNknbqfe8l4n0TOmg6y8WCckTjw2EvjxgwsI3U+KbEfi8jOOrkIEQwiS7Xv/hLhttMBUATfLRHW3rW1h/I74Hit82v2lVHU1FJjLKiwYDwSZ9p2x/vPnzL8L5cgwXwxB6wmPSmTx/58yNYPlx+odvPWryqSWNHJLTwniEgrxhKRGM4YupcJd0/wuc9VeUkWyK9LkYq1vCxydslm5AinrRr/jB+tHaLzAQ+pTnEpYkcI7KwUBAMMd/l+45FIYDxDPJcYdELIMQ1hbAF0UC4I0AxgE4T2JkX9BkChnzfnBjAN6yG3Pb0bXvo8QE1l6+pkEHTylYaixRmOeVZcnrkf913zaIFgkMrvbQ/WeDrqZN1oVTfPaMKnZiPtZWnyGAD0cgTMRkEGE+QJitinr31EyG+acpYGQ1nDHbEIrmDzEYpp9xFHSZ0b7bOohkh9H/8T4a9i3jE7gI4iC8qf9Rkf/MEdgGbBa1bHlhsC5ZXtQNNhC3oZTE76fIdPu+J5m8DSNFSr1zfHSS9W4EGFhARj717zCieIn6+Da0iCTDrVeiJffURT/EZZPuj0Sx/vBnu0dwTznodF6c50/xn4PEQsnxiZhylBVBN6PKaSlTe0jnVfSZL+QlvGnd+DVnvl+GFIyhX3EIzt5NNe4/CWsi1nVAFaD5mkTDok6GaLsYEupaak7ej2/JCTis20h1MrTe3XjQ88RsH+qAmxh2p69JNUXGeA1mS9cQFNxx/pb2aO0Wjbz/CAqbgakpkraTqlUftGt6FCtVKql5oeCxozG+HwkZd7EPvf1DTARP5qq/Kh7EZwLYGx9rp8zKrP1tcfkRb1/bzpAXrKoUKWpDlrE5eQQICGfy8SxW2nyQJb4SLtXJRd+jFJK7RCxzW1iohKRhKYvaTgkqa/TEIAcjIAE8g1qMTqUHuUaH9baUEDvD4NgtEUdKxaog2oW1lRh6nixlMAYW5Pr4TzF92vWr5Ti2kPtj8Q5RFGuPSZEHlTN5umTbMiRRNHS+AJLYh4CkLjQI+M3+G9QmCcMzs7yQlEPNyF9JEbxBLvUHOWugyu4vZ6Qp//v+iG7/8Uxu0KMUn+beCiCVwEV5T80ZTXmd0ux7JhFSskDHDhtCRxTUorP2tVJ41axIpi9YAi1XIiQpxwaXDpmwKdwuLo9PiudJV3qJwaSg2vt46crNPxSV09DlFJkHL3D1llr3JN5mXvpgVtsGiewWOlrOl33GQYhoMQsP50FNI860RBlSwBaAsy59KYc4Ivo/Fmc+WFC6iQ2pL2t0scwqD6nGxjC8MWyB+ZmRV3Z4VUqA4UvxIJ7/dK6TfvDi+Ob9p6rqodra4G7nf4dhZuSnyljyFsth3xnDuqfDTAiWqoruWlB4EjePD3ttLeK1C6DDXVpUKk6DRmVF2Y6dQ6yiT6ZLxL4rlun94UkhYsSm89M1eRAoF5Md7AbytCcDBqEHl0OBbfJZ8f4u2mob5fmkZaZoIS0k2c+AgOzTeFM4mVGmgAEKa2dMrl5TVucKLpNW86YWa2UtfxS0BGh+3t64C5yrQ7zz0Fl9tNi+/4hPrZgSyZf7IWVoQSmeHftEeYEBDZLSp+T2bOwuqH9e2QPhQiGecAiG99U896BbJ1c5R3KrwTW7nOPeKsvkxm09KRGha24u81pUcSiwGvxrJ1aZ4mWEEi158ISL8O5jMm5Nv5kumG8qOwKIp+td1TUpinIU81lSUtxdoOoT7cKO+zL36hnNdGSare7KmylZ8JqGF64I8C2ve8yd+Ft+9kTPdups+OzMJPsBFaZzQfNPIckhhYsqiLp8DurdMEn/1P7mH8+gW/DjWhAJaAV9YyBRhWst30OGKEFWA8CQAqG7/AtiBXXW8ldwoq+tMEvWBOqX9Z0BDrCXwhKSQfySHQtuQgm0n0VbfM6arm5TFnJnlMT2xjgncEyirLTVcFD6hyiVs1MVSDDJZsfGTRodkPfvgsoqIr8KLtGNKmAOtqBQDO9kgY95SVFsXrggoDW18/qqlSeKcgSDZg8nklMqNSWrs1whKwlpBD2OWgO08Wm3Bc4BWsQ0DZXOCdjcK9BgoGW7o7KAb+mBgDuSTYDZ2mY3ljjW2WjH5EHG3khmeqOYz9J1WL0REwySKs19Nx1zX1y6OVBuJ2ORIyET/NOw9Z79VemfpsCUpbDszAJWOyqyP7c9U0ZaC0ImespJk9tUzT/7CoPpeICb4UV+3D0Un/WFwGsswv4YC/v44iO0le4d5x11/dmWc4vYW123tNAAHRA5ACgxjAgLhBI+7L3sCgNv2WFHsVqrHd396Amm7fBfgkmJJo8QKFH2TlYDZc/CGy3olWHzUpSnoiwIw7zXtxa2VYImyGhsGe3JswTPg7gP/W5P4bzB1WaaZlM9dv2px3Z8I5KCPqXHs3Ei2jbjyp59ZtOd6fMKaZBdibhFONaFeJSbawUkUPcH89kLMpNVnwdmaF+sSmsBj6Ppr4T4HHmv3ZLJAgNM9IwLDELUJkB1gemUQtVEccc2jVcei5gq+a5EONTPlS6eWCQT62Wk7lLGPb67QU0+93zvKg0gKn4QN6bO486FiMLr3FxRNIfaP4d4CSTV5qZNGLlF9XufjJuiEUnrVflC2813Psz4LGRA7C2Ij6mEHDtkDZVN75jlA0Vkx2Nnex3DOBGFcJvmwUpjsc1th6tiU/PG01YTYKyBsrtbTcPQkRLyalT3SUe1dLX1A4GCWqVLmnt/eMcNEeCQFoxI7DgwhmmNkzgAnV218CS3pUIHRCb7i8z966op0BVk1VzU618qGFKmPTo6fpMMx3N4BX+nqmyE4eXurYJY3+64LewOJsUvBgnbrHyhZWN+GYYz//CcLVZ/Lsc2Kp1yqQz9irXhVFvEfVrPxQgCnZiUU4Pu3ZtuxY3IYyFL5sk9iXji8zoL2B5kvfdkJsX/bKY/RKC1tp0hnvSdCRo36U7Te6W51EYACGPeH0GcB54YUl7e2YzPv2FtegxLNhPa71hRaZ5y5y6Nq9pV9Ely1lD/goWzvNrcqd6wVt4TeVlBxAEa1LFWyh1rMuCluTIqGCwCmZD+jpcE5zIGvwp9eJW4MldqhpzAQFpO2rEwfmJulWGCQZxKBB6Ve7W8IcluVnktVZN+uGgB8TSjebq+ZjLQg2enwF5wgP8aNjhLd6DvWdZwOR4OtQXDFSmtUiui9hAZTW4EKZ2YaFVbl9EZpvLVIgeMA2hp6EjTAlFwEkLQtqbBTzflCpc37DhFHFH+Z5l1nNzl4zvCQjvSg71+BwFYmKEWSNKZC5AT2qzb29XfN104VusOlvGToAp971LAxRemlcBptS+8EYIsVbVRcPmla78l2lL4rfF10PNW8DneU554FZqoChT9OWbkPdfqRjksh+e/RmdOFFiLsKTmdOYFy73rluHbfBpJEaadLdGnuNi54O8szpkKbGzG/D7SMXPWsAhQ4JNYu9WgFMtru9e0BIHQUUoJ4zeOAGyAfJEmpjekk7+xhtWR9qS3CMmSYKIgvA6+aeS4eAXsDP/Y0XOmqVlpJn+PQLoiNmsbw0S7RSBgp2MinP2rI1tFCUeI7LQbZhoOPN99UPj6205gFXM+BC+o8L3tZ4CVYDtMKl1m2YzHtIT8pnPRSQQBUtgYPN+9jMMBVDqyYqI9eGHeU+JsDm7mg28fr72tYvlTHppW7hBvHjxYDTTRoFSypeHIWO49mo0Q5Tew08BBC15RnE3Sm9vGk7Z1p3l0hA2lgD0UGSyxnjIoiub21uBekdmyBBcvU27qzzDbUV1bA0Q7AxQU7CRplV7Xizgkb1Wi4cAJrZMEavhs3OWOEO6eBMZ72SfofKFdtgnEgdQZyyxaceG5EVfd2y+sRMBAQbDBzHlYPN6iKyZZL9JVAcskZAiD+NCLMCBgGQa9y5JUa+WrxPh3eHswy5cV7YN8pBCU+JNMPn+djU0ZNIPeV42YQGWFwE87Y/+jxVHutj5h+VJ/Dy9MBnuPgUrcGXnnb9SLewwKYCzUvb6/29Z2gKfe6Jk36kuEyd/PbIynrsxz7nln2MWqLj59UQetzQeYGK/tyNErkPNQrQaZvz/h2Z7IEV9A1YTwo945IRi7RpbWubltWlYuqLWLygb62DhEX7F3N7b3EH6/WLXM+ffLHV83kN/5TqoZX1ntU76cxYnZxLTGoa9AM5czY+kG20uIBz1JON9wfyLS49AaYip4DHMaGZCB9UsGDLGAFMW4Ok/pIGmd3Pbv9fWZtHSxb1wGkh/hnrwsddF+VvEQ5IA64Ze8VcRt7XP3+mfe0dqn3eDOaJNx44V1r5QLOmoUvsUSrIC+h95N5vs7wxKLs5BzcdRPKYXG0MLeT/sU7YxIgmL4awvUSQqQKfmsL9hATLx2aqrzUgsh5Bi9t2rF9PJ/tOrxsUPtjlBztfPFti/vvf4E5Xo7zGlxe2IGwLNyP7VGM0/4grlLjARp45NFBMqUh/77yaMph3iWlG8LZeKShBph/H1RCpxAz1gIND62eIEaP5kjs1zQgCvHqIAn0znMQ78SgV/n5GvYnr8FhEX8Iv3YmyEjl0scYrzR6xr4WcU+iEN1+EqjuvxY7qm2SNA1JHBlkk7DAiHaNfAVRgaHtGFBKR8C74TI5C3mA3OztNmGd4c60CBNlHPn8eK2JbUOleiS+S8K9QusFeTQ1B6E0pE/u8bgG4Bb8iXOOZ/OuInW9adX81hyuLj6avM3BxYEA8S2TD60/Srdi+RcLcqMoBf7y5O0oV0XZ62xCrfOjIiYNjYJQ4SvB6k2SlcxXQHV4Jg7ykarNHsSCCC0cnsWNQqmBEu+myogUu28aipL5uG6xdEm/kve9yGM+2kQCqE/oc1jUzErKsfwI09zOwG3A5DvcBz87+nLKP8DnNdZ7VKXI0PB9uPvEF5MYG7hTvPGBlhWtVwzanHPQU2X1+8u2KiQyT4edaZasFKELIqs8SPx3t0gHd8eI9EUn9fi0Fussobuibh94d1B/OR9mM01VUK8q67Ad4ndQCvFSNwaEvDcilyY6ifYoGPN2xYLairxrUs97GI8f7CyGnkvC3p1Kc0EIW3k7WDbhVTbWjlO6G1E1CYLyeLRikrZrVTPoKR8+AUni/kRrKJgra9AFydOxY/AgCDbFWDOBtWrE0SOfaU4L3V+BLjXSrHjno7Wlco2YLKCbQvaRw8AHJ8kkNRce9GN/Jfjhn7G+Vq5I1IZ4LvGoI6mY4nawiudoYCtPKv0nsWxvQryOXBAagZV6gwzkiIZIZIZ6UMtJ0R4GP9SrY2pIvr0iiBMGBao0NDyFrtZUytpUuJ/PtL5UUOUzORrK/pLbAH3WlClyUdbfHJv+etSz8UJOTtP2C/SnvpqG+0H6B11B90aMyPUbBruwQQXnCWv/WPSfrY5q1gyba8h3j31ArkLVFvcbxVQpctoQMvY0ZfVf6U3hF1ITDBXqsymuTfem8Urql1lZYFaNks7eMLjFFdfLNLMNcCA0oIgoV4Ab4rfPugvalafEBuA2WhLhWuN3UYmOqu+Q5CC/C7+SXkRYZ0te1G0O4nioY3jh+UA6RxH+t31gv+uGbqggpPe/NsTvV9GlXl03ye1y7p7t79Q806MlOoAiIDxzeNUow+AcLF/cOHyQ20+kXu+K1HyUX094tuWWBbcI6r1w/nVZNgy33kfMoFGZCUuaFa3TSl2SFnDxQdtsBvcwdmwM1GkrmsJ10RRBHFGHZ5aYlJn45xq/sZolzPlKPhoF5gjOYHY+TajofkDoT+QESbNfHjh3UxnHBWKPvK8lENeeK1+AwHRQAuhBJNHCODmSD33prqAD8He0ih9KW8kpQgDki/d7yAfuw8VGvkeuvBdSeo80hO3zvk2TDPPecroCL9dK2QIzyj8ClF+28NSHLIQ0CDLFpHhXqJGRPjf4BUZ5/y90aY5tmYOb/JW9cTrboHFB7Hyi1e8nRhVlkC4fO2+wRPOSFxNPCejBHfyYeQkUzGsn1gnBTSKTxJnzitgR3GccG7Smg0YeeqehScMIs799s5cBbxuDXGKSJFHnCFidwfmcirbN6C86HROxiy2z6J4Y7S3I4WiQFNHzi4ox7EMRNhhoTgwL0cb3r8fxuESX6L5Dfdx6EsYd0sVgpQrw3uPNnr9MUKaw7dzj2ByPnxRnbGiUUl2WdTntPxAX1wu5NPYx6UeuShwiq0qlH+gNMbXN8oOss+1W6C+tVYWHqC/9Kyd07L0ucmmrN7SeKqgWkxKwoKHEkV2De/NGy5kZi9dXeTT+QOCqs3T3JxDOXMXBbsFlTUprcVbr7zhjlw35qQW3dw+n77y1OQ3d1ANSUp9kd6RJExhPC2RVhqthC0W86A0zobJ049QjihAmEsgJRpSei/aao58aE2QbfrkhFNJ63qpH0FK7SUmoVUPJ0/uAAXIHQ5fC4wy1MNBArI32a44wOV7lxbzKiV8aGg5lU//YVP3d9NHghyttT/2BxtQLjMebgHZ5wUDROc5gDTS6hcmPxYz6/wqx2i8PNC4gfYrSyLrfE6X68UmwcEDnN1TQajljNFcrkeC4O7V8+c8at6GfsUb/DWIAFq+cWAHXhaltaUm31NRUmLXxILPDA5jYu38FOATrNJOPMMLYqyDom9wjD/uoKL45gTr/upTakmpD0MBfJWke4vKATeNfnGBCV+EkrZsm+jhbd9fyVwt4x9Dw2fF4FUXzsEHHVr+emkeG1pgTWQwcxVtc0/LK26jv+6kZY39LlFcCy5kut2numrLOnysjrYdcKfGtkjEmBYl38Qe1zYumUqUPOD4E5FFm4LvdX/3WbGsqKybJ7XnhCrkixGOwR8sHK9U4kFj/Xp2ylB1faB08mpJaDsEqMQGDwQbf29EHpZyG8qXhMJ7NS0I9mfBRKcSBc7q/LkyxZOGwAPPC25uZMGyygWTuflm5XRM5bwCMnlG+Sp2bJmyAqikTTzgyIZk/MfF0MSb1MwiB0hce3s9oN/5H6xqlSxrPN0SOtNCFhu3gZGuJrGdmvCOYI+YOSw+EOHYuCmEqaLoUzEJAe6jIs/NkSVuBSwoyDtfXbrkrxt9L2gO/YJ7ES+Und0fmp9Q7YoGh03TN+jw9+Qqph2EJYEW5694JjyHojEzcgGkTqRGIdT7WIRfnPkLjjcofiU/c+PHurZdXjyF9sMqySUd1Bo0TMw9p1wr/2IoS5ZMKGARRmVQ3pbW5LeY/vpmxmbbeWv3APwGLlbYvoSFgQMN1+YzrPXQs2vvj8UvMY6495FVb9LlApgxHH4UIeivldzqGQ3ZaRn34L5fM/DBtli7MnLXH3/vzvrySBM3F37iSxeEvdDQzgHQtEDDZrG03GSqwfhE5xeKTSf50F9C5LywJC+wXBFU+EdoeegSs/t5OJWvrOp0dhG7bmjn/gt1yMhLeR65j1qLxfU4k/ekPX2tHUh0FndCo05r/CPkt9qxmh8Ok99GZSFFOYBAI8LQEjOizvGMsn8glqi8mQZvYGs3vSSe/rJOqkiU0KHpACz1eDtnblz2spbV8lmp3XzIyTug58UYN1DFP6TnuC795ZGPgU2CtTGCn+lWF7wSUWetNip8MT1AfUYa61x48d0WEXegf3KItbUUOomazRvSt7g48QuunH25gm1LBWBzMgq6eeLT8jrmXX52/f+KSzD1Q0SsKsACzNugMsD2NDRqvEvPC3fS9bOclKpf0P1xAEzuNaeqVurqnBE0Dg50EMAYWfrzEGAf9qP6Ou75TyTqZpR3TwUqEaLJZaTFlwv8p9PVqmpk/OAuIga14Y/C4U/QwgqFmV0npj0MMnFjujYAkkZHEFW6Z/RBWNy91SqAmN5yw3kOqVeHzK09FVUXYbhwE0Ld0R37hWjxATZPcYk+V4kzYMF8xcpqzz9I97/o44xIy2g8858+vAsj4siexwapDciEof+aovPJ6IEFNpBvYO8hnqwAsuJ03hF+ILlNSpYFnzWhhv7KRgKApyZ/s4xseYd2ne7+vNaLmuZI4w00CAVKSzewnas0uCDJKO1WjSeeHQ1wQJHiwfDRR4gCL2pCtkVo4XSn5Xz7J8dJlEsHOz9oGA/s2GDXBRrz+P2c/Zng90tRg+BGbegwnZZzOqOPLLQ84K1YzCN/0Wn0PrllzJS9/8qmHG7928leke2p2nNqvm+z4LomFFgo0HzX6qRPLYiMe6voY6XSJiMNIg0P+lH7vWBqUNzOAKCBP7AKDkGebVqD9XiioOP6yqgK9sSATvSbnrcmIsdxOhCtZtPTYYFdgo6HxXb8YBs56LdrLWOTsn5uN69XoFCWAPeS4NlJjBRu+yvynWvioTulISyTf+FmUpCLM5x6RrzWAyhznEFS7uu6USusom1XfwM2wmiihYLkMwiGnN8YD1sgtsMWYgEptTd86OIx5evYJdvzCyMs1+5TomuCAp4Bzj5B4zHfhb6v41Sipc/OPGKL/pCfUHgtYsVkdJQhw4wLQ+p+VzBr0zhNUcH6OfigBpcwq02D0m+B1VZb6/vZZuHL0hOQSyi70RkwwUTNYjd6XW7UWW5FVycFK7Uu1c56BA7WvdsQMOJP1CxSQulx7fX80/1b+VAH8FCt0NYLb42CA9wGqOc6AIKNgqAm+X04vGqXeycu8ayGasubqb5FTKnul8BItW9IaB1K5Qe6Nhy0NIhGOOSj+uJcpCFlytClVOyyxamyl+CZ3Slq9g0B5k/JydEZp+O6Tu3TfqndkOZ5w03+CYTFKFZbzrmYK8l4cWBAgEgPwI0gmKgtkiB+5cK8sQ0riXa00yXA3OQ2moRklKjeMbi53TWPvrgArvjFmu17Z+Ugb3jDefLg+ED9G1OsbOyCaCYj2AfY+60RqtDmriIl9+QpcKVA/m2b5emrXSpmMQtgIeeZFJ+lAruCjLpH/nKqmOtzxjUS9vVQasafWkIqm3gLZSmZjQ3FI8RxU/2DpNJ2zR7doseCliglmOMilaARnfKVXhoPbAJUO17lrpjGFZhsx8Xs6bx5WIygSditbEJTHPiPtvKIYuAARk47RI45UDtW7OVgSOXQMsrs42u9l1i7OtJoVHALmi7ARy59NjhTDl2s5o2jLdmI7y6T2MHYm0E58zlSX8A0LHm8ayC56L1oTCqQps0hCFmiZsu8QOC9R/n4ceY/FcGPVePsP5Annu1y/sYICDFibmeHbGz8HOmDKNmmNEx8bZea1bJJgRDsu0NCCs12EQL6ObCTrZvlDJVeLtlUWZO0a5potSR/0gp3Pp5fLoYrIakVKzKoO2dR+h/LqO1yGwRlmDi/EJbxuPK7XjxFn+rFZ5pFcZNjM=" />
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="A01D0F18" />
+</div>
+                    <a class="logo" href="/index.html" title="幻幻 - 社区福利站ノ(・ω・)ノ">
+                        <img src="Style/img/logo.png" alt="二次元社区 幻幻" width="100" height="40">
+                        <h1 hidden>幻幻</h1>
+                        <span hidden>社区福利站ノ(・ω・)ノ</span>
+                    </a>
+                    <nav class="menu-header">
+                        <ul id="menu-header" class="menu">
+                            <li id="menu-item-14" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-14"><a href="/zplist-1.html"><i class="fa fa-picture-o"></i>&nbsp;作品图集</a><ul class="sub-menu">
+                                <li id="menu-item-20" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-20"><a href="/zplist-cos-1.html"><i class="fa fa-fw fa-paperclip"></i>&nbsp;COS图集</a></li>
+                                <li id="menu-item-21" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-21"><a href="/zplist-daily-1.html"><i class="fa fa-fw fa-paper-plane"></i>&nbsp;日常图集</a></li>
+                                <li id="menu-item-3390" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3390"><a href="/zplist-painting-1.html"><i class="fa fa-fw fa-dropbox"></i>&nbsp;绘画作品</a></li>
+                                <li id="menu-item-100" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-100"><a href="/zplist-photography-1.html"><i class="fa fa-map-o"></i>&nbsp;轻小说</a></li>
+                            </ul>
+                            </li>
+
+                            <li id="menu-item-38" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-38"><a href="/hzlist-1.html"><i class="fa fa-american-sign-language-interpreting"></i>&nbsp;合作</a><ul class="sub-menu">
+                                <li id="menu-item-40" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-40"><a href="#"><i class="fa fa-circle"></i>&nbsp;需</a></li>
+                                <li id="menu-item-2002" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2002"><a href="#"><i class="fa fa-circle-thin"></i>&nbsp;求</a></li>
+                            </ul>
+                            </li>
+
+                            <li id="menu-item-28" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-28"><a href="/hdlist-1.html"><i class="fa fa-fw fa-amazon"></i>&nbsp;活动</a><ul class="sub-menu">
+                            </ul>
+                            </li>
+
+                            <li id="menu-item-7907" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-7907"><a href="#"><i class="fa fa-fw fa-gamepad"></i>&nbsp;商城</a><ul class="sub-menu">
+                            </ul>
+                            </li>
+                            <li id="menu-item-7908" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-7907"><a href="/fxlist-1.html"><i class="fa fa-link"></i>&nbsp;兑换区</a><ul class="sub-menu">
+                            </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div id="userbar" class="tools"><div class='tool tool-me'>
+                                                    <a href='/zl/zl-56.html'><!--用户主页地址-->
+	                                                    <img class='avatar' width='32' height='32' src='/Upload/Portrait/1.jpg' alt='avatar'><!--头像-->
+	                                                    <i class='fa fa-angle-down'></i>
+                                                    </a>
+                                                    <div class='box'>
+	                                                    <!-- points -->
+	                                                    <div class='box-points'>
+		                                                    <a href='/zl/zl-56.html' alt='0/10000'>
+			                                                    <img src='/Style/img/integral.gif' alt='' width='16' height='16'>
+			                                                    Level 1
+		                                                    </a>
+	                                                    </div>
+	                                                    <div class='box-points'>
+		                                                    <a href='/yh/history.html'>
+			                                                    <img src='/Style/img/integral.gif' alt='' width='16' height='16'>
+			                                                    7 节操 5 热心 0 CN币
+		                                                    </a>
+	                                                    </div>
+	                                                    <ul>
+		                                                    <li class=''>
+			                                                    <a href='/yh/dashboard.html'>
+				                                                    <i class='fa fa-dashboard fa-fw'></i>
+				                                                    用户中心
+			                                                    </a>
+		                                                    </li>
+		                                                    <li class=''>
+			                                                    <a href='/yh/contributions.html'>
+				                                                    <i class='fa fa-paint-brush fa-fw'></i>
+				                                                    文章投稿
+			                                                    </a>
+		                                                    </li>
+		                                                    <li class=''>
+			                                                    <a href='/yh/mytg.html'>
+				                                                    <i class='fa fa-lightbulb-o fa-fw'></i>
+				                                                    我的投稿
+			                                                    </a>
+		                                                    </li>
+		                                                    <li class=''>
+			                                                    <a href='/yh/translate.html'>
+				                                                    <i class='fa fa-envelope fa-fw'></i>
+				                                                    私信
+			                                                    </a>
+		                                                    </li>
+		                                                    <li class=''>
+			                                                    <a href='/yh/bomb.html'>
+				                                                    <i class='fa fa-bomb fa-fw'></i>
+				                                                    轰炸小游戏
+			                                                    </a>
+		                                                    </li>
+		                                                    <li class=''>
+			                                                    <a href='/yh/notifications.html'>
+				                                                    <i class='fa fa-bell fa-fw'></i>
+				                                                    我的提醒
+			                                                    </a>
+		                                                    </li>
+		                                                    <li class=''>
+			                                                    <a href='/yh/history.html'>
+				                                                    <i class='fa fa-history fa-fw'></i>
+				                                                    积分历史
+			                                                    </a>
+		                                                    </li>
+		                                                    <li class=''>
+			                                                    <a href='/yh/settings.html'>
+				                                                    <i class='fa fa-cog fa-fw'></i>
+				                                                    我的设置
+			                                                    </a>
+		                                                    </li>
+		                                                    <li class=''>
+			                                                    <a href='/yh/medal.html'>
+				                                                    <i class='fa fa-bookmark fa-fw'></i>
+				                                                    勋章中心
+			                                                    </a>
+		                                                    </li>
+		                                                    <li class=''>
+			                                                    <a href='/yh/lottery.html'>
+				                                                    <i class='fa fa-yelp fa-fw'></i>
+				                                                    积分商城
+			                                                    </a>
+		                                                    </li>
+		                                                    <li class=''>
+			                                                    <a href='/yh/avatar.html'>
+				                                                    <i class='fa fa-github-alt fa-fw'></i>
+				                                                    我的头像
+			                                                    </a>
+		                                                    </li>
+                                                            <li class=''>
+			                                                    <a href='/yh/recharge.html'>
+				                                                    <i class='fa fa-database'></i>
+				                                                    立刻充值
+			                                                    </a>
+		                                                    </li>
+                                                            <li class=''>
+			                                                    <a href='/yh/exchange.html'>
+				                                                    <i class='fa fa-link'></i>
+				                                                    发布兑换
+			                                                    </a>
+		                                                    </li>
+		                                                    <li class=''>
+			                                                    <a href='/yh/password.html'>
+				                                                    <i class='fa fa-lock fa-fw'></i>
+				                                                    修改密码
+			                                                    </a>
+		                                                    </li>
+		                                                    <li><a href='/prompts.html'><i class='fa fa-sign-out fa-fw'></i>登出</a></li>
+	                                                    </ul>
+                                                    </div>
+                                                    </div><a href="javascript:;" class="tool search fa fa-search fa-2x" data-toggle-target="#fm-search" data-focus-target="#fm-search-s" data-icon-active="fa-arrow-down" data-icon-original="fa-search" title="搜索"></a></div>
+                </form>
+                <form id="fm-search" data-focus-target="#fm-search-s" method="get" action="/Pages/ShowManage/SearchList.aspx">
+                    <input id="fm-search-s" name="s" class="form-control" placeholder="请输入搜索关键词" value="" type="search" required>
+                </form>
+                
+            </div>
+        </div>
+
+        <!---->
+        <div class="nav-main-placeholder"></div>
+        
+    <div class="g">
+        <div class="row">
+            <!--左侧导航-->
+            <div id="account-navbar" class="g-desktop-1-6">
+                <ul class="nav nav-vertical">
+                    <li class=""><a href="/yh/dashboard.html">
+                        <i class="fa fa-dashboard fa-fw"></i>
+                        用户中心
+                    </a></li>
+                    <li class=""><a href="/yh/contributions.html">
+                        <i class="fa fa-paint-brush fa-fw"></i>
+                        文章投稿
+                    </a></li>
+                    <li class=""><a href="/yh/mytg.html">
+                        <i class="fa fa-lightbulb-o fa-fw"></i>
+                        我的投稿
+                    </a></li>
+                    <li class=""><a href="/yh/translate.html">
+                        <i class="fa fa-envelope fa-fw"></i>
+                        私信
+                    </a></li>
+                    <li class=""><a href="/yh/bomb.html">
+                        <i class="fa fa-bomb fa-fw"></i>
+                        轰炸小游戏
+                    </a></li>
+                    <li class=""><a href="/yh/notifications.html">
+                        <i class="fa fa-bell fa-fw"></i>
+                        我的提醒
+                    </a></li>
+                    <li class=""><a href="/yh/history.html">
+                        <i class="fa fa-history fa-fw"></i>
+                        积分历史
+                    </a></li>
+                    <li class=""><a href="/yh/settings.html">
+                        <i class="fa fa-cog fa-fw"></i>
+                        我的设置
+                    </a></li>
+                    <li class=""><a href="/yh/medal.html">
+                        <i class="fa fa-bookmark fa-fw"></i>
+                        勋章中心
+                    </a></li>
+                    <li class=""><a href="/yh/lottery.html">
+                        <i class="fa fa-yelp fa-fw"></i>
+                        积分商城
+                    </a></li>
+                    <li class=""><a href="/yh/avatar.html">
+                        <i class="fa fa-github-alt fa-fw"></i>
+                        我的头像
+                    </a></li>
+                    <li class=""><a href="/yh/password.html">
+                        <i class="fa fa-lock fa-fw"></i>
+                        修改密码
+                    </a></li>
+                    <li class=""><a href="/yh/recharge.html">
+                        <i class="fa fa-database"></i>
+                        立刻充值
+                    </a></li>
+                    <li class=""><a href="/yh/exchange.html">
+                        <i class="fa fa-link"></i>
+                        分享
+                    </a></li>
+                </ul>
+            </div>
+            <!---->
+
+            <div class="g-desktop-5-6">
+                <div id="account-content">
+                    <div class="panel">
+                        <div class="content">
+                            
+    <div class="well">
+        <p>欢迎来到勋章中心。您可以在这里获取一些勋章。</p>
+    </div>
+    <!-- list preset medal items -->
+    <fieldset>
+        <legend class="label label-default"><i class="fa fa-gg-circle"></i>预设勋章</legend>
+        <div class="well">
+            <p>这里有众多勋章任你挑选，只要满足勋章获得要求，即可获得哟</p>
+        </div>
+        <div class="medal-my-info row">
+            <!-- my points count -->
+            <div class="g-tablet-1-3">
+                <img src="/Style/img/integral.gif" alt="节操" width="16" height="16">
+                我的节操： 
+					<span id="points-number">7</span>
+                我的热心： 
+					<span id="points-ardent">5</span>
+                我的CN币： 
+					<span id="points-CNbi">0</span>
+            </div>
+            <!-- posts count -->
+            <div class="g-tablet-1-3">
+                <i class="fa fa-paint-brush"></i>
+                我的文章： 
+					<span id="posts-number">0</span>
+            </div>
+            <!-- comments count -->
+            <div class="g-tablet-1-3">
+                <i class="fa fa-comments"></i>
+                我的评论： 
+					<span id="comments-number">0</span>
+            </div>
+        </div>
+        <div class="preset-medals medal-container">
+            
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend class="label label-default"><i class="fa fa-usd"></i>我的勋章</legend>
+        <div id="my-medal-container">
+            
+                    <div class="page-tip" Visible='True'>
+                        <div class="tip-status tip-status-small tip-status-info">
+                            <i class="fa fa-exclamation-circle fa-fw"></i> 
+                            您还没有任何勋章哦。您可以在上方添加或创建自己的勋章。
+                        </div>
+                    </div>
+                
+        </div>
+    </fieldset>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!--广告图-->
+        
+        <!---->
+        <!--底部-->
+        <footer id="footer">
+            
+            <p class="footer-meta copyright">
+                © <a href="http://www.52cos.cn/">52cos平台</a> 2015。 互联网ICP备案：<a href="http://www.miitbeian.gov.cn/" rel="nofollow" title="工业和信息化部ICP/IP地址/域名信息备案管理系统">ICP证 浙B1.B2-20150475</a>
+                <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://"); document.write(unescape("%3Cspan id='cnzz_stat_icon_1256832143'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/stat.php%3Fid%3D1256832143%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+                <script src="/plugins/Allofthelights.js-master/jquery.allofthelights.js"></script>
+                <script>$(document).ready(function () { $(".ani-player-box").allofthelights(); });</script>
+                <a href="http://www.upyun.com" target="_blank">
+                    <img src="/Style/img/36270f20a1d40012753045a615c6e93a.png"></a>
+            </p>
+        </footer>
+        <a href="#" id="back-to-top" class="fa fa-arrow-up fa-2x" title="返回顶部"></a>
+        <script type='text/javascript' src='/Style/js/frontend-entry.js'></script>
+        <script>
+            $(document).ready(function () {
+                var lilist = document.querySelector("nav.menu-header>#menu-header").querySelectorAll("li");
+                var mh;
+                switch (window.menu_header) {
+                    case "cos":
+                        mh = "COS";
+                        break;
+                    case "daily":
+                        mh = "日常";
+                        break;
+                    case "painting":
+                        mh = "绘画";
+                        break;
+                    case "photography":
+                        mh = "轻小说";
+                        break;
+                    case "reprint":
+                        mh = "合作";
+                        break;
+                    case "activity":
+                        mh = "活动";
+                        break;
+                }
+                $.each(lilist, function (n, value) {
+                    if (value.innerHTML.indexOf(window.menu_header) > -1) {
+                        $(lilist[n]).addClass("current-menu-item");
+                        $(lilist[n]).parents('li').addClass("current-menu-item");
+                    }
+                });
+            });
+
+            //将form转为AJAX提交
+            function ajaxSubmit(frm, fn, errfn) {
+                var dataPara = getFormJson(frm);
+                $.ajax({
+                    url: frm.action,
+                    type: frm.method,
+                    data: dataPara,
+                    success: fn,
+                    error: errfn
+                });
+            }
+
+            //将form中的值转换为键值对。
+            function getFormJson(frm) {
+                var o = {};
+                var a = $(frm).serializeArray();
+                $.each(a, function () {
+                    if (o[this.name] !== undefined) {
+                        if (!o[this.name].push) {
+                            o[this.name] = [o[this.name]];
+                        }
+                        o[this.name].push(this.value || '');
+                    } else {
+                        o[this.name] = this.value || '';
+                    }
+                });
+
+                return o;
+            }
+
+            function searchToggle(obj, evt) {
+                var container = $(obj).closest('.search-wrapper');
+
+                if (!container.hasClass('active')) {
+                    container.addClass('active');
+                    evt.preventDefault();
+                }
+                else if (container.hasClass('active') && $(obj).closest('.input-holder').length == 0) {
+                    container.removeClass('active');
+                    // clear input
+                    container.find('.search-input').val('');
+                    // clear and hide result container when we press close
+                    container.find('.result-container').fadeOut(100, function () { $(this).empty(); });
+                }
+            }
+
+            function submitFn(obj, evt) {
+                value = $(obj).find('.search-input').val().trim();
+
+                _html = "Yup yup! Your search text sounds like this: ";
+                if (!value.length) {
+                    _html = "Yup yup! Add some text friend :D";
+                }
+                else {
+                    _html += "<b>" + value + "</b>";
+                }
+
+                $(obj).find('.result-container').html('<span>' + _html + '</span>');
+                $(obj).find('.result-container').fadeIn(100);
+
+                evt.preventDefault();
+            }
+        </script>
+        <!---->
+    </div>
+    
+    <script>
+            $(document).ready(function () {
+                var lilist = document.querySelector("div#account-navbar").querySelectorAll("li");
+                $.each(lilist, function (n, value) {
+                    if (value.innerHTML.indexOf(window.active_menu) > -1) {
+                        $(lilist[n]).addClass("active");
+                    }
+                });
+
+                var lilist2 = document.querySelector("div.tool-me>.box").querySelectorAll("li");
+                $.each(lilist2, function (n, value) {
+                    console.info(value.innerText);
+                    if (value.innerHTML.indexOf(window.active_menu) > -1) {
+                        $(lilist2[n]).addClass("active");
+                    }
+                });
+            });
+        </script>
+    
+    <script>var active_menu="勋章"</script>
+
+
+</body>
+</html>

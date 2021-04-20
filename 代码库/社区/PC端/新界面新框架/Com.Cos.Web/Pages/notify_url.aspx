@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" Inherits="Com.Cos.Web.Pages.notify_url" Codebehind="notify_url.aspx.cs" %>

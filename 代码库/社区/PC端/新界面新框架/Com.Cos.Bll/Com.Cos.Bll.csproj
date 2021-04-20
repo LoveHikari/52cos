@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D4C06C1F-7535-48B1-BBF8-FF7579F1BE03}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Com.Cos.Bll</RootNamespace>
+    <AssemblyName>Com.Cos.Bll</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActivityBll.cs" />
+    <Compile Include="CollectBll.cs" />
+    <Compile Include="CooperationBll.cs" />
+    <Compile Include="ExchangeBll.cs" />
+    <Compile Include="ExchangeClassBll.cs" />
+    <Compile Include="ExchangeLogisticalBll.cs" />
+    <Compile Include="RefundAccountBll.cs" />
+    <Compile Include="RentPersonBll.cs" />
+    <Compile Include="ExchangePersonBll.cs" />
+    <Compile Include="ExchangeVoteBll.cs" />
+    <Compile Include="ImgBll.cs" />
+    <Compile Include="IntegralChangeBll.cs" />
+    <Compile Include="LoginIPBll.cs" />
+    <Compile Include="MailingAddressBll.cs" />
+    <Compile Include="MedalBll.cs" />
+    <Compile Include="MemberBll.cs" />
+    <Compile Include="MenuModuleBll.cs" />
+    <Compile Include="PersonMedalBll.cs" />
+    <Compile Include="QuickNavigationBll.cs" />
+    <Compile Include="RechargeRecordBll.cs" />
+    <Compile Include="RentBll.cs" />
+    <Compile Include="ReplyBll.cs" />
+    <Compile Include="RewardBll.cs" />
+    <Compile Include="SlideBll.cs" />
+    <Compile Include="SmallImgBll.cs" />
+    <Compile Include="SystemMessageBll.cs" />
+    <Compile Include="TransactionsBll.cs" />
+    <Compile Include="UserGoodBll.cs" />
+    <Compile Include="WorkImgBll.cs" />
+    <Compile Include="WorksBll.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SysParaBll.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Com.Cos.Db\Com.Cos.Db.csproj">
+      <Project>{3bced35f-8cb2-4627-941d-9facb5d051ea}</Project>
+      <Name>Com.Cos.Db</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Com.Cos.Entity\Com.Cos.Entity.csproj">
+      <Project>{05C72EE8-5630-4F19-85C9-A3FBA358719D}</Project>
+      <Name>Com.Cos.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Com.Cos.Utility\Com.Cos.Utility.csproj">
+      <Project>{18756E4C-981D-4490-9A3C-6FF665F03E94}</Project>
+      <Name>Com.Cos.Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

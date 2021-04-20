@@ -1,0 +1,113 @@
+﻿@model Com.Cos.Web.Models.LoginViewModel
+@{
+    ViewBag.Title = "登录页";
+}
+
+@section Css{
+    <link rel="stylesheet" href="~/Content/css/libs/login.css">
+}
+
+<div class="bigBox">
+    <div class="bottom clearfix">
+        <div class="backG clearfix">
+            <div class="center">
+                <div class="left"></div>
+
+                <div class="right">
+                    @using (Html.BeginForm("Login", "Start"))
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary(true)
+                        <div class="user usTop">
+                            <img src="~/Content/img/user.png">
+                            @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @placeholder = "手机号/邮箱" } })
+                            @Html.ValidationMessageFor(model => model.UserName)
+                        </div>
+                        <div class="user">
+                            <img src="~/Content/img/suo.png">
+                            @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @placeholder = "密码" } })
+                            @Html.ValidationMessageFor(model => model.Password)
+                            <span><a href="">忘记密码？</a></span>
+                        </div>
+                        <div class="user">
+                            <img src="~/Content/img/suo.png">
+                            @Html.EditorFor(model => model.VerificationCode, new { htmlAttributes = new { @placeholder = "请填写验证码" } })
+                            <img class="yanzhen verificationcode" title="点击刷新" src="@Url.Action("VerificationCode", "Start", new {area = ""})" style="cursor: pointer" />
+                            <a class="changge" id="replaceVerificationcode" href="javascript:void(0);">换一张</a>
+                            @Html.ValidationMessageFor(model => model.VerificationCode)
+                        </div>
+                        <button type="submit" class="button">登录</button>
+                        <button class="button" onclick="window.location.href = 'Register';return false;">注册</button>
+                    }
+                    <div class="party clearfix">
+                        <span>第三方登录</span>
+                        <p></p>
+                    </div>
+                    <div class="tubiao">
+                        <div class="tuMargin clearfix">
+                            <a href="@Url.Action("TencentLogin", "Start", new {Area = "", ReturnUrl=Request.UrlReferrer?.AbsoluteUri})">
+                                <img src="~/Content/img/qq.png" style="float: left">
+                            </a>
+                            <a href="">
+                                <img src="~/Content/img/xinlang.png" style="float: right">
+                            </a>
+
+                        </div>
+
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            if (!!@(ViewBag.IsReturn??0)) {
+                swalAlert.swalAlert("OMG", "请先登录", "3000", "error", false).then(function (result) {
+                    //window.location.reload();
+                });
+            }
+
+
+            @*$("form[action$='Login']").submit(function () {
+
+                $.post($(this).attr("action"), $(this).serialize(), function (msg) {
+                    //var msg = eval("(" + res + ")");
+                    if (msg.status == "success") {
+                        alert(msg.message);
+                        window.location.href = document.referrer == ""||document.referrer.indexOf("Start/Login") > 0 ?"@Url.Action("Index","Start",new{Area=""})":document.referrer;
+                    } else if(msg.status == "error") {
+                        alert(msg.message);
+                    }
+                    $(".verificationcode").attr("src", "/Start/VerificationCode?" + Math.random());
+                });
+
+                return false;
+            });*@
+        });
+    </script>
+
+    @if (ViewBag.Message == "success")
+    {
+        <script>
+        $(document).ready(function () {
+        swalAlert.swalAlert("Good", "登录成功", "3000", "success", false).then(function (result) {
+            window.location.href = document.referrer == ""||document.referrer.indexOf("Start/Login") > 0 ?"@Url.Action("Index","Start",new{Area=""})":document.referrer;
+            });
+        });
+        </script>
+    }
+    @if (ViewBag.Message == "error")
+    {
+        <script>
+            $(document).ready(function () {
+                swal("OMG", "错误请求", "error");
+            });
+        </script>
+    }
+}

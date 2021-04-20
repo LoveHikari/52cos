@@ -1,0 +1,110 @@
+﻿@using Com.Cos.Common
+@using Com.Cos.Models
+@model Com.Cos.Web.Areas.Exchange.Models.ConfirmOrderViewModel
+
+@{
+    Member member = ViewBag.Member;
+    bool isVip = ViewBag.Vip;
+    string id = ViewBag.Id;
+    Exchange exchange = ViewBag.Exchange;
+}
+<div class="leftContent">
+    <div class="daohang clearfix">
+        <span>首页</span>
+        <img src="~/Content/img/baijian.jpg">
+        <span>兑换区</span>
+        <img src="~/Content/img/baijian.jpg">
+        <span>确认订单</span>
+        <img src="~/Content/img/lanjian.jpg">
+    </div>
+    @Html.HiddenFor(model => model.Type, new { @Value = 0 })
+    @Html.HiddenFor(model => model.Id, new { @Value = id })
+    <div class="leftTop clearfix">
+        <div class="title">
+            <span>确认收获地址</span>
+            <img src="~/Content/img/hongjian.jpg">
+        </div>
+        <div class="address clearfix">
+            <span class="titleSpan">寄送至：</span>
+            @Html.HiddenFor(model => model.Address)
+            <div class="dressBox">
+                @for (int i = 0; i < ViewBag.Addresses.Count; i++)
+                {
+                    MailingAddress add = ViewBag.Addresses[i];
+                    <div class="address_1">
+                        <div class="border_radiu">
+                            <img src="/Content/img/blue_dian.jpg">
+                        </div>
+                        <span data-value="@add.Id">@(add.Province + add.City + add.County + add.Address)(@add.Name 收) @add.Phone</span>
+                        <font>修改本地址</font>
+                    </div>
+                }
+                <div class="addAddress">
+                    <img src="~/Content/img/hongbtn.jpg">
+                    <span>新增收获地址</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="leftMiddle clearfix">
+        <div class="title">
+            <span>选择兑换方式</span>
+            <img src="~/Content/img/hongjian.jpg">
+        </div>
+        @Html.HiddenFor(model => model.Method)
+        <div class="radio">
+            <div class="address_1">
+                <div class="border_radiu">
+                    <img src="/Content/img/gray_dian.jpg">
+                </div>
+                <span data-value="1">身家兑换</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="leftBottom clearfix">
+        <div class="title">
+            <span>运费</span>
+            <img src="~/Content/img/hongjian.jpg">
+        </div>
+        <p>
+            全国统一运费:<span>￥15</span>
+        </p>
+    </div>
+
+    <div class="guarantee clearfix">
+        <div class="title">
+            <span>保障金</span>
+            <img src="~/Content/img/hongjian.jpg">
+        </div>
+        <p>
+            保障金:<span>￥@exchange.Official</span>
+            @Html.HiddenFor(model => model.Deposit, new { @Value = exchange.Official })
+        </p>
+    </div>
+    <div class="pay clearfix">
+        <div class="title">
+            <span>支付方式</span>
+            <img src="~/Content/img/hongjian.jpg">
+        </div>
+        <p>
+            支付方式:<span>支付宝</span>
+        </p>
+    </div>
+    <div class="payInfo clearfix">
+        <div class="shifu">
+            实付款：<span>￥@(exchange.Official.ToInt32()+15)</span>@Html.HiddenFor(model => model.Money, new { @Value = exchange.Official.ToInt32() + 15 })
+        </div>
+        <div class="adss">
+            寄送至：<span>
+                无
+                无
+            </span>
+        </div>
+        <div class="shifu">
+            兑换方式：<span>会员兑换</span>
+        </div>
+    </div>
+    <div class="payBtn">确认支付</div>
+</div>

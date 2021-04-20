@@ -1,0 +1,117 @@
+﻿@using Com.Cos.Models
+@model Com.Cos.Web.Areas.Exchange.Models.ConfirmOrderViewModel
+@*出租*@
+@{
+    Member member = ViewBag.Member;
+    bool isVip = ViewBag.Vip;
+    string id = ViewBag.Id;
+}
+<div class="leftContent">
+    <div class="daohang clearfix">
+        <span>首页</span>
+        <img src="~/Content/img/baijian.jpg">
+        <span>兑换区</span>
+        <img src="~/Content/img/baijian.jpg">
+        <span>确认订单</span>
+        <img src="~/Content/img/lanjian.jpg">
+    </div>
+    @Html.HiddenFor(model=>model.Type,new{@Value=1})
+    @Html.HiddenFor(model => model.Id, new { @Value = id })
+    <div class="leftTop clearfix">
+        <div class="title">
+            <span>确认收获地址</span>
+            <img src="~/Content/img/hongjian.jpg">
+        </div>
+        <div class="address clearfix">
+            <span class="titleSpan">寄送至：</span>
+            @Html.HiddenFor(model => model.Address)
+            <div class="dressBox">
+                @for (int i = 0; i < ViewBag.Addresses.Count; i++)
+                {
+                    MailingAddress add = ViewBag.Addresses[i];
+                    <div class="address_1">
+                        <div class="border_radiu">
+                            <img src="/Content/img/blue_dian.jpg">
+                        </div>
+                        <span data-value="@add.Id">@(add.Province + add.City + add.County + add.Address)(@add.Name 收) @add.Phone</span>
+                        <font>修改本地址</font>
+                    </div>
+                }
+                <div class="addAddress">
+                    <img src="~/Content/img/hongbtn.jpg">
+                    <span>新增收获地址</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="leftMiddle clearfix">
+        <div class="title">
+            <span>选择兑换方式</span>
+            <img src="~/Content/img/hongjian.jpg">
+        </div>
+        @Html.HiddenFor(model => model.Method)
+        <div class="radio">
+            <div class="address_1">
+                <div class="border_radiu select">
+                    <img src="/Content/img/blue_dian.jpg">
+                </div>
+                <span data-value="0" class="selectADS">会员租赁@(isVip ? "（目前可用兑换次数" + member.RemainingConversions + "次）" : "")</span>
+            </div>
+            <div class="address_1">
+                <div class="border_radiu">
+                    <img src="/Content/img/gray_dian.jpg">
+                </div>
+                <span data-value="1">单次租赁</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="leftBottom clearfix">
+        <div class="title">
+            <span>运费</span>
+            <img src="~/Content/img/hongjian.jpg">
+        </div>
+        <p>
+            全国统一运费:<span>￥15</span>
+        </p>
+    </div>
+
+    <div class="guarantee clearfix">
+        <div class="title">
+            <span>保障金</span>
+            <img src="~/Content/img/hongjian.jpg">
+        </div>
+        <p>
+            为保证兑换的合理公平，以免用户在兑换中造成物品的损坏及不退还 ，因此决定在兑换物<br />品之前收取￥100元的保障金。 兑换结束之后，在无损坏前提下，将自动退还全部保障金<br />￥100元。
+        </p>
+        <p>
+            保障金:<span>￥100</span>
+            @Html.HiddenFor(model => model.Deposit, new { @Value = "100" })
+        </p>
+    </div>
+    <div class="pay clearfix">
+        <div class="title">
+            <span>支付方式</span>
+            <img src="~/Content/img/hongjian.jpg">
+        </div>
+        <p>
+            支付方式:<span>支付宝</span>
+        </p>
+    </div>
+    <div class="payInfo clearfix">
+        <div class="shifu fk">
+            实付款：<span>￥115</span>@Html.HiddenFor(model => model.Money, new { @Value = "115" })
+        </div>
+        <div class="adss">
+            寄送至：<span>
+                无
+                无
+            </span>
+        </div>
+        <div class="shifu">
+            兑换方式：<span>会员兑换</span>
+        </div>
+    </div>
+    <div class="payBtn">确认支付</div>
+</div>

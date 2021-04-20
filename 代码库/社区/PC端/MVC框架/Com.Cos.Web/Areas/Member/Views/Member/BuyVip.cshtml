@@ -1,0 +1,82 @@
+﻿@model Com.Cos.Web.Areas.Member.Models.RechargeViewModel
+@{
+    ViewBag.Title = "会员充值";
+}
+@section Css{
+    <link rel="stylesheet" href="~/Content/css/libs/ReleaseCps.css">
+}
+<div class="big">
+    <div class="content clearfix">
+        <!--左侧菜单 Start-->
+        @Html.Partial("_PartialLeftMenu")
+        <!--左侧菜单 End-->
+        @using (Html.BeginForm("Recharge", "Member",FormMethod.Post,new { @Target = "_blank" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+            <div class="middleContent">
+                <div class="middleTop clearfix" style="padding-bottom: 20px;">
+                    <div class="title" style="border-bottom: none;">
+                        <span>会员充值</span>
+                        <img src="~/Content/img/hongjian_1.jpg">
+                        @Html.HiddenFor(model => model.Subject, new { @Value = "会员充值" })
+                    </div>
+                    <p class="ways">请选择充值方式：</p>
+                    <div class="chongzhi clearfix">
+                        <ul class="clearfix">
+                            <li class="on clearfix"><i></i><span data-value="99">1年有效期/￥99.0（享10次兑换）</span></li>
+                            @*<li class="clearfix"><i></i><span data-value="50">单次租凭50元一次</span></li>*@
+                        </ul>
+                        @Html.HiddenFor(model => model.RechargeMethod, new { @Value = "99" })
+                    </div>
+                </div>
+                <div class="middleBottom clearfix" style="padding-bottom: 20px;">
+                    <div class="title" style="border-bottom: none;">
+                        <span>充值方式</span>
+                        <img src="~/Content/img/hongjian_1.jpg">
+                    </div>
+                    <p class="ways" style="padding: 0; text-indent: 9px;">支付方式：</p>
+                    <div class="chongzhi clearfix niligkd">
+                        <ul class="clearfix">
+                            <li class="on"><i></i><span data-value="支付宝">支付宝</span></li>
+                            @*<li><i></i><span data-value="微信">微信</span></li>
+                            <li><i></i><span data-value="工商银行">工商银行</span></li>
+                            <li><i></i><span data-value="财信通">财信通</span></li>*@
+                        </ul>
+                        @Html.HiddenFor(model => model.PaymentMethod, new { @Value = "支付宝" })
+                    </div>
+                    <div>
+                    </div>
+                </div>
+                <p class="ppxs clearfix">注：所有兑换物品使用期为7天</p>
+                <button id="fastmmotn">立即充值</button>
+            </div>
+        }
+        <!--右侧 Start-->
+        @*@Html.Partial("_PartialRight")*@
+        <!--右侧 End-->
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        $(function() {
+            $('.chongzhi ul li').click(function() {
+                $(this).addClass('on').siblings().removeClass('on');
+                var v = $("span", this).attr("data-value");
+                $(this).parents("ul").nextAll("input[type='hidden']").val(v);
+            });
+        });
+
+        $(document).ready(function () {
+            $("form[action$='Recharge']").submit(function () {
+                var val = $(".chongzhi ul li.on span").attr("data-value");
+                if (val !== "99") {
+                    swal("OMG", "请误修改网站代码，由此出现的任何问题，本平台概不负责！", "error");
+                    return false;
+                }
+            });
+        });
+    </script>
+}

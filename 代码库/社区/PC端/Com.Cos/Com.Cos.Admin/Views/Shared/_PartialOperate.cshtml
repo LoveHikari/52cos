@@ -1,0 +1,26 @@
+﻿@model Com.Cos.Admin.Models.ExchangeViewModels.ExchageListViewModel
+
+@if (Model.ExamineName == "审核中")
+{
+    <a style="text-decoration: none" onclick="article_shenhe(this,'@Model.Id')" href="javascript:;" title="审核">审核</a>
+}
+else if(Model.ExamineName == "审核完成")
+{
+    <a style="text-decoration: none" href="javascript:;" title="审核完成">审核完成</a>
+}
+else if (Model.ExamineName == "回收中")
+{
+    <a class="c-primary" onclick="article_huishou(this,'@Model.Id')" href="javascript:;" title="回收">回收</a>
+}
+else if (Model.ExamineName == "已兑换")
+{
+    <a style="text-decoration:none" onclick="article_stop(this,'@Model.Id')" href="javascript:;" title="下架"><i class="Hui-iconfont"></i></a>
+}
+else if (Model.ExamineName == "已结束")
+{
+    <a style="text-decoration: none" onclick="article_start(this, '@Model.Id')" href="javascript:;" title="上架"><i class="Hui-iconfont"></i></a>
+}
+else
+{
+    <a style="text-decoration:none" onclick="article_stop(this,'@Model.Id')" href="javascript:;" title="下架"><i class="Hui-iconfont"></i></a>
+}

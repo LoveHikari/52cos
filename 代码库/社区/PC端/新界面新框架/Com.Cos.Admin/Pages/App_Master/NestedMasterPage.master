@@ -1,0 +1,15 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Pages/App_Master/MasterPage.Master" AutoEventWireup="true" CodeBehind="NestedMasterPage.master.cs" Inherits="Com.Cos.Admin.Pages.App_Master.NestedMasterPage" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    
+
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="javascript" runat="server">
+    
+    <asp:ContentPlaceHolder runat="server" ID="javascript">
+    </asp:ContentPlaceHolder>
+</asp:Content>

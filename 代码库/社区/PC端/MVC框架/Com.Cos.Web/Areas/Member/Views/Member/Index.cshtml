@@ -1,0 +1,56 @@
+﻿@model Com.Cos.Models.Cooperation
+
+@{
+    ViewBag.Title = "用户中心";
+
+    Com.Cos.Models.Member member = ViewBag.User;
+}
+@section Css
+{
+    <link rel="stylesheet" href="~/Content/css/libs/Dashboard.css">
+}
+<div class="big">
+    <div class="content clearfix">
+        <!--左侧菜单 Start-->
+        @Html.Partial("_PartialLeftMenu")
+        <!--左侧菜单 End-->
+        <div class="middleContent">
+            <div class="middleTop clearfix" style="padding-bottom:0px;background:none;margin-bottom:0;">
+                <div class="topsd clearfix">
+                    <div class="topcont clearfix"><span>当前可用会员次数</span><p></p></div>
+                    @if (member.Etime.GetValueOrDefault() < DateTime.Now)
+                    {
+                        <div class="cont clearfix">
+                            <div class="lefgy">会员</div>
+                        </div>
+                        <div class="rrtu_1">
+                            你还不是会员或会员已过期
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="cont clearfix"><div class="lefgy">会员</div><div class="rrtu"><span title="@member.RemainingConversions">@member.RemainingConversions</span><font>次</font></div></div>
+                        <p class="pptest">注：会员有效期至 @member.Etime.GetValueOrDefault().ToString("yyyy年MM月dd日 HH:mm:ss")</p>
+                    }
+                </div>
+                <div class="topsd clearfix" style="padding-bottom:3%;margin-bottom:0;">
+                    <div class="topcont clearfix"><span style="margin-left:-50px">当前身家值</span><p></p></div>
+                    <div class="cont clearfix">
+                        <div class="lefgy">身家</div>
+                    </div>
+                    <div class="rrtu_1" title="@member.Shenjia.GetValueOrDefault().ToString("0.00")">
+                        @member.Shenjia.GetValueOrDefault().ToString("0.00")
+                    </div>
+                </div>
+            </div>
+            <a class="moresef" href="@Url.Action("History","Member",new{Area="Member"})">查看我的充值记录》</a>
+        </div>
+        <!--右侧 Start-->
+        @*@Html.Partial("_PartialRight")*@
+        <!--右侧 End-->
+    </div>
+</div>
+
+@section Scripts
+{
+}
